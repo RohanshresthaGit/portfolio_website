@@ -8,8 +8,14 @@ import Footer from "@/components/main/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+
   title: "Rohan Shrestha",
   description: "Flutter Developer",
+  icons: {
+    icon: '/rohan-32x32.svg', // put your favicon in public folder
+    shortcut: '/rohan-32x32.svg', // optional
+    apple: '/rohan-32x32.svg', // optional
+  },
 };
 
 export default function RootLayout({

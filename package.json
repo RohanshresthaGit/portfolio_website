@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "next": "13.5.6",
+    "nodemailer": "^8.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0"
@@ -19,6 +20,7 @@
     "@react-three/drei": "^9.88.4",
     "@react-three/fiber": "^8.15.4",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",

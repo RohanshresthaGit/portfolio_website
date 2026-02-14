@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "#about-me" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
+    // { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
     { name: "Blogs", href: "https://medium.com/@shrestharohan495" },
     { name: "About me", href: "#about-me" },
@@ -47,13 +47,19 @@ const Navbar = () => {
         {/* Desktop Socials */}
         <div className="hidden md:flex flex-row gap-5">
           {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
+            <a
               key={social.name}
-              width={24}
-              height={24}
-            />
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={social.src}
+                alt={social.name}
+                width={24}
+                height={24}
+              />
+            </a>
           ))}
         </div>
 
@@ -88,14 +94,21 @@ const Navbar = () => {
             {/* Mobile Socials */}
             <div className="flex flex-row gap-5 pt-4 border-t border-[#7042f861]">
               {Socials.map((social) => (
-                <Image
-                  src={social.src}
-                  alt={social.name}
+                <a
                   key={social.name}
-                  width={24}
-                  height={24}
-                  className="cursor-pointer hover:opacity-70 transition-opacity"
-                />
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={social.src}
+                    alt={social.name}
+                    key={social.name}
+                    width={24}
+                    height={24}
+                    className="cursor-pointer hover:opacity-70 transition-opacity"
+                  />
+                </a>
               ))}
             </div>
           </div>

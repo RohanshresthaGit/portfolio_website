@@ -1,74 +1,78 @@
-import React from "react";
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxLinkedinLogo,
-} from "react-icons/rx";
-
-import { FaYoutube } from "react-icons/fa";
+"use client";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
-        <div className="w-full flex flex-col items-center justify-center m-auto">
-            <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-                
+    <footer className="bg-gray-900 text-gray-300 py-12 px-5 md:px-20 relative overflow-hidden ">
+      {/* Optional: Starry background */}
+      <div className="absolute inset-0 bg-[url('/space-bg.png')] bg-cover bg-center opacity-20 -z-10"></div>
 
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Community</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Youtube</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Github</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Discord</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Social Media</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Instagram</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Twitter</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Linkedin</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">About</div>
-                   <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                     
-                        <span className="text-[15px] ml-[6px]">Become Sponsor</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                      
-                        <span className="text-[15px] ml-[6px]">Learning about me</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                  
-                        <span className="text-[15px] ml-[6px]">mifwebchain@gmail.com</span>    
-                    </p>
-                </div>
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
+        {/* Branding */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-6">
+          <div className="text-center md:text-left">
+            <h2 className="text-3xl font-bold text-white">Rohan Shrestha</h2>
+            <p className="mt-2 text-base text-gray-300">
+              Flutter Developer | Web & Mobile Apps
+            </p>
+          </div>
+
+          {/* Contact info inside cards */}
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+            {/* Location Card */}
+            <div className="flex items-center gap-3 px-5 py-3 bg-gray-800 rounded-xl shadow-md hover:bg-gray-700 transition-colors cursor-pointer">
+              <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
+                <MapPinIcon className="h-6 w-6 text-purple-500" />
+              </div>
+              <span className="text-sm md:text-base text-white">
+                Kathmandu, Nepal
+              </span>
             </div>
 
-            <div className="mb-[20px] text-[15px] text-center">
-                &copy; Rohan Shrestha. All rights reserved
-            </div>
+            {/* Email Card */}
+            <a
+              href="mailto:shrestharohan495@gmail.com"
+              className="flex items-center gap-3 px-5 py-3 bg-gray-800 rounded-xl shadow-md hover:bg-gray-700 transition-colors"
+            >
+              <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
+                <EnvelopeIcon className="h-6 w-6 text-cyan-500" />
+              </div>
+              <span className="text-sm md:text-base text-white">
+                shrestharohan495@gmail.com
+              </span>
+            </a>
+          </div>
         </div>
-    </div>
-  )
-}
 
-export default Footer
+        {/* Links */}
+        <div className="flex flex-wrap justify-center gap-8 text-center mt-6 text-gray-400">
+          <a href="/#" className="text-sm md:text-base hover:text-white transition-colors">
+            Home
+          </a>
+          <a href="/#skills" className="text-sm md:text-base hover:text-white transition-colors">
+            Skills
+          </a>
+          <a href="/#projects" className="text-sm md:text-base hover:text-white transition-colors">
+            Projects
+          </a>
+          <a href="/#contact" className="text-sm md:text-base hover:text-white transition-colors">
+            Contact
+          </a>
+          <a
+            href="/privacy-policy"
+            className="text-sm md:text-base hover:text-white transition-colors"
+          >
+            Privacy Policy
+          </a>
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="mt-6 text-center text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} Rohan Shrestha. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

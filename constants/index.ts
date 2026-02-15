@@ -317,6 +317,91 @@ export const Skill_data = [
     },
   ];
   
+
+  export const mainSkills = [
+      {
+      skill_name: "Flutter",
+      Image: "/Flutter.svg",
+      width: 80,
+      height: 80,
+    },
+  {
+      skill_name: "Android",
+      Image: "/android.svg",
+      width: 80,
+      height: 80,
+    },
+  {
+      skill_name: "Ios",
+      Image: "/ios.svg",
+      width: 80,
+      height: 80,
+    },
+  {
+      skill_name: "bloc",
+      Image: "/bloc.png",
+      width: 80,
+      height: 80,
+    },
+  {
+      skill_name: "Riverpod",
+      Image: "/riverpod.png",
+      width: 80,
+      height: 80,
+    },
+      {
+      skill_name: "Git",
+      Image: "/git.svg",
+      width: 50,
+      height: 50,
+    },
+   {
+      skill_name: "GitHub",
+      Image: "/gitwhite.png",
+      width: 50,
+      height: 50,
+    },
+  ]
+  
+  
+  export const secondarySkills = [
+       {
+      skill_name: "Ktor",
+      Image: "/ktor.svg",
+      width: 55,
+      height: 55,
+    },
+    {
+      skill_name: "Django",
+      Image: "/django.svg",
+      width: 55,
+      height: 55,
+    },
+    {
+      skill_name: "Fire base",
+      Image: "/Firebase.png",
+      width: 55,
+      height: 55,
+    },
+    {
+      skill_name: "Postger SQL",
+      Image: "/postger.png",
+      width: 70,
+      height: 70,
+    },
+       {
+      skill_name: "GitLab",
+      Image: "/gitlab.webp",
+      width: 50,
+      height: 50,
+    },
+      {
+      skill_name: "Material UI",
+      Image: "/mui.png",
+      width: 80,
+      height: 80,
+    },
+  ]
   
   
   

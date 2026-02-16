@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 
-  title: "Rohan Shrestha",
-  description: "Flutter Developer | Software Developer | Mobile App Developer",
+  title: "Rohan Shrestha - Flutter Developer",
+  description: "Personal Portfolio website of Rohan Shrestha, Flutter Developer, Software Developer & Mobile App Developer",
   icons: {
     icon: '/rohan-32x32.svg', // put your favicon in public folder
     shortcut: '/rohan-32x32.svg', // optional

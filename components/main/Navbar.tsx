@@ -9,12 +9,12 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#about-me" },
+    { name: "Home", href: "/#" },
     { name: "Skills", href: "#skills" },
     // { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
     { name: "Blogs", href: "https://medium.com/@shrestharohan495" },
-    { name: "About me", href: "#about-me" },
+    { name: "About me", href: "#aboutMe" },
   ];
 
   return (

@@ -23,6 +23,8 @@ const SkillText = () => {
           </span>
           Technologies
         </motion.div>
+          <div className="h-1 w-3/4 bg-white/80 rounded-full my-2 mx-auto"></div>
+
       </div>
       // {/* <motion.div
       //   variants={slideInFromLeft(0.5)}

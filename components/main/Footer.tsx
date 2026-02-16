@@ -1,4 +1,6 @@
 "use client";
+import { Socials } from "@/constants";
+import Image from "next/image";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
 const Footer = () => {
@@ -13,8 +15,25 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h2 className="text-3xl font-bold text-white">Rohan Shrestha</h2>
             <p className="mt-2 text-base text-gray-300">
-              Flutter Developer | Web & Mobile Apps
+              Flutter Developer | Mobile App Developer
             </p>
+                    <div className="flex flex-wrap justify-center md:justify-start gap-5 mt-5">
+                      {Socials.map((social) => (
+                        <a
+                          key={social.name}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src={social.src}
+                            alt={social.name}
+                            width={24}
+                            height={24}
+                          />
+                        </a>
+                      ))}
+                    </div>
           </div>
 
           {/* Contact info inside cards */}
@@ -52,11 +71,17 @@ const Footer = () => {
           <a href="/#skills" className="text-sm md:text-base hover:text-white transition-colors">
             Skills
           </a>
-          <a href="/#projects" className="text-sm md:text-base hover:text-white transition-colors">
+          {/* <a href="/#projects" className="text-sm md:text-base hover:text-white transition-colors">
             Projects
+          </a> */}
+          <a href="https://medium.com/@shrestharohan495" target="_blank" className="text-sm md:text-base hover:text-white transition-colors">
+            Blogs
           </a>
           <a href="/#contact" className="text-sm md:text-base hover:text-white transition-colors">
             Contact
+          </a>
+          <a href="/#aboutMe" className="text-sm md:text-base hover:text-white transition-colors">
+            About Me
           </a>
           <a
             href="/privacy-policy"

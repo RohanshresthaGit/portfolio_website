@@ -58,6 +58,8 @@ const Contact = () => {
           >
             Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Touch</span>
           </motion.h2>
+          <div className="h-1 w-48 bg-white/80 rounded-full my-1 mb-8 mx-auto"></div>
+
           <motion.p
             variants={slideInFromLeft(0.5)}
             className="text-gray-400 max-w-[600px] mx-auto"

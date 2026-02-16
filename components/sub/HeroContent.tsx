@@ -39,13 +39,13 @@ const HeroContent = () => {
             <h1 className="Welcome-text text-[13px]">Flutter Developer</h1>
           </motion.div>
 
-          {/* <motion.div
+          <motion.div
             variants={slideInFromTop}
             className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
           >
-            <h1 className="Welcome-text text-[13px]">Django Developer</h1>
+            <h1 className="Welcome-text text-[13px]">Mobile App Developer</h1>
           </motion.div>
-
+          {/* 
           <motion.div
             variants={slideInFromTop}
             className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
@@ -73,10 +73,10 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-base md:text-lg text-gray-400 my-0 max-w-[600px]"
         >
-          I&apos;m Rohan Shrestha a product-driven developer who engineers
-          scalable systems and meaningful user experiences. I believe great
-          software isn&apos;t just written — it&apos;s architected with
-          intention, performance, and long-term vision.
+          I&apos;m Rohan Shrestha a mobile application developer who engineers
+          scalable systems and meaningful user experiences using Flutter and
+          dart. I believe great software isn&apos;t just written — it&apos;s
+          architected with intention, performance, and long-term vision.
         </motion.p>
         <motion.div variants={slideInFromLeft(1)} className="flex gap-4">
           <motion.a
@@ -98,7 +98,7 @@ const HeroContent = () => {
       >
         <div className="relative w-[160px] h-[200px] sm:w-[260px] sm:h-[300px] md:w-[340px] md:h-[380px]">
           <div
-            className="absolute inset-0 overflow-hidden shadow-2xl"
+            className="absolute inset-0 overflow-hidden shadow-2xl bg-gradient-to-r from-purple-500 to-cyan-500"
             style={{
               clipPath:
                 "polygon(6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%, 0% 6%)",

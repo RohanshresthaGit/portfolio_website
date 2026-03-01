@@ -49,11 +49,11 @@ const AboutMe = () => {
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg">
                 <p className="text-white/80 leading-relaxed text-base md:text-lg">
                   A great software is built on clarity, architecture,
-                  and deep understanding — not just syntax that compiles. Every
+                  and deep understanding not just syntax that compiles. Every
                   line of code must be focused on performance,
                   maintainability, and anticipating future changes, ensuring the
                   system remains scalable, reliable, and easy to evolve over
-                  time. A great developer isn&apos;t just a coder — they are an architect.
+                  time. A great developer isn&apos;t just a coder they are an architect.
                 </p>
                 <p className="text-white/60 text-sm text-right mt-2">
                 — Rohan Shrestha

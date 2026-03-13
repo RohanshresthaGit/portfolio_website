@@ -34,14 +34,14 @@ const HeroContent = () => {
         <div className="flex gap-4 flex-wrap">
           <motion.div
             variants={slideInFromTop}
-            className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
+            className="Welcome-box py-[8px] px-[16px] border border-[#7042f88b] opacity-[0.9]"
           >
             <h1 className="Welcome-text text-[13px]">Flutter Developer</h1>
           </motion.div>
 
           <motion.div
             variants={slideInFromTop}
-            className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
+            className="Welcome-box py-[8px] px-[16px] border border-[#7042f88b] opacity-[0.9]"
           >
             <h1 className="Welcome-text text-[13px]">Mobile App Developer</h1>
           </motion.div>
@@ -83,10 +83,14 @@ const HeroContent = () => {
             className="py-2 button-primary text-center text-white cursor-pointer rounded-lg w-[200px]"
             href="#contact"
           >
-            Hire ME!
+            Work with ME!
           </motion.a>
 
-          <motion.a className="py-2 button-primary text-center text-white cursor-pointer rounded-lg w-[200px]">
+          <motion.a
+            href="/rohan_cv.pdf"
+            download={true}
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg w-[200px]"
+          >
             Download CV
           </motion.a>
         </motion.div>

@@ -4,6 +4,7 @@ import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";
 import Contact from "@/components/main/Contact";
 import AboutMe from "@/components/main/About-me";
+import Experience from "@/components/main/Experience";
 // import Image from "next/image";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills />
+        <Experience />
         <Contact />
         <AboutMe />
         {/* <Projects /> */}

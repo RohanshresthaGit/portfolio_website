@@ -11,10 +11,11 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/#" },
     { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
     // { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
     { name: "Blogs", href: "https://medium.com/@shrestharohan495" },
-    { name: "About me", href: "#aboutMe" },
+    // { name: "About me", href: "#aboutMe" },
   ];
 
   return (

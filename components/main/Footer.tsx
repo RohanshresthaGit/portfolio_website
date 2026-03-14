@@ -71,6 +71,10 @@ const Footer = () => {
           <a href="/#skills" className="text-sm md:text-base hover:text-white transition-colors">
             Skills
           </a>
+          <a href="/#experience" className="text-sm md:text-base hover:text-white transition-colors">
+            Experience
+          </a>
+
           {/* <a href="/#projects" className="text-sm md:text-base hover:text-white transition-colors">
             Projects
           </a> */}
@@ -79,9 +83,6 @@ const Footer = () => {
           </a>
           <a href="/#contact" className="text-sm md:text-base hover:text-white transition-colors">
             Contact
-          </a>
-          <a href="/#aboutMe" className="text-sm md:text-base hover:text-white transition-colors">
-            About Me
           </a>
           <a
             href="/privacy-policy"

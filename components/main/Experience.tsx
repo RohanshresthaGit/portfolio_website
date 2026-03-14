@@ -330,12 +330,7 @@ const Experience = () => {
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center mb-12">
-          <motion.div
-            variants={slideInFromTop} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="Welcome-box py-[8px] px-[16px] border border-[#7042f88b] inline-flex mb-4"
-          >
-            <span className="Welcome-text text-[13px] font-medium tracking-widest uppercase">✦ My Journey</span>
-          </motion.div>
+          
 
           <motion.h2
             variants={slideInFromTop} initial="hidden" whileInView="visible" viewport={{ once: true }}

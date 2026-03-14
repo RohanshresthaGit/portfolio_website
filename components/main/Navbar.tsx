@@ -2,29 +2,54 @@
 
 import { Socials } from "@/constants";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navLinks = [
-    { name: "Home", href: "/#" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    // { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-    { name: "Blogs", href: "https://medium.com/@shrestharohan495" },
-    // { name: "About me", href: "#aboutMe" },
+    { name: "Home", href: "/#", id: "home" },
+    { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Experience", href: "#experience", id: "experience" },
+    { name: "Contact", href: "#contact", id: "contact" },
+    { name: "Blogs", href: "https://medium.com/@shrestharohan495", id: "blogs" },
   ];
+
+  useEffect(() => {
+    const sectionIds = navLinks
+      .filter((l) => l.id !== "blogs")
+      .map((l) => l.id);
+
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id === "home" ? "about-me" : id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActiveSection(id);
+          });
+        },
+        { threshold: 0.3, rootMargin: "-60px 0px -30% 0px" }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        <a
-          href="#about-me"
-          className="h-auto w-auto flex flex-row items-center"
-        >
+
+        {/* Logo */}
+        <a href="#about-me" className="h-auto w-auto flex flex-row items-center">
           <span className="font-bold ml-[10px] text-gray-300 text-sm md:text-base">
             Rohan Shrestha
           </span>
@@ -32,16 +57,41 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="cursor-pointer hover:text-purple-500 transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
+          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full">
+            {navLinks.map((link) => {
+              const active = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target={link.id === "blogs" ? "_blank" : undefined}
+                  rel={link.id === "blogs" ? "noopener noreferrer" : undefined}
+                  className="relative group cursor-pointer text-sm px-1 pb-1 transition-colors duration-300"
+                  style={{ color: active ? "#ba9cff" : "rgb(229,231,235)" }}
+                >
+                  {link.name}
+
+                  {/* Underline — shows on hover OR active */}
+                  <span
+                    className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
+                    style={{
+                      background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
+                      width: active ? "100%" : "0%",
+                    }}
+                  />
+
+                  {/* Hover underline via CSS — only when not active */}
+                  {!active && (
+                    <span
+                      className="absolute bottom-0 left-0 h-[2px] rounded-full w-0 group-hover:w-full transition-all duration-300"
+                      style={{
+                        background: "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(156,178,255,0.5))",
+                      }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </div>
         </div>
 
@@ -53,18 +103,14 @@ const Navbar = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
+              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={24}
-                height={24}
-              />
+              <Image src={social.src} alt={social.name} width={24} height={24} />
             </a>
           ))}
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger */}
         <button
           className="md:hidden flex items-center"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -81,16 +127,41 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-[65px] left-0 right-0 bg-[#090321]/95 backdrop-blur-md border-b border-[#7042f861] py-6 px-6">
           <div className="flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-purple-500 transition-colors duration-300 text-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const active = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target={link.id === "blogs" ? "_blank" : undefined}
+                  rel={link.id === "blogs" ? "noopener noreferrer" : undefined}
+                  className="relative group w-fit text-lg transition-colors duration-300 pb-1"
+                  style={{ color: active ? "#ba9cff" : "rgb(209,213,219)" }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+
+                  {/* Active underline */}
+                  <span
+                    className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
+                    style={{
+                      background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
+                      width: active ? "100%" : "0%",
+                    }}
+                  />
+
+                  {/* Hover underline */}
+                  {!active && (
+                    <span
+                      className="absolute bottom-0 left-0 h-[2px] rounded-full w-0 group-hover:w-full transition-all duration-300"
+                      style={{
+                        background: "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(156,178,255,0.5))",
+                      }}
+                    />
+                  )}
+                </a>
+              );
+            })}
 
             {/* Mobile Socials */}
             <div className="flex flex-row gap-5 pt-4 border-t border-[#7042f861]">
@@ -100,14 +171,14 @@ const Navbar = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="opacity-70 hover:opacity-100 transition-opacity duration-300"
                 >
                   <Image
                     src={social.src}
                     alt={social.name}
-                    key={social.name}
                     width={24}
                     height={24}
-                    className="cursor-pointer hover:opacity-70 transition-opacity"
+                    className="cursor-pointer"
                   />
                 </a>
               ))}

@@ -6,11 +6,11 @@ import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
 
 const roles = [
+  "Software Developer",
   "Flutter Developer",
   "Mobile App Developer",
-  "Software Developer",
-  "UI/UX Enthusiast",
-  "Kotlin Developer",
+  // "UI/UX Enthusiast",
+  // "Kotlin Developer",
 ];
 
 const TypingText = () => {

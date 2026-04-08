@@ -3,11 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 interface Item {
   role: string;
@@ -98,12 +94,7 @@ const communityExperience: Item[] = [
     logoColor: "#4ade80",
     description:
       "Contributed to open-source community initiatives and collaborative activities under GNOME Nepal, supporting the growth of open-source culture in Nepal. Organized, Volunteered, and participated in events, workshops, and discussions to promote linux & open-source in Nepal.",
-    skills: [
-      "Linux",
-      "Event Management",
-      "Open Source",
-      "Community Engagement",
-    ],
+    skills: ["Linux", "Event Management", "Open Source", "Community Engagement"],
   },
   {
     role: "College Representative (CR)",
@@ -147,10 +138,7 @@ const communityExperience: Item[] = [
   },
 ];
 
-const badgeConfig: Record<
-  string,
-  { bg: string; border: string; text: string }
-> = {
+const badgeConfig: Record<string, { bg: string; border: string; text: string }> = {
   "Full Time": {
     bg: "rgba(113,47,255,0.2)",
     border: "rgba(113,47,255,0.5)",
@@ -182,6 +170,7 @@ const badgeConfig: Record<
     text: "#38bdf8",
   },
 };
+
 const defaultBadge = {
   bg: "rgba(113,47,255,0.15)",
   border: "rgba(113,47,255,0.4)",
@@ -234,8 +223,9 @@ const CardContent = ({
           <Image
             src={item.logo}
             alt={item.company}
-            fill
-            className="object-cover"
+            width={64}
+            height={64}
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -291,8 +281,7 @@ const CardContent = ({
         <div
           className="h-[1px] w-full my-4"
           style={{
-            background:
-              "linear-gradient(90deg, rgba(112,66,248,0.5), transparent)",
+            background: "linear-gradient(90deg, rgba(112,66,248,0.5), transparent)",
           }}
         />
         <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed text-justify mb-4">
@@ -354,8 +343,9 @@ const MobileTimelineItem = ({
           <Image
             src={item.logo}
             alt={item.company}
-            fill
-            className="object-cover"
+            width={40}
+            height={40}
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -432,8 +422,9 @@ const DesktopTimelineItem = ({
           <Image
             src={item.logo}
             alt={item.company}
-            fill
-            className="object-cover"
+            width={56}
+            height={56}
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

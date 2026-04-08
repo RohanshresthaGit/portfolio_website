@@ -10,13 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 
-  title: "Rohan Shrestha | Flutter Developer | Django Developer | Mobile App Developer",
-  description: "Personal Portfolio website of Rohan Shrestha, Flutter Developer, Software Developer & Mobile App Developer",
-  icons: {
-    icon: '/rohan-32x32.svg', // put your favicon in public folder
-    shortcut: '/rohan-32x32.svg', // optional
-    apple: '/rohan-32x32.svg', // optional
-  },
+  title: "Rohan Shrestha | Flutter Developer | Django Developer",
+  description: "Personal Portfolio website of Rohan Shrestha, Flutter Developer, Software Developer, Django developer & Mobile App Developer",
 };
 
 export default function RootLayout({

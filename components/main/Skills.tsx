@@ -81,7 +81,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-0 py-20 scroll-mt-20"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-40 py-5 scroll-mt-20"
       style={{ transform: "scale(0.9)" }}
     >
       {/* Ambient glow blobs */}

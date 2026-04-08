@@ -5,6 +5,7 @@ import Skills from "@/components/main/Skills";
 import Contact from "@/components/main/Contact";
 import AboutMe from "@/components/main/About-me";
 import Experience from "@/components/main/Experience";
+import Blog from "@/components/main/blogs";
 // import Image from "next/image";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Skills />
         <Experience />
+        <Blog />
         <Contact />
         {/* <AboutMe /> */}
         {/* <Projects /> */}

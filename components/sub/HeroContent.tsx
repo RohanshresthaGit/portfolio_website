@@ -23,11 +23,17 @@ const TypingText = () => {
     let timeout: NodeJS.Timeout;
 
     if (!isDeleting && displayed.length < full.length) {
-      timeout = setTimeout(() => setDisplayed(full.slice(0, displayed.length + 1)), 80);
+      timeout = setTimeout(
+        () => setDisplayed(full.slice(0, displayed.length + 1)),
+        80,
+      );
     } else if (!isDeleting && displayed.length === full.length) {
       timeout = setTimeout(() => setIsDeleting(true), 1800);
     } else if (isDeleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(full.slice(0, displayed.length - 1)), 45);
+      timeout = setTimeout(
+        () => setDisplayed(full.slice(0, displayed.length - 1)),
+        45,
+      );
     } else {
       setIsDeleting(false);
       setCurrentRole((prev) => (prev + 1) % roles.length);
@@ -55,14 +61,25 @@ const HeroContent = () => {
   const y = useMotionValue(0);
 
   const springConfig = { stiffness: 80, damping: 12 };
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [-22, 22]), springConfig);
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [22, -22]), springConfig);
-  const translateZ = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), springConfig);
+  const rotateX = useSpring(
+    useTransform(y, [-0.5, 0.5], [-18, 18]),
+    springConfig,
+  );
+  const rotateY = useSpring(
+    useTransform(x, [-0.5, 0.5], [18, -18]),
+    springConfig,
+  );
+  const translateZ = useSpring(
+    useTransform(x, [-0.5, 0.5], [-5, 5]),
+    springConfig,
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     x.set((e.clientX - rect.left) / rect.width - 0.5);
     y.set((e.clientY - rect.top) / rect.height - 0.5);
+    x.set((e.clientX - rect.right) / rect.width + 0.5);
+    y.set((e.clientY - rect.bottom) / rect.height + 0.5);
   };
 
   const handleMouseLeave = () => {
@@ -79,12 +96,11 @@ const HeroContent = () => {
     >
       {/* Left content */}
       <div className="w-full md:w-[55%] flex flex-col gap-3 justify-center items-center md:items-start text-center md:text-start order-2 md:order-1">
-
         <motion.div
           variants={slideInFromLeft(0.2)}
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-white"
         >
-          Hi, I am
+          Hello, This is
         </motion.div>
 
         <motion.div
@@ -98,7 +114,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.4)}
           className="text-xl md:text-2xl font-bold text-white flex flex-wrap items-center justify-center md:justify-start gap-x-2 mt-1"
         >
-          <span>I am a</span>
+          <span>a</span>
           <TypingText />
         </motion.div>
 
@@ -106,23 +122,36 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.6)}
           className="text-sm md:text-base lg:text-[17px] text-gray-400 leading-relaxed text-justify max-w-[580px] mt-2"
         >
-          <strong className="text-white font-bold">Professional Software Developer</strong> with{" "}
-          <strong className="text-white font-bold">1.5+ years of experience</strong> in mobile and
-          web development, specializing in building{" "}
-          <strong className="text-white font-bold">cross-platform mobile applications</strong>{" "}
-          using <strong className="text-white font-bold">Flutter and Dart</strong>. Experienced in{" "}
+          with{" "}
+          <strong className="text-white font-bold">
+            1.5+ years of experience
+          </strong>{" "}
+          in mobile app development, specializing in developing{" "}
+          <strong className="text-white font-bold">
+            cross-platform mobile applications
+          </strong>
+          {" "}
+          using{" "}
+          <strong className="text-white font-bold">Flutter and Dart</strong>.
+          Experienced in{" "}
           <strong className="text-white font-bold">state management</strong>,{" "}
-          <strong className="text-white font-bold">REST API integration</strong>,{" "}
+          <strong className="text-white font-bold">API integration</strong>,{" "}
           <strong className="text-white font-bold">Firebase</strong>, and{" "}
-          <strong className="text-white font-bold">Hive</strong>, with a strong focus on creating
-          clean, responsive, and high-performance applications. Also familiar with{" "}
-          <strong className="text-white font-bold">React, Node.js, Express.js</strong>, and{" "}
-          <strong className="text-white font-bold">MongoDB</strong>, enabling contributions to
-          full-stack development. Passionate about writing{" "}
-          <strong className="text-white font-bold">maintainable code</strong>, solving real-world
-          problems, and continuously learning new technologies to build scalable and user-focused
-          software. Based in <strong className="text-white font-bold">Nepal</strong>, delivering
-          reliable and efficient digital solutions.
+          <strong className="text-white font-bold">Hive</strong>, with a strong
+          focus on developing clean, responsive, maintainable, scalable and
+          high-performance mobile applications for both
+          <strong className="text-white font-bold"> Android </strong>
+          and
+          <strong className="text-white font-bold"> iOS</strong>. Also familiar
+          with other technologies such as{" "}
+          <strong className="text-white font-bold">
+            Java, Python, Django, Kotlin, Ktor
+          </strong>
+          , and <strong className="text-white font-bold">Postgresql</strong>,
+          enabling contributions to full-stack development. Passionate about
+          writing maintainable code, solving real-world problems, and
+          continuously learning new technologies to build scalable and
+          user-focused software.
         </motion.p>
 
         {/* Buttons */}
@@ -138,7 +167,8 @@ const HeroContent = () => {
             className="flex items-center justify-center text-white font-semibold rounded-xl text-sm md:text-base w-[160px] md:w-[180px] py-3 tracking-wide transition-all"
             style={{
               background: "linear-gradient(135deg, #7042f8, #9b6dff)",
-              boxShadow: "0 4px 20px rgba(112,66,248,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
+              boxShadow:
+                "0 4px 20px rgba(112,66,248,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
             }}
           >
             Work with ME!
@@ -146,7 +176,7 @@ const HeroContent = () => {
 
           {/* Download CV — outlined */}
           <motion.a
-            href="/rohan_cv.pdf"
+            href="/rohan_shrestha.pdf"
             download={true}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
@@ -154,15 +184,19 @@ const HeroContent = () => {
             style={{
               background: "transparent",
               border: "1.5px solid rgba(112,66,248,0.7)",
-              boxShadow: "0 4px 16px rgba(112,66,248,0.2), inset 0 0 12px rgba(112,66,248,0.08)",
+              boxShadow:
+                "0 4px 16px rgba(112,66,248,0.2), inset 0 0 12px rgba(112,66,248,0.08)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "rgba(112,66,248,0.15)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(112,66,248,0.35), inset 0 0 16px rgba(112,66,248,0.15)";
+              (e.currentTarget as HTMLElement).style.background =
+                "rgba(112,66,248,0.15)";
+              (e.currentTarget as HTMLElement).style.boxShadow =
+                "0 4px 20px rgba(112,66,248,0.35), inset 0 0 16px rgba(112,66,248,0.15)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.background = "transparent";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(112,66,248,0.2), inset 0 0 12px rgba(112,66,248,0.08)";
+              (e.currentTarget as HTMLElement).style.boxShadow =
+                "0 4px 16px rgba(112,66,248,0.2), inset 0 0 12px rgba(112,66,248,0.08)";
             }}
           >
             Download CV
@@ -198,7 +232,8 @@ const HeroContent = () => {
               style={{
                 inset: "-50px",
                 borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(113,47,255,0.38) 0%, transparent 70%)",
+                background:
+                  "radial-gradient(circle, rgba(113,47,255,0.38) 0%, transparent 70%)",
                 filter: "blur(36px)",
               }}
             />
@@ -210,12 +245,20 @@ const HeroContent = () => {
                 inset: "-4px",
                 borderRadius: "50%",
                 padding: "3px",
-                background: "conic-gradient(from 0deg, #7042f8, #ba9cff, #9cb2ff, #e59cff, #7042f8)",
+                background:
+                  "conic-gradient(from 0deg, #7042f8, #ba9cff, #9cb2ff, #e59cff, #7042f8)",
               }}
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
             >
-              <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "#05071a" }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",
+                  background: "#05071a",
+                }}
+              />
             </motion.div>
 
             {/* Orbiting purple dot */}
@@ -228,7 +271,9 @@ const HeroContent = () => {
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{
-                  width: "10px", height: "10px", borderRadius: "50%",
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "50%",
                   background: "#ba9cff",
                   boxShadow: "0 0 12px 4px rgba(186,156,255,0.8)",
                 }}
@@ -245,7 +290,9 @@ const HeroContent = () => {
               <div
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
                 style={{
-                  width: "7px", height: "7px", borderRadius: "50%",
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
                   background: "#9cb2ff",
                   boxShadow: "0 0 8px 3px rgba(156,178,255,0.7)",
                 }}
@@ -261,16 +308,20 @@ const HeroContent = () => {
                 className="absolute bottom-0 left-0 right-0 pointer-events-none z-10"
                 style={{
                   height: "25%",
-                  background: "linear-gradient(to top, rgba(5,7,26,0.8), transparent)",
+                  background:
+                    "linear-gradient(to top, rgba(5,7,26,0.8), transparent)",
                 }}
               />
               <div
                 className="absolute inset-0"
-                style={{ background: "linear-gradient(180deg, #1a0040 0%, #05071a 100%)" }}
+                style={{
+                  background:
+                    "linear-gradient(180deg, #1a0040 0%, #05071a 100%)",
+                }}
               />
               <Image
-                src="/rohan.svg"
-                alt="Rohan portfolio"
+                src="/my_image.jpeg"
+                alt="Rohan Shrestha"
                 fill
                 style={{ objectFit: "cover", objectPosition: "center" }}
                 sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 340px, 380px"

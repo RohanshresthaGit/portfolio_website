@@ -64,7 +64,7 @@ const Contact = () => {
             variants={slideInFromLeft(0.5)}
             className="text-gray-400 max-w-[600px] mx-auto"
           >
-            Have a question or want to work together? I'd love to hear from you. Feel free to reach out!
+            Have a question or want to work together? I&apos;d love to hear from you. Feel free to reach out!
           </motion.p>
         </div>
 
@@ -111,7 +111,7 @@ const Contact = () => {
                 <div className="text-center">
                   <div className="text-5xl mb-4">✨</div>
                   <h3 className="text-2xl font-bold text-white mb-2">Thank you!</h3>
-                  <p className="text-gray-400">Your message has been sent. I'll get back to you soon!</p>
+                  <p className="text-gray-400">Your message has been sent. I&apos;ll get back to you soon!</p>
                 </div>
               </div>
               ) : (

@@ -33,7 +33,7 @@ const AboutMe = () => {
         {/* Content */}
         <div className=" text-white/80 leading-relaxed text-base md:text-lg">
           <p className="mb-6">
-            Currently pursuing my Bachelor's degree in Computer Application at
+            Currently pursuing my Bachelor&apos;s degree in Computer Application at
             Tribhuwan University. With a strong passion for software
             development, I specialize in Flutter and have experience building
             maintainable, scalable and robust mobile applications. I am

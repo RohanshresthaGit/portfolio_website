@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   slideInFromLeft,
   slideInFromRight,
@@ -52,7 +53,16 @@ const technicalExperience: Item[] = [
     logoColor: "#0ea5e9",
     description:
       "Contributed to the development of a ride-sharing mobile application using Flutter. Implemented responsive UI components and improved existing features. Assisted in API integration, performance optimization, and debugging application issues. Worked closely with the development team to plan and improve application performance.",
-    skills: ["Flutter", "Dart", "API Integration", "UI/UX", "Debugging", "Technical Documentation", 'State Management', "MVVM"],
+    skills: [
+      "Flutter",
+      "Dart",
+      "API Integration",
+      "UI/UX",
+      "Debugging",
+      "Technical Documentation",
+      "State Management",
+      "MVVM",
+    ],
   },
   {
     role: "Flutter Developer Intern",
@@ -88,7 +98,12 @@ const communityExperience: Item[] = [
     logoColor: "#4ade80",
     description:
       "Contributed to open-source community initiatives and collaborative activities under GNOME Nepal, supporting the growth of open-source culture in Nepal. Organized, Volunteered, and participated in events, workshops, and discussions to promote linux & open-source in Nepal.",
-    skills: ["Linux", "Event Management","Open Source", "Community Engagement"],
+    skills: [
+      "Linux",
+      "Event Management",
+      "Open Source",
+      "Community Engagement",
+    ],
   },
   {
     role: "College Representative (CR)",
@@ -99,7 +114,14 @@ const communityExperience: Item[] = [
     logoColor: "#fbbf24",
     description:
       "Represented the college in Code for Change initiatives. Coordinated activities and supported collaboration among student members to drive technology-focused community work. Organized events, workshops, and discussions to promote technology for social good and skill development among students.",
-    skills: ["Leadership", "Coordination", "Community", "Event Management", "Networking", "Communication"],
+    skills: [
+      "Leadership",
+      "Coordination",
+      "Community",
+      "Event Management",
+      "Networking",
+      "Communication",
+    ],
   },
   {
     role: "Member",
@@ -209,10 +231,11 @@ const CardContent = ({
             boxShadow: `0 0 16px 2px ${item.logoColor}33`,
           }}
         >
-          <img
+          <Image
             src={item.logo}
             alt={item.company}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
 
@@ -328,10 +351,11 @@ const MobileTimelineItem = ({
             boxShadow: `0 0 12px 2px ${item.logoColor}44`,
           }}
         >
-          <img
+          <Image
             src={item.logo}
             alt={item.company}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
 
@@ -405,10 +429,11 @@ const DesktopTimelineItem = ({
             boxShadow: `0 0 20px 4px ${item.logoColor}55`,
           }}
         >
-          <img
+          <Image
             src={item.logo}
             alt={item.company}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
       </div>

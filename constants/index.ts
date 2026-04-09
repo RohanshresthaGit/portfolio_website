@@ -321,7 +321,7 @@ export const Skill_data = [
   export const mainSkills = [
       {
       skill_name: "Flutter",
-      Image: "/Flutter.svg",
+      Image: "/flutter.svg",
       width: 80,
       height: 80,
     },
@@ -367,7 +367,7 @@ export const Skill_data = [
   export const secondarySkills = [
        {
       skill_name: "Ktor",
-      Image: "/ktor.svg",
+      Image: "/Ktor.svg",
       width: 55,
       height: 55,
     },

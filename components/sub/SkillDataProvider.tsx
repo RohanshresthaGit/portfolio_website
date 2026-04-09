@@ -9,9 +9,10 @@ interface Props {
   width: number;
   height: number;
   index: number;
+  alt: string;
 }
 
-const SkillDataProvider = ({ src, width, height }: Props) => {
+const SkillDataProvider = ({ src, width, height, alt}: Props) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -55,7 +56,7 @@ const SkillDataProvider = ({ src, width, height }: Props) => {
           src={src}
           width={40}
           height={40}
-          alt="skill image"
+          alt={alt}
           className="object-contain w-10 h-10"
           style={{
             filter: hovered

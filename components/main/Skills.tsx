@@ -123,6 +123,7 @@ const Skills = () => {
               <SkillDataProvider
                 key={`main-${index}`}
                 src={image.Image}
+                alt={image.skill_name}
                 width={getSize(image.width)}
                 height={getHeight(image.height)}
                 index={index}
@@ -159,6 +160,7 @@ const Skills = () => {
               <SkillDataProvider
                 key={`secondary-${index}`}
                 src={image.Image}
+                alt={image.skill_name}
                 width={getSize(image.width)}
                 height={getHeight(image.height)}
                 index={index}

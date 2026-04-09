@@ -58,31 +58,32 @@ const Skills = () => {
     const remainingDistance = Math.abs(targetX - currentX);
     const proportionalDuration = (remainingDistance / containerWidth) * 20;
 
-    controls.start({
-      x: targetX,
-      transition: { duration: proportionalDuration, ease: "linear" },
-    }).then(() => {
-      if (direction === "forward") {
-        motionValue.set(0);
-        controls.start({
-          x: [0, -containerWidth],
-          transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
-        });
-      } else {
-        motionValue.set(-containerWidth);
-        controls.start({
-          x: [-containerWidth, 0],
-          transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
-        });
-      }
-    });
+    controls
+      .start({
+        x: targetX,
+        transition: { duration: proportionalDuration, ease: "linear" },
+      })
+      .then(() => {
+        if (direction === "forward") {
+          motionValue.set(0);
+          controls.start({
+            x: [0, -containerWidth],
+            transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
+          });
+        } else {
+          motionValue.set(-containerWidth);
+          controls.start({
+            x: [-containerWidth, 0],
+            transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
+          });
+        }
+      });
   };
 
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-40 py-5 scroll-mt-20"
-      style={{ transform: "scale(0.9)" }}
+      className="flex flex-col items-center justify-center gap-3 w-full relative overflow-hidden py-10 md:py-20 scroll-mt-20"
     >
       {/* Ambient glow blobs */}
       <div
@@ -97,7 +98,7 @@ const Skills = () => {
       <SkillText />
 
       {/* Main Skills row */}
-      <div className="flex w-full justify-center mt-12 md:mt-24">
+      <div className="flex w-full justify-center mt-6 md:mt-16">
         <div
           className="w-full md:w-3/4 relative"
           style={{ overflowX: "hidden", overflowY: "visible" }}
@@ -117,7 +118,9 @@ const Skills = () => {
             animate={controlsMain}
             style={{ x: xMain }}
             onMouseEnter={() => pauseAnimation(controlsMain)}
-            onMouseLeave={() => resumeAnimation(xMain, controlsMain, mainContainerRef, "forward")}
+            onMouseLeave={() =>
+              resumeAnimation(xMain, controlsMain, mainContainerRef, "forward")
+            }
           >
             {[...mainSkills, ...mainSkills].map((image, index) => (
               <SkillDataProvider
@@ -134,7 +137,7 @@ const Skills = () => {
       </div>
 
       {/* Secondary Skills row */}
-      <div className="flex w-full justify-center mt-12 md:mt-24">
+      <div className="flex w-full justify-center mt-6 md:mt-16">
         <div
           className="w-full md:w-3/4 relative"
           style={{ overflowX: "hidden", overflowY: "visible" }}
@@ -154,7 +157,14 @@ const Skills = () => {
             animate={controlsSecondary}
             style={{ x: xSecondary }}
             onMouseEnter={() => pauseAnimation(controlsSecondary)}
-            onMouseLeave={() => resumeAnimation(xSecondary, controlsSecondary, secondaryContainerRef, "backward")}
+            onMouseLeave={() =>
+              resumeAnimation(
+                xSecondary,
+                controlsSecondary,
+                secondaryContainerRef,
+                "backward"
+              )
+            }
           >
             {[...secondarySkills, ...secondarySkills].map((image, index) => (
               <SkillDataProvider

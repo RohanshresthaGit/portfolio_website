@@ -12,7 +12,7 @@ const Blog = () => {
       {/* Section Title */}
       <div className="text-center mb-12 md:mb-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-white">BLOG</h2>
-        <div className="w-24 sm:w-32 h-1 bg-purple-500 mx-auto mt-4" />
+       <div className="h-1 w-24 bg-white/80 rounded-full mt-3 mx-auto" />
         <p className="text-gray-400 mt-4 text-base sm:text-lg font-semibold px-4">
           Thoughts, tutorials, and insights on app development, technology, and
           software engineering

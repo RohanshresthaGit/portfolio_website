@@ -48,7 +48,7 @@ const Skills = () => {
   const resumeAnimation = (
     motionValue: any,
     controls: any,
-    containerRef: React.RefObject<HTMLDivElement>,
+    containerRef: any,
     direction: "forward" | "backward"
   ) => {
     if (!containerRef.current) return;

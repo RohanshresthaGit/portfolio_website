@@ -339,7 +339,7 @@ export const Skill_data = [
     },
   {
       skill_name: "bloc",
-      Image: "/bloc.png",
+      Image: "/bloc.webp",
       width: 80,
       height: 80,
     },

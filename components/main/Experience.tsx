@@ -516,7 +516,7 @@ const Experience = () => {
           transition={{ duration: 0.3 }}
         >
           {/* Mobile */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             {data.map((item, index) => (
               <MobileTimelineItem
                 key={`m-${tab}-${index}`}
@@ -529,7 +529,7 @@ const Experience = () => {
           </div>
 
           {/* Desktop */}
-          <div className="hidden md:block relative">
+          <div className="hidden lg:block relative">
             <div
               className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 z-0"
               style={{

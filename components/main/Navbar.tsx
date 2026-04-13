@@ -100,7 +100,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex w-full max-w-[500px] h-full flex-row items-center justify-between md:mr-20">
+        <div className="hidden lg:flex w-full max-w-[500px] h-full flex-row items-center justify-between lg:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full">
             {navLinks.map((link) => {
               const active = activeSection === link.id;
@@ -141,7 +141,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Socials */}
-        <div className="hidden md:flex flex-row gap-5">
+        <div className="hidden lg:flex flex-row gap-5">
           {Socials.map((social) => (
             <a
               key={social.name}
@@ -162,7 +162,7 @@ const Navbar = () => {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden flex items-center"
+          className="lg:hidden flex items-center"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
@@ -175,7 +175,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-[65px] left-0 right-0 bg-[#090321]/95 backdrop-blur-md border-b border-[#7042f861] py-6 px-6">
+        <div className="lg:hidden absolute top-[65px] left-0 right-0 bg-[#090321]/95 backdrop-blur-md border-b border-[#7042f861] py-6 px-6">
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => {
               const active = activeSection === link.id;

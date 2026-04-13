@@ -11,7 +11,7 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
         {/* Branding */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full gap-6">
           <div className="text-center md:text-left">
             <h2 className="text-3xl font-bold text-white">Rohan Shrestha</h2>
             <p className="mt-2 text-base text-gray-300">
@@ -37,9 +37,9 @@ const Footer = () => {
           </div>
 
           {/* Contact info inside cards */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
             {/* Location Card */}
-            <div className="flex items-center gap-3 px-5 py-3 bg-gray-800 rounded-xl shadow-md hover:bg-gray-700 transition-colors cursor-pointer">
+            <div className="flex items-center gap-3 px-5 py-3 bg-gray-800 rounded-xl shadow-md hover:bg-gray-700 transition-colors lg:cursor-pointer">
               <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
                 <MapPinIcon className="h-6 w-6 text-purple-500" />
               </div>

@@ -91,11 +91,11 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 md:gap-16 px-6 md:px-16 lg:px-24 pt-32 sm:pt-36 md:pt-28 lg:pt-32 pb-10 mx-auto"
+      className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 lg:gap-16 px-5 sm:px-8 lg:px-24 pt-32 sm:pt-36 lg:pt-32 pb-10 mx-auto"
       style={{ maxWidth: "1300px" }}
     >
       {/* Left content */}
-      <div className="w-full md:w-[55%] flex flex-col gap-3 justify-center items-center md:items-start text-center md:text-start order-2 md:order-1">
+      <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-center items-center lg:items-start text-center lg:text-start order-2 lg:order-1">
         <motion.div
           variants={slideInFromLeft(0.2)}
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-white"
@@ -207,7 +207,7 @@ const HeroContent = () => {
       {/* Right — image */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full md:w-[45%] flex justify-center md:justify-end items-center flex-shrink-0 order-1 md:order-2"
+        className="w-full lg:w-[45%] flex justify-center lg:justify-end items-center flex-shrink-0 order-1 lg:order-2"
       >
         {/* Floating animation wrapper */}
         <motion.div

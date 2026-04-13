@@ -19,10 +19,19 @@ export default function CustomCursor() {
   const animRef   = useRef<number>(0);
 
   const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => { setIsMounted(true); }, []);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    if (!isMounted) return;
+    setIsMounted(true);
+    const mediaQuery = window.matchMedia('(min-width: 1280px)');
+    const updateEnabled = () => setEnabled(mediaQuery.matches);
+    updateEnabled();
+    mediaQuery.addEventListener?.('change', updateEnabled);
+    return () => mediaQuery.removeEventListener?.('change', updateEnabled);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted || !enabled) return;
 
     document.body.style.cursor = 'none';
 
@@ -163,9 +172,9 @@ export default function CustomCursor() {
       document.removeEventListener('mouseup',   onMouseUp);
       cancelAnimationFrame(animRef.current);
     };
-  }, [isMounted]);
+  }, [isMounted, enabled]);
 
-  if (!isMounted) return null;
+  if (!isMounted || !enabled) return null;
 
   const base: React.CSSProperties = {
     position:      'fixed',

@@ -31,7 +31,7 @@ const Navbar = () => {
     } else {
       setActiveSection("home");
     }
-  }, [pathname, navLinks]);
+  }, [pathname]);
 
   // Re-attach IntersectionObservers on route change
   useEffect(() => {
@@ -63,7 +63,7 @@ const Navbar = () => {
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, [pathname, navLinks]);
+  }, [pathname]);
 
   // Listen for popstate (browser back/forward)
   useEffect(() => {
@@ -77,7 +77,7 @@ const Navbar = () => {
     };
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, [navLinks]);
+  }, []);
 
   return (
     <div className="fixed inset-x-0 top-0 h-[65px] box-border shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 sm:px-10">

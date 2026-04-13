@@ -6,22 +6,22 @@ import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { usePathname } from "next/navigation";
 
+const navLinks = [
+  { name: "Home", href: "/#", id: "home" },
+  { name: "Skills", href: "/#skills", id: "skills" },
+  { name: "Experience", href: "/#experience", id: "experience" },
+  {
+    name: "Blogs",
+    href: "/#blog",
+    id: "blog",
+  },
+  { name: "Contact", href: "/#contact", id: "contact" },
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
-
-  const navLinks = [
-    { name: "Home", href: "/#", id: "home" },
-    { name: "Skills", href: "/#skills", id: "skills" },
-    { name: "Experience", href: "/#experience", id: "experience" },
-    {
-      name: "Blogs",
-      href: "/#blog",
-      id: "blog",
-    },
-    { name: "Contact", href: "/#contact", id: "contact" },
-  ];
 
   // Restore active section from URL hash on mount and on route change
   useEffect(() => {
@@ -31,7 +31,7 @@ const Navbar = () => {
     } else {
       setActiveSection("home");
     }
-  }, [pathname]);
+  }, [pathname, navLinks]);
 
   // Re-attach IntersectionObservers on route change
   useEffect(() => {
@@ -63,7 +63,7 @@ const Navbar = () => {
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, [pathname]);
+  }, [pathname, navLinks]);
 
   // Listen for popstate (browser back/forward)
   useEffect(() => {
@@ -77,7 +77,7 @@ const Navbar = () => {
     };
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
+  }, [navLinks]);
 
   return (
     <div className="fixed inset-x-0 top-0 h-[65px] box-border shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 sm:px-10">

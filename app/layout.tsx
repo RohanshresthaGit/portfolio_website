@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 
-  title: "Rohan Shrestha | Flutter Developer | Django Developer",
-  description: "Personal Portfolio website of Rohan Shrestha, Flutter Developer, Software Developer, Django developer & Mobile App Developer",
+  title: "Rohan Shrestha | Flutter Developer | Node.js Developer",
+  description: "Personal Portfolio website of Rohan Shrestha, Flutter Developer, Software Developer, Node.js developer & Mobile App Developer",
 };
 
 export default function RootLayout({

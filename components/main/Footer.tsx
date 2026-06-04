@@ -78,7 +78,7 @@ const Footer = () => {
           {/* <a href="/#projects" className="text-sm md:text-base hover:text-white transition-colors">
             Projects
           </a> */}
-          <a href="https://medium.com/@shrestharohan495" target="_blank" className="text-sm md:text-base hover:text-white transition-colors">
+          <a href="/#blog" className="text-sm md:text-base hover:text-white transition-colors">
             Blogs
           </a>
           <a href="/#contact" className="text-sm md:text-base hover:text-white transition-colors">

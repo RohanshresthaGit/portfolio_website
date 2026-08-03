@@ -29,14 +29,30 @@ const Navbar = () => {
   const pathname = usePathname();
   const isMobile = useMobile();
 
-  // Restore active section from URL hash on mount and on route change
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash && navLinks.some((l) => l.id === hash)) {
-      setActiveSection(hash);
-    } else {
-      setActiveSection("home");
-    }
+    const updateActiveSection = () => {
+      const hash = window.location.hash.replace("#", "");
+
+      if (window.location.pathname === "/featured") {
+        setActiveSection("featured");
+        return;
+      }
+
+      if (hash && navLinks.some((l) => l.id === hash)) {
+        setActiveSection(hash);
+      } else {
+        setActiveSection("home");
+      }
+    };
+
+    updateActiveSection();
+    window.addEventListener("hashchange", updateActiveSection);
+    window.addEventListener("popstate", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("hashchange", updateActiveSection);
+      window.removeEventListener("popstate", updateActiveSection);
+    };
   }, [pathname]);
 
   // Re-attach IntersectionObservers on route change
@@ -70,20 +86,6 @@ const Navbar = () => {
 
     return () => observers.forEach((o) => o.disconnect());
   }, [pathname]);
-
-  // Listen for popstate (browser back/forward)
-  useEffect(() => {
-    const handlePopState = () => {
-      const hash = window.location.hash.replace("#", "");
-      if (hash && navLinks.some((l) => l.id === hash)) {
-        setActiveSection(hash);
-      } else {
-        setActiveSection("home");
-      }
-    };
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
 
   return (
     <div className="fixed inset-x-0 top-0 h-[65px] box-border shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 sm:px-10">

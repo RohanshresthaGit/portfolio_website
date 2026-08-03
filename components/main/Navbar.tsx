@@ -2,7 +2,7 @@
 
 import { Socials } from "@/constants";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { usePathname } from "next/navigation";
 import navbarContent from "@/constants/navbar-content.json";
@@ -10,10 +10,24 @@ import navbarContent from "@/constants/navbar-content.json";
 const navLinks = navbarContent.navbar.links;
 const brand = navbarContent.navbar.brand;
 
+const useMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 1024);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return isMobile;
+};
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
+  const isMobile = useMobile();
 
   // Restore active section from URL hash on mount and on route change
   useEffect(() => {
@@ -92,7 +106,8 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex w-full max-w-[500px] h-full flex-row items-center justify-between lg:mr-20">
+        {!isMobile && (
+          <div className="hidden lg:flex w-full max-w-[500px] h-full flex-row items-center justify-between lg:mr-20">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full">
             {navLinks.map((link) => {
               const active = activeSection === link.id;
@@ -130,10 +145,12 @@ const Navbar = () => {
               );
             })}
           </div>
-        </div>
+          </div>
+        )}
 
         {/* Desktop Socials */}
-        <div className="hidden lg:flex flex-row gap-5">
+        {!isMobile && (
+          <div className="hidden lg:flex flex-row gap-5">
           {Socials.map((social) => (
             <a
               key={social.name}
@@ -150,23 +167,26 @@ const Navbar = () => {
               />
             </a>
           ))}
-        </div>
+          </div>
+        )}
 
         {/* Mobile Hamburger */}
-        <button
-          className="lg:hidden flex items-center"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        {isMobile && (
+          <button
+            className="lg:hidden flex items-center"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
           {isMenuOpen ? (
             <XMarkIcon className="h-6 w-6 text-gray-300" />
           ) : (
             <Bars3Icon className="h-6 w-6 text-gray-300" />
           )}
-        </button>
+          </button>
+        )}
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
+      {isMobile && isMenuOpen && (
         <div className="lg:hidden absolute top-[65px] left-0 right-0 bg-[#090321]/95 backdrop-blur-md border-b border-[#7042f861] py-6 px-6">
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => {

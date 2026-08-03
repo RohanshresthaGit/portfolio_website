@@ -3,20 +3,18 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
-  const dotRef    = useRef<HTMLDivElement>(null);
-  const ringRef   = useRef<HTMLDivElement>(null);
-  const orbitRef  = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
+  const orbitRef = useRef<HTMLDivElement>(null);
   const planetRef = useRef<HTMLDivElement>(null);
-  const trailRef  = useRef<HTMLCanvasElement>(null);
   const rippleRef = useRef<HTMLDivElement>(null);
 
-  const mouse     = useRef({ x: 0, y: 0 });
-  const ringPos   = useRef({ x: 0, y: 0 });
-  const orbitPos  = useRef({ x: 0, y: 0 });
-  const angle     = useRef(0);
-  const isHover   = useRef(false);
-  const trail     = useRef<{ x: number; y: number }[]>([]);
-  const animRef   = useRef<number>(0);
+  const mouse = useRef({ x: 0, y: 0 });
+  const ringPos = useRef({ x: 0, y: 0 });
+  const orbitPos = useRef({ x: 0, y: 0 });
+  const angle = useRef(0);
+  const isHover = useRef(false);
+  const animRef = useRef<number>(0);
 
   const [isMounted, setIsMounted] = useState(false);
   const [enabled, setEnabled] = useState(false);
@@ -35,26 +33,16 @@ export default function CustomCursor() {
 
     document.body.style.cursor = 'none';
 
-    // Trail canvas
-    const canvas = trailRef.current!;
-    const ctx    = canvas.getContext('2d')!;
-    const resize = () => {
-      canvas.width  = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     const animate = () => {
-      ringPos.current.x  = lerp(ringPos.current.x,  mouse.current.x, 0.1);
-      ringPos.current.y  = lerp(ringPos.current.y,  mouse.current.y, 0.1);
-      orbitPos.current.x = lerp(orbitPos.current.x, mouse.current.x, 0.06);
-      orbitPos.current.y = lerp(orbitPos.current.y, mouse.current.y, 0.06);
+      ringPos.current.x = lerp(ringPos.current.x, mouse.current.x, 0.12);
+      ringPos.current.y = lerp(ringPos.current.y, mouse.current.y, 0.12);
+      orbitPos.current.x = lerp(orbitPos.current.x, mouse.current.x, 0.08);
+      orbitPos.current.y = lerp(orbitPos.current.y, mouse.current.y, 0.08);
 
-      angle.current += isHover.current ? 0.055 : 0.022;
-      const radius = isHover.current ? 30 : 22;
+      angle.current += isHover.current ? 0.035 : 0.016;
+      const radius = isHover.current ? 24 : 16;
 
       ringRef.current!.style.transform =
         `translate(${ringPos.current.x}px, ${ringPos.current.y}px) translate(-50%,-50%)`;
@@ -64,27 +52,6 @@ export default function CustomCursor() {
       const px = orbitPos.current.x + Math.cos(angle.current) * radius;
       const py = orbitPos.current.y + Math.sin(angle.current) * radius;
       planetRef.current!.style.transform = `translate(${px}px, ${py}px) translate(-50%,-50%)`;
-
-      // Comet trail — purple → blue gradient
-      trail.current.push({ x: mouse.current.x, y: mouse.current.y });
-      if (trail.current.length > 32) trail.current.shift();
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 1; i < trail.current.length; i++) {
-        const t  = i / trail.current.length;
-        const p  = trail.current[i];
-        const pp = trail.current[i - 1];
-        const rr = Math.round(lerp(229, 156, t));
-        const g  = Math.round(lerp(156, 178, t));
-        const b  = 255;
-        ctx.beginPath();
-        ctx.moveTo(pp.x, pp.y);
-        ctx.lineTo(p.x,  p.y);
-        ctx.strokeStyle = `rgba(${rr},${g},${b},${t * 0.4})`;
-        ctx.lineWidth   = t * 3;
-        ctx.lineCap     = 'round';
-        ctx.stroke();
-      }
 
       animRef.current = requestAnimationFrame(animate);
     };
@@ -166,7 +133,6 @@ export default function CustomCursor() {
 
     return () => {
       document.body.style.cursor = '';
-      window.removeEventListener('resize', resize);
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mousedown', onMouseDown);
       document.removeEventListener('mouseup',   onMouseUp);
@@ -186,12 +152,6 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Comet trail */}
-      <canvas
-        ref={trailRef}
-        style={{ ...base, zIndex: 99988, width: '100vw', height: '100vh' }}
-      />
-
       {/* Dashed orbit (slowest) */}
       <div
         ref={orbitRef}

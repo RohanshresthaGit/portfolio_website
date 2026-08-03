@@ -1,96 +1,20 @@
 {
   "pageTitle": "Featured Work & Product Experience",
-  "pageSubtitle": "A selection of mobile app, API, and product development work that reflects my experience as a Flutter and Node.js developer.",
+  "pageSubtitle": "A collection of milestones, achievements, awards, certifications, community involvement, and memorable experiences that tell the story beyond my code.",
   "items": [
     {
       "id": 1,
-      "title": "Built Cross-Platform Mobile Products with Flutter",
-      "category": "Mobile Development",
+      "title": "Awarded As a Rising Developer",
+      "category": "Awards & Recognition",
       "date": "March 2026",
       "location": "Kathmandu, Nepal",
-      "description": "Delivered production-focused mobile experiences with clean UI, strong state management, and maintainable architecture for Android and iOS.",
+      "description": "On the occasion of Dynamic Technology's 10th anniversary, I was recognized as a rising mobile developer for my contributions to Flutter and Node.js development, as well as my impact on the local tech community. ",
       "images": [
-        "/featured/featured-1.svg",
-        "/featured/featured-2.svg",
-        "/featured/featured-3.svg",
-        "/featured/featured-4.svg"
+        "/featured/rising-dev-1.jpeg",
+        "/featured/rising-dev-2.jpeg"
       ],
-      "tags": ["Flutter", "Mobile", "Architecture"]
-    },
-    {
-      "id": 2,
-      "title": "Developed Backend-Connected Features with Node.js and REST APIs",
-      "category": "Backend",
-      "date": "January 2026",
-      "location": "Pokhara, Nepal",
-      "description": "Implemented API-driven workflows and reliable data integration to support scalable product features and a smoother user experience.",
-      "images": [
-        "/featured/featured-2.svg",
-        "/featured/featured-3.svg",
-        "/featured/featured-4.svg",
-        "/featured/featured-5.svg"
-      ],
-      "tags": ["Node.js", "REST API", "Backend"]
-    },
-    {
-      "id": 3,
-      "title": "Delivered Product-Focused Engineering in Fast-Moving Teams",
-      "category": "Product Engineering",
-      "date": "November 2025",
-      "location": "Virtual",
-      "description": "Turned requirements into stable features through thoughtful implementation, iteration, and close collaboration with product and engineering teams.",
-      "images": [
-        "/featured/featured-3.svg",
-        "/featured/featured-4.svg",
-        "/featured/featured-5.svg",
-        "/featured/featured-1.svg"
-      ],
-      "tags": ["Product", "Engineering", "Delivery"]
-    },
-    {
-      "id": 4,
-      "title": "Contributed to Community and Open Source Growth in Nepal",
-      "category": "Community",
-      "date": "September 2025",
-      "location": "Lalitpur, Nepal",
-      "description": "Supported developer communities through collaboration, technical sharing, and open-source participation that strengthened local engineering networks.",
-      "images": [
-        "/featured/featured-4.svg",
-        "/featured/featured-5.svg",
-        "/featured/featured-2.svg",
-        "/featured/featured-3.svg"
-      ],
-      "tags": ["Open Source", "Community", "Leadership"]
-    },
-    {
-      "id": 5,
-      "title": "Built Mobile Experiences with a Strong Focus on Usability",
-      "category": "Mobile UX",
-      "date": "July 2025",
-      "location": "Remote",
-      "description": "Created polished, responsive app experiences that balanced performance, clarity, and end-user value under compressed delivery timelines.",
-      "images": [
-        "/featured/featured-5.svg",
-        "/featured/featured-1.svg",
-        "/featured/featured-2.svg",
-        "/featured/featured-4.svg"
-      ],
-      "tags": ["Cross-Platform", "UX", "Delivery"]
-    },
-    {
-      "id": 6,
-      "title": "Supported Growth as a Developer in Nepal’s Tech Ecosystem",
-      "category": "Growth",
-      "date": "May 2025",
-      "location": "Kathmandu, Nepal",
-      "description": "Continued building practical engineering experience through real projects, community involvement, and a strong focus on product quality.",
-      "images": [
-        "/featured/featured-1.svg",
-        "/featured/featured-3.svg",
-        "/featured/featured-5.svg",
-        "/featured/featured-2.svg"
-      ],
-      "tags": ["Developer", "Community", "Growth"]
+      "tags": ["Rising_Developer", "Dynamic_Technosoft", "Flutter"]
     }
   ]
 }
+

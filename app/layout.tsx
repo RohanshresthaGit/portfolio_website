@@ -31,6 +31,7 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rohan-shrestha.vercel.app"),
   title: "Rohan Shrestha | Flutter & Node.js Full Stack Mobile App Developer",
   description: "Flutter and Node.js developer based in Nepal building cross-platform mobile apps, REST APIs, and full stack product experiences for startups and growing teams.",
   keywords: [

@@ -12,7 +12,36 @@ interface ImageCarouselProps {
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+
+  const renderCurrentImage = (src: string, index: number) => {
+    const isRemoteOrDataUrl =
+      /^https?:\/\//.test(src) || src.startsWith("data:");
+
+    if (isRemoteOrDataUrl) {
+      return (
+        <img
+          src={src}
+          alt={`${alt} ${index + 1}`}
+          className="h-full w-full object-cover"
+          loading={index === 0 ? "eager" : "lazy"}
+          decoding={index === 0 ? "sync" : "async"}
+        />
+      );
+    }
+
+    return (
+      <Image
+        src={src}
+        alt={`${alt} ${index + 1}`}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 50vw"
+        priority={index === 0}
+        loading={index === 0 ? "eager" : "lazy"}
+        unoptimized
+      />
+    );
+  };
 
   const goToNext = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % images.length);
@@ -22,15 +51,6 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
     setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
   }, [images.length]);
 
-  useEffect(() => {
-    if (images.length <= 1 || isPaused) return;
-
-    const timer = window.setInterval(() => {
-      goToNext();
-    }, 4000);
-
-    return () => window.clearInterval(timer);
-  }, [goToNext, images.length, isPaused]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowRight") {
@@ -64,8 +84,6 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
   return (
     <div
       className="relative w-full aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-[#080b1f] shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="region"
@@ -82,14 +100,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
           transition={{ duration: 0.35, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <Image
-            src={images[activeIndex]}
-            alt={`${alt} ${activeIndex + 1}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority={activeIndex === 0}
-          />
+          {renderCurrentImage(images[activeIndex], activeIndex)}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         </motion.div>
       </AnimatePresence>

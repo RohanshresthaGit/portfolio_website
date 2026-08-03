@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
 import siteContent from "@/constants/navbar-content.json";
@@ -52,35 +52,12 @@ const TypingText = () => {
 };
 
 const HeroContent = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const [isInteractive, setIsInteractive] = useState(false);
 
-  const springConfig = { stiffness: 80, damping: 12 };
-  const rotateX = useSpring(
-    useTransform(y, [-0.5, 0.5], [-18, 18]),
-    springConfig,
-  );
-  const rotateY = useSpring(
-    useTransform(x, [-0.5, 0.5], [18, -18]),
-    springConfig,
-  );
-  const translateZ = useSpring(
-    useTransform(x, [-0.5, 0.5], [-5, 5]),
-    springConfig,
-  );
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
-    x.set((e.clientX - rect.right) / rect.width + 0.5);
-    y.set((e.clientY - rect.bottom) / rect.height + 0.5);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
+  useEffect(() => {
+    const enable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    setIsInteractive(enable);
+  }, []);
 
   return (
     <motion.div
@@ -182,14 +159,19 @@ const HeroContent = () => {
         >
           <motion.div
             className="relative w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[340px] md:h-[340px] lg:w-[380px] lg:h-[380px]"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            onMouseMove={isInteractive ? (e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = (e.clientX - rect.left) / rect.width - 0.5;
+              const y = (e.clientY - rect.top) / rect.height - 0.5;
+              e.currentTarget.style.transform = `rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
+            } : undefined}
+            onMouseLeave={isInteractive ? (e) => {
+              e.currentTarget.style.transform = "rotateY(0deg) rotateX(0deg)";
+            } : undefined}
             style={{
-              rotateX,
-              rotateY,
-              translateZ,
               transformStyle: "preserve-3d",
               perspective: 700,
+              transition: "transform 0.2s ease-out",
             }}
           >
             {/* Ambient glow */}
@@ -289,6 +271,8 @@ const HeroContent = () => {
                 src="/my_image.jpeg"
                 alt={siteContent.hero.imageAlt}
                 fill
+                priority
+                loading="eager"
                 style={{ objectFit: "cover", objectPosition: "center" }}
                 sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 340px, 380px"
               />

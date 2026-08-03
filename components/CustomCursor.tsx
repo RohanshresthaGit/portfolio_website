@@ -21,11 +21,21 @@ export default function CustomCursor() {
 
   useEffect(() => {
     setIsMounted(true);
-    const mediaQuery = window.matchMedia('(min-width: 1280px)');
-    const updateEnabled = () => setEnabled(mediaQuery.matches);
+    const mediaQuery = window.matchMedia('(min-width: 1280px) and (hover: hover) and (pointer: fine)');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const updateEnabled = () => {
+      setEnabled(mediaQuery.matches && !reducedMotionQuery.matches);
+    };
+
     updateEnabled();
     mediaQuery.addEventListener?.('change', updateEnabled);
-    return () => mediaQuery.removeEventListener?.('change', updateEnabled);
+    reducedMotionQuery.addEventListener?.('change', updateEnabled);
+
+    return () => {
+      mediaQuery.removeEventListener?.('change', updateEnabled);
+      reducedMotionQuery.removeEventListener?.('change', updateEnabled);
+    };
   }, []);
 
   useEffect(() => {

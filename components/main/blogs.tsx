@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { blogPosts } from "@/constants/blogposts";
 import { FaCalendar, FaArrowRight, FaClock } from "react-icons/fa6";
+import siteContent from "@/constants/navbar-content.json";
+
+const blogPosts = siteContent.blog.posts;
 
 const Blog = () => {
   return (
@@ -11,11 +13,10 @@ const Blog = () => {
     >
       {/* Section Title */}
       <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white">BLOG</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">{siteContent.blog.heading}</h2>
        <div className="h-1 w-24 bg-white/80 rounded-full mt-3 mx-auto" />
         <p className="text-gray-400 mt-4 text-base sm:text-lg font-semibold px-4">
-          Thoughts, tutorials, and insights on app development, technology, and
-          software engineering
+          {siteContent.blog.description}
         </p>
       </div>
 
@@ -86,7 +87,7 @@ const Blog = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-semibold text-sm transition-colors group/link"
               >
-                Read More
+                {siteContent.blog.readMore}
                 <FaArrowRight
                   size={12}
                   className="group-hover/link:translate-x-1 transition-transform"
@@ -101,7 +102,7 @@ const Blog = () => {
       {blogPosts.length === 0 && (
         <div className="text-center py-12">
           <p className="text-gray-400 text-lg">
-            No blog posts yet. Stay tuned for upcoming content!
+            {siteContent.blog.emptyState}
           </p>
         </div>
       )}

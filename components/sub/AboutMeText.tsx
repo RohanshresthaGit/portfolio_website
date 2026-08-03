@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  slideInFromTop,
-} from "@/utils/motion";
+import { slideInFromTop } from "@/utils/motion";
+import siteContent from "@/constants/navbar-content.json";
 
 const AboutMeText = () => {
   return (

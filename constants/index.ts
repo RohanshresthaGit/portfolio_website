@@ -99,11 +99,11 @@ export const Skill_data = [
       src: "/instagram.svg",
       url: "https://www.instagram.com/rohan.log_/",
     },
-    {
-      name: "Facebook",
-      src: "/facebook.svg",
-      url: "https://www.facebook.com/rohan.shrestha.20115/",
-    },
+    // {
+    //   name: "Facebook",
+    //   src: "/facebook.svg",
+    //   url: "https://www.facebook.com/rohan.shrestha.20115/",
+    // },
     {
       name: "GitHub",
       src: "/gitwhite.png",
@@ -114,11 +114,11 @@ export const Skill_data = [
       src: "/medium.webp",
       url: "https://medium.com/@shrestharohan495",
     },
-    {
-      name: "Discord",
-      src: "/discord.png",
-      url: "https://discord.com/users/1210889565401784352",
-    },
+    // {
+    //   name: "Discord",
+    //   src: "/discord.png",
+    //   url: "https://discord.com/users/1210889565401784352",
+    // },
   ];
   
   

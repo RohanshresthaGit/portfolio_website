@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import siteContent from "@/constants/navbar-content.json";
 
 const Contact = () => {
+  const content = siteContent.contact;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,7 +41,7 @@ const Contact = () => {
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        setError("Failed to send message. Please try again.");
+        setError(content.form.error);
       }
     } catch (err) {
       setError("An error occurred. Please try again.");
@@ -56,7 +58,7 @@ const Contact = () => {
             variants={slideInFromLeft(0.3)}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Touch</span>
+            {content.headline.first}{" "}<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">{content.headline.accent}</span>
           </motion.h2>
           <div className="h-1 w-48 bg-white/80 rounded-full my-1 mb-8 mx-auto"></div>
 
@@ -64,7 +66,7 @@ const Contact = () => {
             variants={slideInFromLeft(0.5)}
             className="text-gray-400 max-w-[600px] mx-auto"
           >
-            Have a question or want to work together? I&apos;d love to hear from you. Feel free to reach out!
+            {content.description}
           </motion.p>
         </div>
 
@@ -79,8 +81,8 @@ const Contact = () => {
                 <MapPinIcon className="h-6 w-6 text-purple-500" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Location</h3>
-                <p className="text-gray-400">Kathmandu, Nepal</p>
+                <h3 className="text-white font-semibold mb-1">{content.location.title}</h3>
+                <p className="text-gray-400">{content.location.value}</p>
               </div>
             </div>
 
@@ -89,14 +91,14 @@ const Contact = () => {
                 <EnvelopeIcon className="h-6 w-6 text-cyan-500" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Email</h3>
-                <p className="text-gray-400">shrestharohan495@gmail.com</p>
+                <h3 className="text-white font-semibold mb-1">{content.email.title}</h3>
+                <p className="text-gray-400">{content.email.value}</p>
               </div>
             </div>
 
             <div className="pt-8 border-t border-[#7042f861]">
               <p className="text-gray-400 text-sm">
-                I typically reply within 24 hours. Looking forward to connecting with you!
+                {content.note}
               </p>
             </div>
           </motion.div>
@@ -110,46 +112,46 @@ const Contact = () => {
               <div className="flex items-center justify-center h-full">
                 <div className="text-center">
                   <div className="text-5xl mb-4">✨</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Thank you!</h3>
-                  <p className="text-gray-400">Your message has been sent. I&apos;ll get back to you soon!</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">{content.form.successTitle}</h3>
+                  <p className="text-gray-400">{content.form.successMessage}</p>
                 </div>
               </div>
               ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-6 pointer-events-auto">
                 <div>
-                  <label className="block text-gray-300 mb-2 font-medium">Name</label>
+                  <label className="block text-gray-300 mb-2 font-medium">{content.form.nameLabel}</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Your name"
+                    placeholder={content.form.namePlaceholder}
                     className="w-full bg-[#1a0033] border border-[#7042f861] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors relative z-20"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 mb-2 font-medium">Email</label>
+                  <label className="block text-gray-300 mb-2 font-medium">{content.form.emailLabel}</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your.email@example.com"
+                    placeholder={content.form.emailPlaceholder}
                     className="w-full bg-[#1a0033] border border-[#7042f861] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors relative z-20"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 mb-2 font-medium">Message</label>
+                  <label className="block text-gray-300 mb-2 font-medium">{content.form.messageLabel}</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="Your message..."
+                    placeholder={content.form.messagePlaceholder}
                     rows={5}
                     className="w-full bg-[#1a0033] border border-[#7042f861] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors resize-none relative z-20"
                   />
@@ -162,7 +164,7 @@ const Contact = () => {
                   disabled={loading}
                   className="button-primary py-3 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 transition-transform"
                 >
-                  {loading ? "Sending..." : "Send Message"}
+                  {loading ? content.form.submitting : content.form.submit}
                 </button>
               </form>
             )}

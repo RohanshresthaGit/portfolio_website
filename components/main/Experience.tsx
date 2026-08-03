@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import siteContent from "@/constants/navbar-content.json";
 
 interface Item {
   role: string;
@@ -16,127 +17,8 @@ interface Item {
   skills: string[];
 }
 
-const technicalExperience: Item[] = [
-  {
-    role: "Flutter Developer",
-    company: "Dynamic Technosoft Pvt. Ltd.",
-    duration: "June 2025 - Present",
-    type: "Full Time",
-    logo: "/dynamic_technosoft.jpg",
-    logoColor: "#7042f8",
-    description:
-      "Developed mobile application features using Flutter and Dartfot both android and ios platforms. Built responsive user interfaces and implemented application logic. Integrated REST APIs and worked with backend services for data handling. Focused on writing clean and maintainable code while collaborating with the development team.",
-    skills: [
-      "Flutter",
-      "Dart",
-      "REST API",
-      "Git",
-      "GitHub",
-      "Clean Code",
-      "State Management",
-      "UI/UX",
-      "Responsive Design",
-      "Version Control",
-      "Debugging",
-    ],
-  },
-  {
-    role: "Junior Flutter Developer",
-    company: "Vroom Nepal",
-    duration: "Oct 2024 - June 2025",
-    type: "Full Time",
-    logo: "/vroom_nepal.webp",
-    logoColor: "#0ea5e9",
-    description:
-      "Contributed to the development of a ride-sharing mobile application using Flutter. Implemented responsive UI components and improved existing features. Assisted in API integration, performance optimization, and debugging application issues. Worked closely with the development team to plan and improve application performance.",
-    skills: [
-      "Flutter",
-      "Dart",
-      "API Integration",
-      "UI/UX",
-      "Debugging",
-      "Technical Documentation",
-      "State Management",
-      "MVVM",
-    ],
-  },
-  {
-    role: "Flutter Developer Intern",
-    company: "Vroom Nepal",
-    duration: "Sept 2024 - Oct 2024",
-    type: "Internship",
-    logo: "/vroom_nepal.webp",
-    logoColor: "#0ea5e9",
-    description:
-      "Assisted in building and maintaining mobile app features using Flutter and Dart. Learned industry development workflows and collaborative development practices. Supported the team in implementing UI components, and fixing bugs.",
-    skills: ["Flutter", "Dart", "Git", "Responsive Design"],
-  },
-  {
-    role: "Freelance Flutter Developer",
-    company: "Eclat Info. Sys.",
-    duration: "June 2024 - Aug 2025",
-    type: "Freelance",
-    logo: "/eclat.jpg",
-    logoColor: "#e59cff",
-    description:
-      "Worked on a Hospital Management System mobile application focused on the patient side. Developed application features and UI using Flutter. Integrated backend APIs for managing patient data and services. Delivered maintainable and efficient mobile application solutions.",
-    skills: ["Flutter", "Dart", "REST API", "Git", "Gitlab"],
-  },
-];
-
-const communityExperience: Item[] = [
-  {
-    role: "Contributor",
-    company: "GNOME Nepal",
-    duration: "July 2024 - Present",
-    type: "Open Source",
-    logo: "/gnome.jpg",
-    logoColor: "#4ade80",
-    description:
-      "Contributed to open-source community initiatives and collaborative activities under GNOME Nepal, supporting the growth of open-source culture in Nepal. Organized, Volunteered, and participated in events, workshops, and discussions to promote linux & open-source in Nepal.",
-    skills: ["Linux", "Event Management", "Open Source", "Community Engagement"],
-  },
-  {
-    role: "College Representative (CR)",
-    company: "Code for Change - Padmashree International College",
-    duration: "Jan 2025 - Dec 2025",
-    type: "Leadership",
-    logo: "/code_for_change.jpg",
-    logoColor: "#fbbf24",
-    description:
-      "Represented the college in Code for Change initiatives. Coordinated activities and supported collaboration among student members to drive technology-focused community work. Organized events, workshops, and discussions to promote technology for social good and skill development among students.",
-    skills: [
-      "Leadership",
-      "Coordination",
-      "Community",
-      "Event Management",
-      "Networking",
-      "Communication",
-    ],
-  },
-  {
-    role: "Member",
-    company: "Code for Change",
-    duration: "Jan 2024 - Dec 2024",
-    type: "Community",
-    logo: "/code_for_change.jpg",
-    logoColor: "#38bdf8",
-    description:
-      "Participated in technology-driven community initiatives and programs focused on using technology for social good and skill building.",
-    skills: ["Web development", "Networking"],
-  },
-  {
-    role: "Member",
-    company: "Flutter Kathmandu",
-    duration: "Feb 2024 - Present",
-    type: "Community",
-    logo: "/flutter_white.jpg",
-    logoColor: "#54d7eb",
-    description:
-      "Engaged with the Flutter developer community in Kathmandu. Participated in knowledge sharing sessions, meetups, workshops and community events to grow as a Flutter developer.",
-    skills: ["Flutter", "Dart", "Networking"],
-  },
-];
+const technicalExperience: Item[] = siteContent.experience.technicalExperience as Item[];
+const communityExperience: Item[] = siteContent.experience.communityExperience as Item[];
 
 const badgeConfig: Record<string, { bg: string; border: string; text: string }> = {
   "Full Time": {
@@ -472,9 +354,9 @@ const Experience = () => {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-medium text-white leading-tight">
-            Experience &{" "}
+            {siteContent.experience.heading.first}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              Involvement
+              {siteContent.experience.heading.second}
             </span>
           </h2>
           <div className="h-1 w-48 bg-white/80 rounded-full mt-3 mx-auto" />
@@ -488,22 +370,22 @@ const Experience = () => {
               border: "1px solid rgba(112,66,248,0.2)",
             }}
           >
-            {(["technical", "community"] as const).map((t) => (
+            {(siteContent.experience.tabs as Array<{ id: "technical" | "community"; label: string }>).map((tabItem) => (
               <button
-                key={t}
-                onClick={() => setTab(t)}
+                key={tabItem.id}
+                onClick={() => setTab(tabItem.id)}
                 className="px-6 py-2 rounded-lg text-sm font-medium tracking-wide transition-all duration-300"
                 style={{
                   background:
-                    tab === t
+                    tab === tabItem.id
                       ? "linear-gradient(135deg, #7042f8, #9b6dff)"
                       : "transparent",
-                  color: tab === t ? "#fff" : "rgba(255,255,255,0.45)",
+                  color: tab === tabItem.id ? "#fff" : "rgba(255,255,255,0.45)",
                   boxShadow:
-                    tab === t ? "0 4px 16px rgba(112,66,248,0.4)" : "none",
+                    tab === tabItem.id ? "0 4px 16px rgba(112,66,248,0.4)" : "none",
                 }}
               >
-                {t === "technical" ? "💼 Technical" : "🌐 Community"}
+                {tabItem.label}
               </button>
             ))}
           </div>

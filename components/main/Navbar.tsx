@@ -5,18 +5,10 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { usePathname } from "next/navigation";
+import navbarContent from "@/constants/navbar-content.json";
 
-const navLinks = [
-  { name: "Home", href: "/#", id: "home" },
-  { name: "Skills", href: "/#skills", id: "skills" },
-  { name: "Experience", href: "/#experience", id: "experience" },
-  {
-    name: "Blogs",
-    href: "/#blog",
-    id: "blog",
-  },
-  { name: "Contact", href: "/#contact", id: "contact" },
-];
+const navLinks = navbarContent.navbar.links;
+const brand = navbarContent.navbar.brand;
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,18 +76,18 @@ const Navbar = () => {
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-0">
         {/* Logo */}
         <a
-          href="#about-me"
+          href={brand.href}
           className="h-auto w-auto flex flex-row items-center gap-2"
         >
           <Image
-            src="/my_image.jpeg"
-            alt="Rohan Shrestha"
+            src={brand.imageSrc}
+            alt={brand.imageAlt}
             width={32}
             height={32}
             className="rounded-full"
           />
           <span className="font-bold text-gray-300 text-sm md:text-base">
-            Rohan Shrestha
+            {brand.name}
           </span>
         </a>
 

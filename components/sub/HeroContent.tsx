@@ -4,14 +4,9 @@ import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
+import siteContent from "@/constants/navbar-content.json";
 
-const roles = [
-  "Software Developer",
-  "Flutter Developer",
-  "Mobile App Developer",
-  // "UI/UX Enthusiast",
-  // "Kotlin Developer",
-];
+const roles = siteContent.hero.roles;
 
 const TypingText = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -100,14 +95,14 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.2)}
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-white"
         >
-          Hello, This is
+          {siteContent.hero.greeting}
         </motion.div>
 
         <motion.div
           variants={slideInFromLeft(0.3)}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
         >
-          Rohan Shrestha
+          {siteContent.hero.name}
         </motion.div>
 
         <motion.div
@@ -122,36 +117,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.6)}
           className="text-sm md:text-base lg:text-[17px] text-gray-400 leading-relaxed text-justify max-w-[580px] mt-2"
         >
-          with{" "}
-          <strong className="text-white font-bold">
-            1.5+ years of experience
-          </strong>{" "}
-          in mobile app development, specializing in developing{" "}
-          <strong className="text-white font-bold">
-            cross-platform mobile applications
-          </strong>
-          {" "}
-          using{" "}
-          <strong className="text-white font-bold">Flutter and Dart</strong>.
-          Experienced in{" "}
-          <strong className="text-white font-bold">state management</strong>,{" "}
-          <strong className="text-white font-bold">API integration</strong>,{" "}
-          <strong className="text-white font-bold">Firebase</strong>, and{" "}
-          <strong className="text-white font-bold">Hive</strong>, with a strong
-          focus on developing clean, responsive, maintainable, scalable and
-          high-performance mobile applications for both
-          <strong className="text-white font-bold"> Android </strong>
-          and
-          <strong className="text-white font-bold"> iOS</strong>. Also familiar
-          with other technologies such as{" "}
-          <strong className="text-white font-bold">
-            Java, Python, Django, Kotlin, Ktor
-          </strong>
-          , and <strong className="text-white font-bold">Postgresql</strong>,
-          enabling contributions to full-stack development. Passionate about
-          writing maintainable code, solving real-world problems, and
-          continuously learning new technologies to build scalable and
-          user-focused software.
+          {siteContent.hero.description}
         </motion.p>
 
         {/* Buttons */}
@@ -171,12 +137,12 @@ const HeroContent = () => {
                 "0 4px 20px rgba(112,66,248,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
             }}
           >
-            Work with ME!
+            {siteContent.hero.primaryCta}
           </motion.a>
 
           {/* Download CV — outlined */}
           <motion.a
-            href="/rohan_shrestha.pdf"
+            href={siteContent.hero.secondaryLink}
             download={true}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
@@ -199,7 +165,7 @@ const HeroContent = () => {
                 "0 4px 16px rgba(112,66,248,0.2), inset 0 0 12px rgba(112,66,248,0.08)";
             }}
           >
-            Download CV
+            {siteContent.hero.secondaryCta}
           </motion.a>
         </motion.div>
       </div>
@@ -321,7 +287,7 @@ const HeroContent = () => {
               />
               <Image
                 src="/my_image.jpeg"
-                alt="Rohan Shrestha"
+                alt={siteContent.hero.imageAlt}
                 fill
                 style={{ objectFit: "cover", objectPosition: "center" }}
                 sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 340px, 380px"

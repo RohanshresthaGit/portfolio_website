@@ -2,25 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import siteContent from "@/constants/navbar-content.json";
 
-const sections = [
-  {
-    title: "Information I Collect",
-    items: [
-      "Personal information such as name, email, or phone (if you provide it)",
-      "Usage data like app interactions, clicks, or time spent on screens",
-      "Device information including IP address, device type, and operating system",
-    ],
-  },
-  {
-    title: "How I Use Your Data",
-    items: [
-      "To provide and improve app features and user experience",
-      "To contact you for updates, promotions, or support (with consent)",
-      "To analyze usage trends and improve app performance",
-    ],
-  },
-];
+const privacyPolicy = siteContent.privacyPolicy;
 
 const PrivacyPolicy = () => {
   return (
@@ -57,7 +41,7 @@ const PrivacyPolicy = () => {
             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-purple-400 transition-colors mb-10 group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
-            Back to Home
+            {privacyPolicy.backLink}
           </Link>
         </motion.div>
 
@@ -71,9 +55,9 @@ const PrivacyPolicy = () => {
        
 
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
-            Privacy{" "}
+            {privacyPolicy.title.first}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              Policy
+              {privacyPolicy.title.second}
             </span>
           </h1>
 
@@ -82,7 +66,7 @@ const PrivacyPolicy = () => {
             style={{ background: "linear-gradient(90deg, #ba9cff, #9cb2ff, transparent)" }}
           />
 
-          <p className="text-gray-500 text-sm tracking-wide">Last updated: February 15, 2026</p>
+          <p className="text-gray-500 text-sm tracking-wide">{privacyPolicy.updated}</p>
         </motion.div>
 
         {/* Intro */}
@@ -98,14 +82,12 @@ const PrivacyPolicy = () => {
           }}
         >
           <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-            This Privacy Policy describes how I collect, use, and protect information when you use
-            my apps or website. By using my apps, you agree to the collection and use of information
-            in accordance with this policy.
+            {privacyPolicy.intro}
           </p>
         </motion.div>
 
         {/* List sections */}
-        {sections.map((section, si) => (
+        {privacyPolicy.sections.map((section, si) => (
           <motion.div
             key={si}
             initial={{ opacity: 0, y: 16 }}
@@ -159,11 +141,10 @@ const PrivacyPolicy = () => {
               className="w-1.5 h-5 rounded-full flex-shrink-0"
               style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
             />
-            Data Sharing
+            {privacyPolicy.dataSharing.title}
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            I do not sell or trade your personal data. Your data may be shared with service
-            providers only to help run the app, maintain servers, or analyze usage.
+            {privacyPolicy.dataSharing.description}
           </p>
         </motion.div>
 
@@ -184,11 +165,10 @@ const PrivacyPolicy = () => {
               className="w-1.5 h-5 rounded-full flex-shrink-0"
               style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
             />
-            Your Rights
+            {privacyPolicy.yourRights.title}
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            You can request deletion of your personal data or withdraw consent at any time by
-            contacting me at{" "}
+            {privacyPolicy.yourRights.description}{" "}
             
              <a href="mailto:shrestharohan495@gmail.com"
               style={{ color: "#ba9cff" }}
@@ -218,10 +198,10 @@ const PrivacyPolicy = () => {
               className="w-1.5 h-5 rounded-full flex-shrink-0"
               style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
             />
-            Contact Me
+            {privacyPolicy.contact.title}
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-            If you have questions about this Privacy Policy or my apps, please contact me at{" "}
+            {privacyPolicy.contact.description}{" "}
             
              <a href="mailto:shrestharohan495@gmail.com"
               style={{ color: "#ba9cff" }}

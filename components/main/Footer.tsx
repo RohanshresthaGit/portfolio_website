@@ -2,8 +2,10 @@
 import { Socials } from "@/constants";
 import Image from "next/image";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import siteContent from "@/constants/navbar-content.json";
 
 const Footer = () => {
+  const footer = siteContent.footer;
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-5 md:px-20 relative overflow-hidden ">
       {/* Optional: Starry background */}
@@ -13,9 +15,9 @@ const Footer = () => {
         {/* Branding */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full gap-6">
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold text-white">Rohan Shrestha</h2>
+            <h2 className="text-3xl font-bold text-white">{footer.name}</h2>
             <p className="mt-2 text-base text-gray-300">
-              Flutter Developer | Mobile App Developer
+              {footer.role}
             </p>
                     <div className="flex flex-wrap justify-center md:justify-start gap-5 mt-5">
                       {Socials.map((social) => (
@@ -44,7 +46,7 @@ const Footer = () => {
                 <MapPinIcon className="h-6 w-6 text-purple-500" />
               </div>
               <span className="text-sm md:text-base text-white">
-                Kathmandu, Nepal
+                {footer.location}
               </span>
             </div>
 
@@ -57,7 +59,7 @@ const Footer = () => {
                 <EnvelopeIcon className="h-6 w-6 text-cyan-500" />
               </div>
               <span className="text-sm md:text-base text-white">
-                shrestharohan495@gmail.com
+                {footer.email}
               </span>
             </a>
           </div>
@@ -65,36 +67,16 @@ const Footer = () => {
 
         {/* Links */}
         <div className="flex flex-wrap justify-center gap-8 text-center mt-6 text-gray-400">
-          <a href="/#" className="text-sm md:text-base hover:text-white transition-colors">
-            Home
-          </a>
-          <a href="/#skills" className="text-sm md:text-base hover:text-white transition-colors">
-            Skills
-          </a>
-          <a href="/#experience" className="text-sm md:text-base hover:text-white transition-colors">
-            Experience
-          </a>
-
-          {/* <a href="/#projects" className="text-sm md:text-base hover:text-white transition-colors">
-            Projects
-          </a> */}
-          <a href="/#blog" className="text-sm md:text-base hover:text-white transition-colors">
-            Blogs
-          </a>
-          <a href="/#contact" className="text-sm md:text-base hover:text-white transition-colors">
-            Contact
-          </a>
-          <a
-            href="/privacy-policy"
-            className="text-sm md:text-base hover:text-white transition-colors"
-          >
-            Privacy Policy
-          </a>
+          {footer.links.map((link) => (
+            <a key={link.name} href={link.href} className="text-sm md:text-base hover:text-white transition-colors">
+              {link.name}
+            </a>
+          ))}
         </div>
 
         {/* Bottom copyright */}
         <div className="mt-6 text-center text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Rohan Shrestha. All rights reserved.
+          {footer.copyright.replace("{year}", String(new Date().getFullYear()))}
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AboutMeText from "../sub/AboutMeText";
+import siteContent from "@/constants/navbar-content.json";
 
 const AboutMe = () => {
   return (
@@ -19,10 +20,10 @@ const AboutMe = () => {
 
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold text-white">
-              Rohan Shrestha
+              {siteContent.about.name}
             </h2>
             <p className="text-white/70 text-sm md:text-base mt-1 italic">
-              Flutter Developer
+              {siteContent.about.role}
             </p>
           </div>
         </div>
@@ -33,12 +34,7 @@ const AboutMe = () => {
         {/* Content */}
         <div className=" text-white/80 leading-relaxed text-base md:text-lg">
           <p className="mb-6">
-            Currently pursuing my Bachelor&apos;s degree in Computer Application at
-            Tribhuwan University. With a strong passion for software
-            development, I specialize in Flutter and have experience building
-            maintainable, scalable and robust mobile applications. I am
-            dedicated to crafting high-quality, user-friendly apps that solve
-            real-world problems and provide seamless experiences for users.
+            {siteContent.about.intro}
           </p>
           <div>
             {/* <h3 className="text-white font-medium mb-3 mt-8">
@@ -48,15 +44,10 @@ const AboutMe = () => {
               {/* Card Container */}
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg">
                 <p className="text-white/80 leading-relaxed text-base md:text-lg">
-                  A great software is built on clarity, architecture,
-                  and deep understanding not just syntax that compiles. Every
-                  line of code must be focused on performance,
-                  maintainability, and anticipating future changes, ensuring the
-                  system remains scalable, reliable, and easy to evolve over
-                  time. A great developer isn&apos;t just a coder they are an architect.
+                  {siteContent.about.quote}
                 </p>
                 <p className="text-white/60 text-sm text-right mt-2">
-                — Rohan Shrestha
+                — {siteContent.about.quoteAuthor}
               </p>
               </div>
 

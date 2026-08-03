@@ -1,0 +1,240 @@
+{
+  "navbar": {
+    "brand": {
+      "name": "Rohan Shrestha",
+      "imageSrc": "/my_image.jpeg",
+      "imageAlt": "Rohan Shrestha",
+      "href": "#about-me"
+    },
+    "links": [
+      { "name": "Home", "href": "/#", "id": "home" },
+      { "name": "Skills", "href": "/#skills", "id": "skills" },
+      { "name": "Experience", "href": "/#experience", "id": "experience" },
+      { "name": "Blogs", "href": "/#blog", "id": "blog" },
+      { "name": "Contact", "href": "/#contact", "id": "contact" }
+    ]
+  },
+  "hero": {
+    "greeting": "Hello, This is",
+    "name": "Rohan Shrestha",
+    "roles": [
+      "Software Developer",
+      "Flutter Developer",
+      "Mobile App Developer"
+    ],
+    "description": "with 1.5+ years of experience in mobile app development, specializing in developing cross-platform mobile applications using Flutter and Dart. Experienced in state management, API integration, Firebase, and Hive, with a strong focus on developing clean, responsive, maintainable, scalable and high-performance mobile applications for both Android and iOS. Also familiar with other technologies such as Java, Python, Django, Kotlin, Ktor, and Postgresql, enabling contributions to full-stack development. Passionate about writing maintainable code, solving real-world problems, and continuously learning new technologies to build scalable and user-focused software.",
+    "primaryCta": "Work with ME!",
+    "secondaryCta": "Download CV",
+    "secondaryLink": "/rohan_shrestha.pdf",
+    "imageAlt": "Rohan Shrestha"
+  },
+  "about": {
+    "heading": "About Me",
+    "name": "Rohan Shrestha",
+    "role": "Flutter Developer",
+    "intro": "Currently pursuing my Bachelor's degree in Computer Application at Tribhuwan University. With a strong passion for software development, I specialize in Flutter and have experience building maintainable, scalable and robust mobile applications. I am dedicated to crafting high-quality, user-friendly apps that solve real-world problems and provide seamless experiences for users.",
+    "quote": "A great software is built on clarity, architecture, and deep understanding not just syntax that compiles. Every line of code must be focused on performance, maintainability, and anticipating future changes, ensuring the system remains scalable, reliable, and easy to evolve over time. A great developer isn't just a coder they are an architect.",
+    "quoteAuthor": "Rohan Shrestha"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies"
+  },
+  "experience": {
+    "heading": {
+      "first": "Experience &",
+      "second": "Involvement"
+    },
+    "tabs": [
+      { "id": "technical", "label": "💼 Technical" },
+      { "id": "community", "label": "🌐 Community" }
+    ],
+    "technicalExperience": [
+      {
+        "role": "Flutter Developer",
+        "company": "Dynamic Technosoft Pvt. Ltd.",
+        "duration": "June 2025 - Present",
+        "type": "Full Time",
+        "logo": "/dynamic_technosoft.jpg",
+        "logoColor": "#7042f8",
+        "description": "Developed mobile application features using Flutter and Dart for both android and ios platforms. Built responsive user interfaces and implemented application logic. Integrated REST APIs and worked with backend services for data handling. Focused on writing clean and maintainable code while collaborating with the development team.",
+        "skills": ["Flutter", "Dart", "REST API", "Git", "GitHub", "Clean Code", "State Management", "UI/UX", "Responsive Design", "Version Control", "Debugging"]
+      },
+      {
+        "role": "Junior Flutter Developer",
+        "company": "Vroom Nepal",
+        "duration": "Oct 2024 - June 2025",
+        "type": "Full Time",
+        "logo": "/vroom_nepal.webp",
+        "logoColor": "#0ea5e9",
+        "description": "Contributed to the development of a ride-sharing mobile application using Flutter. Implemented responsive UI components and improved existing features. Assisted in API integration, performance optimization, and debugging application issues. Worked closely with the development team to plan and improve application performance.",
+        "skills": ["Flutter", "Dart", "API Integration", "UI/UX", "Debugging", "Technical Documentation", "State Management", "MVVM"]
+      },
+      {
+        "role": "Flutter Developer Intern",
+        "company": "Vroom Nepal",
+        "duration": "Sept 2024 - Oct 2024",
+        "type": "Internship",
+        "logo": "/vroom_nepal.webp",
+        "logoColor": "#0ea5e9",
+        "description": "Assisted in building and maintaining mobile app features using Flutter and Dart. Learned industry development workflows and collaborative development practices. Supported the team in implementing UI components, and fixing bugs.",
+        "skills": ["Flutter", "Dart", "Git", "Responsive Design"]
+      },
+      {
+        "role": "Freelance Flutter Developer",
+        "company": "Eclat Info. Sys.",
+        "duration": "June 2024 - Aug 2025",
+        "type": "Freelance",
+        "logo": "/eclat.jpg",
+        "logoColor": "#e59cff",
+        "description": "Worked on a Hospital Management System mobile application focused on the patient side. Developed application features and UI using Flutter. Integrated backend APIs for managing patient data and services. Delivered maintainable and efficient mobile application solutions.",
+        "skills": ["Flutter", "Dart", "REST API", "Git", "Gitlab"]
+      }
+    ],
+    "communityExperience": [
+      {
+        "role": "Contributor",
+        "company": "GNOME Nepal",
+        "duration": "July 2024 - Present",
+        "type": "Open Source",
+        "logo": "/gnome.jpg",
+        "logoColor": "#4ade80",
+        "description": "Contributed to open-source community initiatives and collaborative activities under GNOME Nepal, supporting the growth of open-source culture in Nepal. Organized, Volunteered, and participated in events, workshops, and discussions to promote linux & open-source in Nepal.",
+        "skills": ["Linux", "Event Management", "Open Source", "Community Engagement"]
+      },
+      {
+        "role": "College Representative (CR)",
+        "company": "Code for Change - Padmashree International College",
+        "duration": "Jan 2025 - Dec 2025",
+        "type": "Leadership",
+        "logo": "/code_for_change.jpg",
+        "logoColor": "#fbbf24",
+        "description": "Represented the college in Code for Change initiatives. Coordinated activities and supported collaboration among student members to drive technology-focused community work. Organized events, workshops, and discussions to promote technology for social good and skill development among students.",
+        "skills": ["Leadership", "Coordination", "Community", "Event Management", "Networking", "Communication"]
+      },
+      {
+        "role": "Member",
+        "company": "Code for Change",
+        "duration": "Jan 2024 - Dec 2024",
+        "type": "Community",
+        "logo": "/code_for_change.jpg",
+        "logoColor": "#38bdf8",
+        "description": "Participated in technology-driven community initiatives and programs focused on using technology for social good and skill building.",
+        "skills": ["Web development", "Networking"]
+      },
+      {
+        "role": "Member",
+        "company": "Flutter Kathmandu",
+        "duration": "Feb 2024 - Present",
+        "type": "Community",
+        "logo": "/flutter_white.jpg",
+        "logoColor": "#54d7eb",
+        "description": "Engaged with the Flutter developer community in Kathmandu. Participated in knowledge sharing sessions, meetups, workshops and community events to grow as a Flutter developer.",
+        "skills": ["Flutter", "Dart", "Networking"]
+      }
+    ]
+  },
+  "blog": {
+    "heading": "BLOG",
+    "description": "Thoughts, tutorials, and insights on app development, technology, and software engineering",
+    "emptyState": "No blog posts yet. Stay tuned for upcoming content!",
+    "readMore": "Read More",
+    "posts": [
+      {
+        "id": 1,
+        "title": "Stop Guessing How Your App Looks on Other Devices — This Flutter Package Changed Everything.",
+        "excerpt": "As a Flutter developer, one of the biggest challenges I faced was ensuring that my app looked great on all devices. With so many different screen sizes and resolutions, it was nearly impossible to predict how my app would render on every device. That’s when I discovered the Flutter Device Preview package, and it completely changed the way I develop apps.",
+        "image": "/blog1.png",
+        "category": "Flutter",
+        "date": "Feb 13, 2026",
+        "readTime": "5 min read",
+        "tags": ["Flutter", "Flutter Package", "Best Practices"],
+        "link": "https://medium.com/@shrestharohan495/stop-guessing-how-your-app-looks-on-other-devices-this-flutter-package-changed-everything-5af34eb750cb"
+      }
+    ]
+  },
+  "contact": {
+    "headline": {
+      "first": "Get in",
+      "accent": "Touch"
+    },
+    "description": "Have a question or want to work together? I'd love to hear from you. Feel free to reach out!",
+    "location": {
+      "title": "Location",
+      "value": "Kathmandu, Nepal"
+    },
+    "email": {
+      "title": "Email",
+      "value": "shrestharohan495@gmail.com"
+    },
+    "note": "I typically reply within 24 hours. Looking forward to connecting with you!",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "successTitle": "Thank you!",
+      "successMessage": "Your message has been sent. I'll get back to you soon!",
+      "error": "Failed to send message. Please try again.",
+      "genericError": "An error occurred. Please try again."
+    }
+  },
+  "footer": {
+    "name": "Rohan Shrestha",
+    "role": "Flutter Developer | Mobile App Developer",
+    "location": "Kathmandu, Nepal",
+    "email": "shrestharohan495@gmail.com",
+    "links": [
+      { "name": "Home", "href": "/#" },
+      { "name": "Skills", "href": "/#skills" },
+      { "name": "Experience", "href": "/#experience" },
+      { "name": "Blogs", "href": "/#blog" },
+      { "name": "Contact", "href": "/#contact" },
+      { "name": "Privacy Policy", "href": "/privacy-policy" }
+    ],
+    "copyright": "© {year} Rohan Shrestha. All rights reserved."
+  },
+  "privacyPolicy": {
+    "backLink": "Back to Home",
+    "title": {
+      "first": "Privacy",
+      "second": "Policy"
+    },
+    "updated": "Last updated: February 15, 2026",
+    "intro": "This Privacy Policy describes how I collect, use, and protect information when you use my apps or website. By using my apps, you agree to the collection and use of information in accordance with this policy.",
+    "sections": [
+      {
+        "title": "Information I Collect",
+        "items": [
+          "Personal information such as name, email, or phone (if you provide it)",
+          "Usage data like app interactions, clicks, or time spent on screens",
+          "Device information including IP address, device type, and operating system"
+        ]
+      },
+      {
+        "title": "How I Use Your Data",
+        "items": [
+          "To provide and improve app features and user experience",
+          "To contact you for updates, promotions, or support (with consent)",
+          "To analyze usage trends and improve app performance"
+        ]
+      }
+    ],
+    "dataSharing": {
+      "title": "Data Sharing",
+      "description": "I do not sell or trade your personal data. Your data may be shared with service providers only to help run the app, maintain servers, or analyze usage."
+    },
+    "yourRights": {
+      "title": "Your Rights",
+      "description": "You can request deletion of your personal data or withdraw consent at any time by contacting me at"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "description": "If you have questions about this Privacy Policy or my apps, please contact me at"
+    }
+  }
+}

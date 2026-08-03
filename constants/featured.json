@@ -1,0 +1,96 @@
+{
+  "pageTitle": "Featured",
+  "pageSubtitle": "A collection of achievements, milestones, and memorable moments throughout my journey.",
+  "items": [
+    {
+      "id": 1,
+      "title": "Awarded Best Mobile App Experience",
+      "category": "Award",
+      "date": "March 2026",
+      "location": "Kathmandu, Nepal",
+      "description": "Recognized for designing an exceptional mobile experience that combined thoughtful UX, smooth performance, and strong product storytelling.",
+      "images": [
+        "/featured/featured-1.svg",
+        "/featured/featured-2.svg",
+        "/featured/featured-3.svg",
+        "/featured/featured-4.svg"
+      ],
+      "tags": ["UX", "Mobile", "Recognition"]
+    },
+    {
+      "id": 2,
+      "title": "Speaker at Flutter Meetup",
+      "category": "Conference",
+      "date": "January 2026",
+      "location": "Pokhara, Nepal",
+      "description": "Delivered a live session on scalable Flutter architecture, state management, and building polished apps for real-world products.",
+      "images": [
+        "/featured/featured-2.svg",
+        "/featured/featured-3.svg",
+        "/featured/featured-4.svg",
+        "/featured/featured-5.svg"
+      ],
+      "tags": ["Flutter", "Speaking", "Community"]
+    },
+    {
+      "id": 3,
+      "title": "Completed Advanced Product Design Workshop",
+      "category": "Workshop",
+      "date": "November 2025",
+      "location": "Virtual",
+      "description": "Joined an intensive workshop focused on design systems, product thinking, and collaborative development practices for modern apps.",
+      "images": [
+        "/featured/featured-3.svg",
+        "/featured/featured-4.svg",
+        "/featured/featured-5.svg",
+        "/featured/featured-1.svg"
+      ],
+      "tags": ["Design", "Workshop", "Product"]
+    },
+    {
+      "id": 4,
+      "title": "Open Source Contribution Spotlight",
+      "category": "Community",
+      "date": "September 2025",
+      "location": "Lalitpur, Nepal",
+      "description": "Contributed to community-driven initiatives that promoted inclusivity, knowledge sharing, and technical growth among student developers.",
+      "images": [
+        "/featured/featured-4.svg",
+        "/featured/featured-5.svg",
+        "/featured/featured-2.svg",
+        "/featured/featured-3.svg"
+      ],
+      "tags": ["Open Source", "Community", "Leadership"]
+    },
+    {
+      "id": 5,
+      "title": "Completed a Cross-Platform App Challenge",
+      "category": "Milestone",
+      "date": "July 2025",
+      "location": "Remote",
+      "description": "Built and shipped a complete cross-platform app experience within a short sprint, emphasizing performance and thoughtful interactions.",
+      "images": [
+        "/featured/featured-5.svg",
+        "/featured/featured-1.svg",
+        "/featured/featured-2.svg",
+        "/featured/featured-4.svg"
+      ],
+      "tags": ["Challenge", "Product", "Delivery"]
+    },
+    {
+      "id": 6,
+      "title": "Featured in Student Tech Circle",
+      "category": "Achievement",
+      "date": "May 2025",
+      "location": "Kathmandu, Nepal",
+      "description": "Highlighted as one of the emerging builders in the student technology ecosystem for dedication, innovation, and continuous learning.",
+      "images": [
+        "/featured/featured-1.svg",
+        "/featured/featured-3.svg",
+        "/featured/featured-5.svg",
+        "/featured/featured-2.svg"
+      ],
+      "tags": ["Achievement", "Student", "Innovation"]
+    }
+  ]
+}

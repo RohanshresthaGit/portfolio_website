@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#05071a"/>
+  <rect x="70" y="100" width="1060" height="600" rx="44" fill="url(#g5)"/>
+  <rect x="220" y="200" width="260" height="260" rx="24" fill="rgba(255,255,255,0.15)"/>
+  <rect x="520" y="180" width="320" height="220" rx="24" fill="rgba(255,255,255,0.16)"/>
+  <rect x="220" y="520" width="280" height="16" rx="8" fill="#fff" fill-opacity="0.8"/>
+  <rect x="220" y="548" width="220" height="14" rx="7" fill="#fff" fill-opacity="0.7"/>
+  <text x="600" y="660" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff">Featured 5</text>
+  <defs>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></linearGradient>
+  </defs>
+</svg>

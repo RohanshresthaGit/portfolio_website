@@ -11,7 +11,8 @@
       { "name": "Skills", "href": "/#skills", "id": "skills" },
       { "name": "Experience", "href": "/#experience", "id": "experience" },
       { "name": "Blogs", "href": "/#blog", "id": "blog" },
-      { "name": "Contact", "href": "/#contact", "id": "contact" }
+      { "name": "Contact", "href": "/#contact", "id": "contact" },
+      { "name": "Featured", "href": "/featured", "id": "featured" }
     ]
   },
   "hero": {
@@ -194,6 +195,7 @@
       { "name": "Experience", "href": "/#experience" },
       { "name": "Blogs", "href": "/#blog" },
       { "name": "Contact", "href": "/#contact" },
+      { "name": "Featured", "href": "/featured" },
       { "name": "Privacy Policy", "href": "/privacy-policy" }
     ],
     "copyright": "© {year} Rohan Shrestha. All rights reserved."

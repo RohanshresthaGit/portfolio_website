@@ -3,7 +3,7 @@
     "brand": {
       "name": "Rohan Shrestha",
       "imageSrc": "/my_image.jpeg",
-      "imageAlt": "Rohan Shrestha",
+      "imageAlt": "Rohan Shrestha, Flutter and Node.js full stack mobile app developer",
       "href": "#about-me"
     },
     "links": [
@@ -16,26 +16,27 @@
     ]
   },
   "hero": {
-    "greeting": "Hello, This is",
+    "greeting": "Hello, I’m",
     "name": "Rohan Shrestha",
     "roles": [
-      "Software Developer",
-      "Flutter Developer",
-      "Mobile App Developer"
+      "Flutter App Developer",
+      "Node.js Backend Developer",
+      "Full Stack Mobile App Developer"
     ],
-    "description": "with 1.5+ years of experience in mobile app development, specializing in developing cross-platform mobile applications using Flutter and Dart. Experienced in state management, API integration, Firebase, and Hive, with a strong focus on developing clean, responsive, maintainable, scalable and high-performance mobile applications for both Android and iOS. Also familiar with other technologies such as Java, Python, Django, Kotlin, Ktor, and Postgresql, enabling contributions to full-stack development. Passionate about writing maintainable code, solving real-world problems, and continuously learning new technologies to build scalable and user-focused software.",
-    "primaryCta": "Work with ME!",
-    "secondaryCta": "Download CV",
+    "description": "I build production-ready mobile apps and backend services for startups and growing product teams. My work spans Flutter and Dart for cross-platform experiences, Node.js for scalable APIs, and end-to-end delivery from architecture and API integration to deployment and maintenance.",
+    "primaryCta": "Let's Connect",
+    "secondaryCta": "Download Resume",
     "secondaryLink": "/rohan_shrestha.pdf",
-    "imageAlt": "Rohan Shrestha"
+    "imageAlt": "Rohan Shrestha, Flutter and Node.js full stack mobile app developer"
   },
   "about": {
     "heading": "About Me",
     "name": "Rohan Shrestha",
-    "role": "Flutter Developer",
-    "intro": "Currently pursuing my Bachelor's degree in Computer Application at Tribhuwan University. With a strong passion for software development, I specialize in Flutter and have experience building maintainable, scalable and robust mobile applications. I am dedicated to crafting high-quality, user-friendly apps that solve real-world problems and provide seamless experiences for users.",
-    "quote": "A great software is built on clarity, architecture, and deep understanding not just syntax that compiles. Every line of code must be focused on performance, maintainability, and anticipating future changes, ensuring the system remains scalable, reliable, and easy to evolve over time. A great developer isn't just a coder they are an architect.",
-    "quoteAuthor": "Rohan Shrestha"
+    "role": "Flutter & Node.js Developer | Full Stack Mobile App Developer",
+    "intro": "I’m a software developer based in Nepal focused on building reliable mobile applications and backend systems that solve real product problems. My work spans Flutter and Dart for Android and iOS, Node.js for REST APIs and server-side logic, and modern app architecture for scalability, maintainability, and clean delivery.",
+    "quote": "I focus on building dependable products through solid architecture, thoughtful API design, and practical engineering decisions that support long-term growth.",
+    "quoteAuthor": "Rohan Shrestha",
+    "certifications": "My work includes cross-platform app development, API integration, state management, backend development, and production-ready mobile engineering for startups and growing product teams."
   },
   "skills": {
     "title": "Skills",
@@ -43,8 +44,8 @@
   },
   "experience": {
     "heading": {
-      "first": "Experience &",
-      "second": "Involvement"
+      "first": "Experience",
+      "second": "& Impact"
     },
     "tabs": [
       { "id": "technical", "label": "💼 Technical" },
@@ -58,7 +59,7 @@
         "type": "Full Time",
         "logo": "/dynamic_technosoft.jpg",
         "logoColor": "#7042f8",
-        "description": "Developed mobile application features using Flutter and Dart for both android and ios platforms. Built responsive user interfaces and implemented application logic. Integrated REST APIs and worked with backend services for data handling. Focused on writing clean and maintainable code while collaborating with the development team.",
+        "description": "Developing production-grade Flutter applications for business products, translating requirements into scalable features, integrating REST APIs, and improving app stability and maintainability across Android and iOS.",
         "skills": ["Flutter", "Dart", "REST API", "Git", "GitHub", "Clean Code", "State Management", "UI/UX", "Responsive Design", "Version Control", "Debugging"]
       },
       {
@@ -68,7 +69,7 @@
         "type": "Full Time",
         "logo": "/vroom_nepal.webp",
         "logoColor": "#0ea5e9",
-        "description": "Contributed to the development of a ride-sharing mobile application using Flutter. Implemented responsive UI components and improved existing features. Assisted in API integration, performance optimization, and debugging application issues. Worked closely with the development team to plan and improve application performance.",
+        "description": "Built and improved mobile application features for a ride-sharing product, contributed to API-driven workflows, and helped refine performance and user experience through maintainable app architecture.",
         "skills": ["Flutter", "Dart", "API Integration", "UI/UX", "Debugging", "Technical Documentation", "State Management", "MVVM"]
       },
       {
@@ -78,7 +79,7 @@
         "type": "Internship",
         "logo": "/vroom_nepal.webp",
         "logoColor": "#0ea5e9",
-        "description": "Assisted in building and maintaining mobile app features using Flutter and Dart. Learned industry development workflows and collaborative development practices. Supported the team in implementing UI components, and fixing bugs.",
+        "description": "Supported feature implementation, bug fixes, and UI refinements while gaining hands-on experience with Flutter workflows, version control, and quality-focused app development in a collaborative environment.",
         "skills": ["Flutter", "Dart", "Git", "Responsive Design"]
       },
       {
@@ -88,7 +89,7 @@
         "type": "Freelance",
         "logo": "/eclat.jpg",
         "logoColor": "#e59cff",
-        "description": "Worked on a Hospital Management System mobile application focused on the patient side. Developed application features and UI using Flutter. Integrated backend APIs for managing patient data and services. Delivered maintainable and efficient mobile application solutions.",
+        "description": "Delivered a patient-side hospital management mobile application by implementing core features, integrating backend services, and shaping a reliable cross-platform product for real-world use.",
         "skills": ["Flutter", "Dart", "REST API", "Git", "Gitlab"]
       }
     ],
@@ -100,7 +101,7 @@
         "type": "Open Source",
         "logo": "/gnome.jpg",
         "logoColor": "#4ade80",
-        "description": "Contributed to open-source community initiatives and collaborative activities under GNOME Nepal, supporting the growth of open-source culture in Nepal. Organized, Volunteered, and participated in events, workshops, and discussions to promote linux & open-source in Nepal.",
+        "description": "Contributed to open-source and community initiatives that supported collaboration, technical learning, and developer engagement in Nepal’s growing technology ecosystem.",
         "skills": ["Linux", "Event Management", "Open Source", "Community Engagement"]
       },
       {
@@ -110,7 +111,7 @@
         "type": "Leadership",
         "logo": "/code_for_change.jpg",
         "logoColor": "#fbbf24",
-        "description": "Represented the college in Code for Change initiatives. Coordinated activities and supported collaboration among student members to drive technology-focused community work. Organized events, workshops, and discussions to promote technology for social good and skill development among students.",
+        "description": "Represented the college in technology-focused initiatives, coordinating events and helping students connect with practical software development opportunities.",
         "skills": ["Leadership", "Coordination", "Community", "Event Management", "Networking", "Communication"]
       },
       {
@@ -120,7 +121,7 @@
         "type": "Community",
         "logo": "/code_for_change.jpg",
         "logoColor": "#38bdf8",
-        "description": "Participated in technology-driven community initiatives and programs focused on using technology for social good and skill building.",
+        "description": "Participated in community-driven programs focused on using technology for social impact, mentorship, and collaborative learning.",
         "skills": ["Web development", "Networking"]
       },
       {
@@ -130,14 +131,14 @@
         "type": "Community",
         "logo": "/flutter_white.jpg",
         "logoColor": "#54d7eb",
-        "description": "Engaged with the Flutter developer community in Kathmandu. Participated in knowledge sharing sessions, meetups, workshops and community events to grow as a Flutter developer.",
+        "description": "Engaged with the Flutter community in Kathmandu through meetups and knowledge-sharing sessions that strengthened technical growth and networking.",
         "skills": ["Flutter", "Dart", "Networking"]
       }
     ]
   },
   "blog": {
     "heading": "BLOG",
-    "description": "Thoughts, tutorials, and insights on app development, technology, and software engineering",
+    "description": "Insights on Flutter, mobile engineering, backend systems, and product delivery",
     "emptyState": "No blog posts yet. Stay tuned for upcoming content!",
     "readMore": "Read More",
     "posts": [
@@ -156,10 +157,10 @@
   },
   "contact": {
     "headline": {
-      "first": "Get in",
-      "accent": "Touch"
+      "first": "Let’s",
+      "accent": "Connect"
     },
-    "description": "Have a question or want to work together? I'd love to hear from you. Feel free to reach out!",
+    "description": "I’m open to Flutter developer, Node.js developer, and full stack mobile app opportunities for startups, product teams, and growing businesses. If you need help building a mobile app, backend service, or API-driven product, I’d be glad to connect.",
     "location": {
       "title": "Location",
       "value": "Kathmandu, Nepal"
@@ -168,7 +169,7 @@
       "title": "Email",
       "value": "shrestharohan495@gmail.com"
     },
-    "note": "I typically reply within 24 hours. Looking forward to connecting with you!",
+    "note": "I typically reply within 24 hours and welcome conversations about mobile app development, backend services, and product delivery.",
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Your name",
@@ -178,15 +179,15 @@
       "messagePlaceholder": "Your message...",
       "submit": "Send Message",
       "submitting": "Sending...",
-      "successTitle": "Thank you!",
-      "successMessage": "Your message has been sent. I'll get back to you soon!",
+      "successTitle": "Thanks for reaching out",
+      "successMessage": "I’ll get back to you soon about your mobile app, backend, or product opportunity.",
       "error": "Failed to send message. Please try again.",
       "genericError": "An error occurred. Please try again."
     }
   },
   "footer": {
     "name": "Rohan Shrestha",
-    "role": "Flutter Developer | Mobile App Developer",
+    "role": "Flutter & Node.js Developer | Full Stack Mobile App Developer",
     "location": "Kathmandu, Nepal",
     "email": "shrestharohan495@gmail.com",
     "links": [

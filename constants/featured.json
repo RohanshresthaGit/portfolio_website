@@ -1,59 +1,59 @@
 {
-  "pageTitle": "Featured",
-  "pageSubtitle": "A collection of achievements, milestones, and memorable moments throughout my journey.",
+  "pageTitle": "Featured Work & Product Experience",
+  "pageSubtitle": "A selection of mobile app, API, and product development work that reflects my experience as a Flutter and Node.js developer.",
   "items": [
     {
       "id": 1,
-      "title": "Awarded Best Mobile App Experience",
-      "category": "Award",
+      "title": "Built Cross-Platform Mobile Products with Flutter",
+      "category": "Mobile Development",
       "date": "March 2026",
       "location": "Kathmandu, Nepal",
-      "description": "Recognized for designing an exceptional mobile experience that combined thoughtful UX, smooth performance, and strong product storytelling.",
+      "description": "Delivered production-focused mobile experiences with clean UI, strong state management, and maintainable architecture for Android and iOS.",
       "images": [
         "/featured/featured-1.svg",
         "/featured/featured-2.svg",
         "/featured/featured-3.svg",
         "/featured/featured-4.svg"
       ],
-      "tags": ["UX", "Mobile", "Recognition"]
+      "tags": ["Flutter", "Mobile", "Architecture"]
     },
     {
       "id": 2,
-      "title": "Speaker at Flutter Meetup",
-      "category": "Conference",
+      "title": "Developed Backend-Connected Features with Node.js and REST APIs",
+      "category": "Backend",
       "date": "January 2026",
       "location": "Pokhara, Nepal",
-      "description": "Delivered a live session on scalable Flutter architecture, state management, and building polished apps for real-world products.",
+      "description": "Implemented API-driven workflows and reliable data integration to support scalable product features and a smoother user experience.",
       "images": [
         "/featured/featured-2.svg",
         "/featured/featured-3.svg",
         "/featured/featured-4.svg",
         "/featured/featured-5.svg"
       ],
-      "tags": ["Flutter", "Speaking", "Community"]
+      "tags": ["Node.js", "REST API", "Backend"]
     },
     {
       "id": 3,
-      "title": "Completed Advanced Product Design Workshop",
-      "category": "Workshop",
+      "title": "Delivered Product-Focused Engineering in Fast-Moving Teams",
+      "category": "Product Engineering",
       "date": "November 2025",
       "location": "Virtual",
-      "description": "Joined an intensive workshop focused on design systems, product thinking, and collaborative development practices for modern apps.",
+      "description": "Turned requirements into stable features through thoughtful implementation, iteration, and close collaboration with product and engineering teams.",
       "images": [
         "/featured/featured-3.svg",
         "/featured/featured-4.svg",
         "/featured/featured-5.svg",
         "/featured/featured-1.svg"
       ],
-      "tags": ["Design", "Workshop", "Product"]
+      "tags": ["Product", "Engineering", "Delivery"]
     },
     {
       "id": 4,
-      "title": "Open Source Contribution Spotlight",
+      "title": "Contributed to Community and Open Source Growth in Nepal",
       "category": "Community",
       "date": "September 2025",
       "location": "Lalitpur, Nepal",
-      "description": "Contributed to community-driven initiatives that promoted inclusivity, knowledge sharing, and technical growth among student developers.",
+      "description": "Supported developer communities through collaboration, technical sharing, and open-source participation that strengthened local engineering networks.",
       "images": [
         "/featured/featured-4.svg",
         "/featured/featured-5.svg",
@@ -64,33 +64,33 @@
     },
     {
       "id": 5,
-      "title": "Completed a Cross-Platform App Challenge",
-      "category": "Milestone",
+      "title": "Built Mobile Experiences with a Strong Focus on Usability",
+      "category": "Mobile UX",
       "date": "July 2025",
       "location": "Remote",
-      "description": "Built and shipped a complete cross-platform app experience within a short sprint, emphasizing performance and thoughtful interactions.",
+      "description": "Created polished, responsive app experiences that balanced performance, clarity, and end-user value under compressed delivery timelines.",
       "images": [
         "/featured/featured-5.svg",
         "/featured/featured-1.svg",
         "/featured/featured-2.svg",
         "/featured/featured-4.svg"
       ],
-      "tags": ["Challenge", "Product", "Delivery"]
+      "tags": ["Cross-Platform", "UX", "Delivery"]
     },
     {
       "id": 6,
-      "title": "Featured in Student Tech Circle",
-      "category": "Achievement",
+      "title": "Supported Growth as a Developer in Nepal’s Tech Ecosystem",
+      "category": "Growth",
       "date": "May 2025",
       "location": "Kathmandu, Nepal",
-      "description": "Highlighted as one of the emerging builders in the student technology ecosystem for dedication, innovation, and continuous learning.",
+      "description": "Continued building practical engineering experience through real projects, community involvement, and a strong focus on product quality.",
       "images": [
         "/featured/featured-1.svg",
         "/featured/featured-3.svg",
         "/featured/featured-5.svg",
         "/featured/featured-2.svg"
       ],
-      "tags": ["Achievement", "Student", "Innovation"]
+      "tags": ["Developer", "Community", "Growth"]
     }
   ]
 }

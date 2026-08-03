@@ -49,6 +49,9 @@ const AboutMe = () => {
                 <p className="text-white/60 text-sm text-right mt-2">
                 — {siteContent.about.quoteAuthor}
               </p>
+                <p className="text-white/60 text-sm mt-4">
+                  {siteContent.about.certifications}
+                </p>
               </div>
 
               

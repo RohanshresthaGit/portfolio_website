@@ -16,7 +16,7 @@
     ]
   },
   "hero": {
-    "greeting": "Hello, I’m",
+    "greeting": "Hello, I'm",
     "name": "Rohan Shrestha",
     "roles": [
       "Flutter App Developer",
@@ -65,33 +65,14 @@
       {
         "role": "Junior Flutter Developer",
         "company": "Vroom Nepal",
-        "duration": "Oct 2024 - June 2025",
+        "duration": "Apr 2023 - May 2025",
         "type": "Full Time",
         "logo": "/vroom_nepal.webp",
         "logoColor": "#0ea5e9",
         "description": "Built and improved mobile application features for a ride-sharing product, contributed to API-driven workflows, and helped refine performance and user experience through maintainable app architecture.",
         "skills": ["Flutter", "Dart", "API Integration", "UI/UX", "Debugging", "Technical Documentation", "State Management", "MVVM"]
-      },
-      {
-        "role": "Flutter Developer Intern",
-        "company": "Vroom Nepal",
-        "duration": "Sept 2024 - Oct 2024",
-        "type": "Internship",
-        "logo": "/vroom_nepal.webp",
-        "logoColor": "#0ea5e9",
-        "description": "Supported feature implementation, bug fixes, and UI refinements while gaining hands-on experience with Flutter workflows, version control, and quality-focused app development in a collaborative environment.",
-        "skills": ["Flutter", "Dart", "Git", "Responsive Design"]
-      },
-      {
-        "role": "Freelance Flutter Developer",
-        "company": "Eclat Info. Sys.",
-        "duration": "June 2024 - Aug 2025",
-        "type": "Freelance",
-        "logo": "/eclat.jpg",
-        "logoColor": "#e59cff",
-        "description": "Delivered a patient-side hospital management mobile application by implementing core features, integrating backend services, and shaping a reliable cross-platform product for real-world use.",
-        "skills": ["Flutter", "Dart", "REST API", "Git", "Gitlab"]
       }
+   
     ],
     "communityExperience": [
       {

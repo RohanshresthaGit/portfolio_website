@@ -89,11 +89,11 @@ export const Skill_data = [
   ];
   
   export const Socials = [
-    {
-      name: "Linkedin",
-      src: "/linkedin.webp",
-      url: "https://www.linkedin.com/in/-rohan-shrestha/",
-    },
+    // {
+    //   name: "Linkedin",
+    //   src: "/linkedin.webp",
+    //   url: "https://www.linkedin.com/in/-rohan-shrestha/",
+    // },
     {
       name: "Instagram",
       src: "/instagram.svg",

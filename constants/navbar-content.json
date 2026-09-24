@@ -20,10 +20,12 @@
     "name": "Rohan Shrestha",
     "roles": [
       "Flutter App Developer",
+      "Mobile Application Developer",
       "Node.js Backend Developer",
-      "Full Stack Mobile App Developer"
+      "Full Stack Developer",
+      "Software Developer in Nepal"
     ],
-    "description": "I build production-ready mobile apps and backend services for startups and growing product teams. My work spans Flutter and Dart for cross-platform experiences, Node.js for scalable APIs, and end-to-end delivery from architecture and API integration to deployment and maintenance, with additional experience in Kotlin, Java, Python, Bash, Git and GitHub for software development, automation, and tooling.",
+    "description": "I am a software developer in Nepal building production-ready mobile applications and backend services for startups and growing product teams. My work spans Flutter and Dart for cross-platform experiences, Node.js for scalable APIs, and full stack delivery from architecture and API integration to deployment and maintenance, with additional experience in Kotlin, Java, Python, Bash, Git and GitHub.",
     "primaryCta": "Let's Connect",
     "secondaryCta": "Download Resume",
     "secondaryLink": "/rohan_shrestha.pdf",

@@ -75,12 +75,12 @@ const HeroContent = () => {
           {siteContent.hero.greeting}
         </motion.div>
 
-        <motion.div
+        <motion.h1
           variants={slideInFromLeft(0.3)}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
         >
           {siteContent.hero.name}
-        </motion.div>
+        </motion.h1>
 
         <motion.div
           variants={slideInFromLeft(0.4)}

@@ -12,12 +12,12 @@ const inter = Inter({ subsets: ["latin"] });
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://rohan-shrestha/#person",
+  "@id": "https://rohan-shrestha.info.np/#person",
   "name": "Rohan Shrestha",
-  "url": "https://rohan-shrestha",
+  "url": "https://rohan-shrestha.info.np",
   "jobTitle": "Flutter Developer and Full Stack Software Developer",
   "description": "Rohan Shrestha is a software developer in Nepal specializing in Flutter mobile application development, Node.js backend development, REST APIs, and full stack product development.",
-  "image": "https://rohan-shrestha/my_image.jpeg",
+  "image": "https://rohan-shrestha.info.np/my_image.jpeg",
   "email": "mailto:shrestharohan495@gmail.com",
   "nationality": {
     "@type": "Country",
@@ -51,15 +51,15 @@ const structuredData = {
 const websiteStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://rohan-shrestha/#website",
+  "@id": "https://rohan-shrestha.info.np/#website",
   "name": "Rohan Shrestha Portfolio",
   "alternateName": "Rohan Shrestha - Flutter and Node.js Developer",
-  "url": "https://rohan-shrestha",
+  "url": "https://rohan-shrestha.info.np",
   "description": "Portfolio of Rohan Shrestha, a Flutter developer, Node.js developer, and full stack software developer in Nepal building mobile applications and web services.",
   "inLanguage": "en-US",
   "author": {
     "@type": "Person",
-    "@id": "https://rohan-shrestha/#person",
+    "@id": "https://rohan-shrestha.info.np/#person",
     "name": "Rohan Shrestha"
   }
 };
@@ -67,26 +67,26 @@ const websiteStructuredData = {
 const profilePageStructuredData = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "@id": "https://rohan-shrestha/#profile",
-  "url": "https://rohan-shrestha",
+  "@id": "https://rohan-shrestha.info.np/#profile",
+  "url": "https://rohan-shrestha.info.np",
   "name": "Rohan Shrestha | Official Portfolio",
   "description": "The official portfolio of Rohan Shrestha, a Flutter developer, software developer, and full stack developer in Nepal specializing in mobile applications and Node.js.",
   "isPartOf": {
-    "@id": "https://rohan-shrestha/#website"
+    "@id": "https://rohan-shrestha.info.np/#website"
   },
   "mainEntity": {
-    "@id": "https://rohan-shrestha/#person"
+    "@id": "https://rohan-shrestha.info.np/#person"
   },
   "inLanguage": "en-US"
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rohan-shrestha"),
+  metadataBase: new URL("https://rohan-shrestha.info.np"),
   applicationName: "Rohan Shrestha Portfolio",
   manifest: "/manifest.json",
   title: "Rohan Shrestha | Flutter Developer & Software Developer in Nepal",
   description: "Rohan Shrestha is a Flutter developer and software developer in Nepal building mobile applications, Node.js APIs, and full stack software for startups and growing teams.",
-  authors: [{ name: "Rohan Shrestha", url: "https://rohan-shrestha" }],
+  authors: [{ name: "Rohan Shrestha", url: "https://rohan-shrestha.info.np" }],
   creator: "Rohan Shrestha",
   publisher: "Rohan Shrestha",
   keywords: [
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Rohan Shrestha Portfolio",
-    url: "https://rohan-shrestha",
+    url: "https://rohan-shrestha.info.np",
     images: [
       {
         url: "/my_image.jpeg",

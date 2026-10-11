@@ -107,6 +107,9 @@ export const metadata: Metadata = {
     "Software Developer in Nepal",
     "Software Developer Nepal"
   ],
+  verification: {
+    google: "cwoiSs1wZ4y_Wu_YLLZuMSpjRnwbUwF0AF2CEnQc-0k",
+  },
   openGraph: {
     title: "Rohan Shrestha | Flutter Developer & Software Developer in Nepal",
     description: "Rohan Shrestha builds mobile applications, Node.js backend services, and full stack software as a Flutter developer in Nepal.",

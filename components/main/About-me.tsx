@@ -19,7 +19,7 @@ const AboutMe = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">
+            <h2 className="text-2xl md:text-3xl font-semibold text-cyan-300">
               {siteContent.about.name}
             </h2>
             <p className="text-white/70 text-sm md:text-base mt-1 italic">
@@ -47,14 +47,14 @@ const AboutMe = () => {
                   {siteContent.about.quote}
                 </p>
                 <p className="text-white/60 text-sm text-right mt-2">
-                — {siteContent.about.quoteAuthor}
-              </p>
+                  — {siteContent.about.quoteAuthor}
+                </p>
                 <p className="text-white/60 text-sm mt-4">
                   {siteContent.about.certifications}
                 </p>
               </div>
 
-              
+
             </div>
           </div>
         </div>

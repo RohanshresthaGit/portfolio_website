@@ -37,7 +37,7 @@ const FeaturedPage = () => {
         <header
           className="mb-14 text-center"
         >
-          <h1 className="text-4xl font-bold text-white md:text-5xl">
+          <h1 className="text-4xl font-bold text-cyan-300 md:text-5xl">
             {pageTitle}
           </h1>
           <div className="mx-auto mt-4 h-[2px] w-32 rounded-full" style={{ background: "linear-gradient(90deg, #ba9cff, #9cb2ff, transparent)" }} />

@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
 
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
             {privacyPolicy.title.first}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-cyan-300">
               {privacyPolicy.title.second}
             </span>
           </h1>
@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
               backdropFilter: "blur(12px)",
             }}
           >
-            <h2 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
               <span
                 className="w-1.5 h-5 rounded-full flex-shrink-0"
                 style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
@@ -118,7 +118,7 @@ const PrivacyPolicy = () => {
             backdropFilter: "blur(12px)",
           }}
         >
-          <h2 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
+          <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
             <span
               className="w-1.5 h-5 rounded-full flex-shrink-0"
               style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
@@ -139,7 +139,7 @@ const PrivacyPolicy = () => {
             backdropFilter: "blur(12px)",
           }}
         >
-          <h2 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
+          <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
             <span
               className="w-1.5 h-5 rounded-full flex-shrink-0"
               style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
@@ -170,7 +170,7 @@ const PrivacyPolicy = () => {
             backdropFilter: "blur(12px)",
           }}
         >
-          <h2 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
+          <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
             <span
               className="w-1.5 h-5 rounded-full flex-shrink-0"
               style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}

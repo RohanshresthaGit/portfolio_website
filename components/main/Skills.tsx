@@ -76,7 +76,7 @@ const Skills = () => (
                                 <h3 className="text-lg font-semibold text-white">{group.title}</h3>
                                 <p className="mt-1 text-sm text-gray-400">{group.detail}</p>
                             </div>
-                            <span className="pt-1 font-mono text-xs text-gray-500">
+                            <span className="pt-1 font-mono text-xs text-gray-400">
                                 {String(group.skills.length).padStart(2, "0")} items
                             </span>
                         </div>

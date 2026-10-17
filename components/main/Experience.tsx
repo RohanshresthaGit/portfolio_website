@@ -355,7 +355,7 @@ const Experience = () => {
         <div className="text-center mb-12">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-medium text-white leading-tight">
             {siteContent.experience.heading.first}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-cyan-300">
               {siteContent.experience.heading.second}
             </span>
           </h2>

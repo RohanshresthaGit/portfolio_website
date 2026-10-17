@@ -79,7 +79,7 @@ const Contact = () => {
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
             {content.headline.first}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-cyan-300">
               {content.headline.accent}
             </span>
           </m.h2>

@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           {/* Branding */}
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-cyan-300">
               {footer.name}
             </h2>
 

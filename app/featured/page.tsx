@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import featuredContent from "@/constants/featured.json";
 import FeaturedCard from "@/components/sub/FeaturedCard";
 
@@ -26,11 +23,7 @@ const FeaturedPage = () => {
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 pb-24 pt-28 md:px-10 md:pt-36">
-        <motion.div
-          initial={{ opacity: 0, x: -16 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <div>
           <Link
             href="/"
             aria-label="Back to Home: Rohan Shrestha portfolio homepage"
@@ -39,12 +32,9 @@ const FeaturedPage = () => {
             <span className="transition-transform group-hover:-translate-x-1">←</span>
             Back to Home
           </Link>
-        </motion.div>
+        </div>
 
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+        <header
           className="mb-14 text-center"
         >
           <h1 className="text-4xl font-bold text-white md:text-5xl">
@@ -54,7 +44,7 @@ const FeaturedPage = () => {
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg">
             {pageSubtitle}
           </p>
-        </motion.header>
+        </header>
 
         <div className="space-y-10">
           {items.map((item, index) => (

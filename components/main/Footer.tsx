@@ -1,6 +1,4 @@
 
-"use client";
-
 import { Socials } from "@/constants";
 import Image from "next/image";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";

@@ -1,12 +1,8 @@
-// import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
-// import Projects from "@/components/main/Projects";
 import Skills from "@/components/main/Skills";
 import Contact from "@/components/main/Contact";
-import AboutMe from "@/components/main/About-me";
 import Experience from "@/components/main/Experience";
 import Blog from "@/components/main/blogs";
-// import Image from "next/image";
 
 export default function Home() {
   return (
@@ -17,9 +13,6 @@ export default function Home() {
         <Experience />
         <Blog />
         <Contact />
-        {/* <AboutMe /> */}
-        {/* <Projects /> */}
-        {/* <Encryption /> */}
       </div>
     </main>
   );

@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import siteContent from "@/constants/navbar-content.json";
 
 const privacyPolicy = siteContent.privacyPolicy;
@@ -31,11 +28,7 @@ const PrivacyPolicy = () => {
       <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-20">
 
         {/* Back link */}
-        <motion.div
-          initial={{ opacity: 0, x: -16 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <div>
           <Link
             href="/"
             aria-label={`${privacyPolicy.backLink}: Rohan Shrestha portfolio homepage`}
@@ -44,13 +37,10 @@ const PrivacyPolicy = () => {
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
             {privacyPolicy.backLink}
           </Link>
-        </motion.div>
+        </div>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+        <div
           className="mb-10"
         >
 
@@ -68,13 +58,10 @@ const PrivacyPolicy = () => {
           />
 
           <p className="text-gray-500 text-sm tracking-wide">{privacyPolicy.updated}</p>
-        </motion.div>
+        </div>
 
         {/* Intro */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+        <div
           className="rounded-2xl p-5 md:p-6 mb-6"
           style={{
             background: "rgba(10,0,30,0.6)",
@@ -85,15 +72,12 @@ const PrivacyPolicy = () => {
           <p className="text-gray-400 leading-relaxed text-sm md:text-base">
             {privacyPolicy.intro}
           </p>
-        </motion.div>
+        </div>
 
         {/* List sections */}
         {privacyPolicy.sections.map((section, si) => (
-          <motion.div
+          <div
             key={si}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 + si * 0.08 }}
             className="rounded-2xl p-5 md:p-6 mb-6"
             style={{
               background: "rgba(10,0,30,0.6)",
@@ -122,14 +106,11 @@ const PrivacyPolicy = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         ))}
 
         {/* Data Sharing */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.42 }}
+        <div
           className="rounded-2xl p-5 md:p-6 mb-6"
           style={{
             background: "rgba(10,0,30,0.6)",
@@ -147,13 +128,10 @@ const PrivacyPolicy = () => {
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
             {privacyPolicy.dataSharing.description}
           </p>
-        </motion.div>
+        </div>
 
         {/* Your Rights */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.48 }}
+        <div
           className="rounded-2xl p-5 md:p-6 mb-6"
           style={{
             background: "rgba(10,0,30,0.6)",
@@ -180,13 +158,10 @@ const PrivacyPolicy = () => {
             </a>
             .
           </p>
-        </motion.div>
+        </div>
 
         {/* Contact */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.54 }}
+        <div
           className="rounded-2xl p-5 md:p-6 mb-10"
           style={{
             background:
@@ -214,7 +189,7 @@ const PrivacyPolicy = () => {
             </a>
             .
           </p>
-        </motion.div>
+        </div>
 
 
       </div>

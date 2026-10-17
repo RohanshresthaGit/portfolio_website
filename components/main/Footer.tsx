@@ -98,7 +98,7 @@ const Footer = () => {
         <div className="h-px w-full bg-gray-700" />
 
         {/* Copyright */}
-        <div className="text-center text-sm text-gray-500">
+        <div className="text-center text-sm text-gray-400">
           {footer.copyright.replace(
             "{year}",
             String(new Date().getFullYear())

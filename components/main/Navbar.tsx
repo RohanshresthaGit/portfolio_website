@@ -93,6 +93,7 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href={brand.href}
+          aria-label={`Go to ${brand.name}'s portfolio homepage`}
           className="h-auto w-auto flex flex-row items-center gap-2"
         >
           <Image
@@ -119,6 +120,7 @@ const Navbar = () => {
                     href={link.href}
                     target={link.id === "blogs" ? "_blank" : undefined}
                     rel={link.id === "blogs" ? "noopener noreferrer" : undefined}
+                    aria-label={`Navigate to ${link.name}`}
                     className="relative group cursor-pointer text-sm px-1 pb-1 transition-colors duration-300"
                     style={{ color: active ? "#ba9cff" : "rgb(229,231,235)" }}
                   >
@@ -159,6 +161,7 @@ const Navbar = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visit Rohan Shrestha on ${social.name}`}
                 className="opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
@@ -199,6 +202,7 @@ const Navbar = () => {
                   href={link.href}
                   target={link.id === "blogs" ? "_blank" : undefined}
                   rel={link.id === "blogs" ? "noopener noreferrer" : undefined}
+                  aria-label={`Navigate to ${link.name}`}
                   className="relative group w-fit text-lg transition-colors duration-300 pb-1"
                   style={{ color: active ? "#ba9cff" : "rgb(209,213,219)" }}
                   onClick={() => setIsMenuOpen(false)}
@@ -236,6 +240,7 @@ const Navbar = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Visit Rohan Shrestha on ${social.name}`}
                   className="opacity-70 hover:opacity-100 transition-opacity duration-300"
                 >
                   <Image

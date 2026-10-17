@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
                                   <tr>
                                     <td style="padding:8px 0;">
                                       <span style="font-size:12px;color:#7b6aaa;text-transform:uppercase;letter-spacing:1px;">Email</span><br/>
-                                      <a href="mailto:${email}" style="font-size:16px;color:#9b6dff;font-weight:600;text-decoration:none;">${email}</a>
+                                      <a href="mailto:${email}" aria-label="Email the contact form sender at ${email}" style="font-size:16px;color:#9b6dff;font-weight:600;text-decoration:none;">${email}</a>
                                     </td>
                                   </tr>
                                 </table>
@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
                           <table width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                               <td align="center">
-                                <a href="mailto:${email}" style="display:inline-block;background:linear-gradient(135deg,#7042f8,#9b6dff);color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;padding:14px 36px;border-radius:50px;letter-spacing:0.5px;">
+                                <a href="mailto:${email}" aria-label="Reply to ${name} about their portfolio inquiry" style="display:inline-block;background:linear-gradient(135deg,#7042f8,#9b6dff);color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;padding:14px 36px;border-radius:50px;letter-spacing:0.5px;">
                                   Reply to ${name}
                                 </a>
                               </td>

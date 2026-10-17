@@ -13,8 +13,12 @@ const Blog = () => {
     >
       {/* Section Title */}
       <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white">{siteContent.blog.heading}</h2>
-       <div className="h-1 w-24 bg-white/80 rounded-full mt-3 mx-auto" />
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          {siteContent.blog.heading}
+        </h2>
+
+        <div className="h-1 w-24 bg-white/80 rounded-full mt-3 mx-auto" />
+
         <p className="text-gray-400 mt-4 text-base sm:text-lg font-semibold px-4">
           {siteContent.blog.description}
         </p>
@@ -28,15 +32,17 @@ const Blog = () => {
             className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden hover:shadow-purple-500/50 hover:-translate-y-2 transition-all duration-300 group"
           >
             {/* Blog Image */}
-            <div className="relative overflow-hidden h-48 sm:h-56">
+            <div className="relative overflow-hidden aspect-[16/9]">
               <Image
                 src={post.image}
                 alt={post.title}
-                fill
-                className="object-fit group-hover:scale-110 transition-transform duration-300"
-                loading="lazy"
+                width={640}
+                height={360}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
+
               <div className="absolute top-4 left-4 z-10">
                 <span className="bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   {post.category}
@@ -52,6 +58,7 @@ const Blog = () => {
                   <FaCalendar size={12} />
                   <span>{post.date}</span>
                 </div>
+
                 <div className="flex items-center gap-1">
                   <FaClock size={12} />
                   <span>{post.readTime}</span>
@@ -72,8 +79,8 @@ const Blog = () => {
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.map((tag, index) => (
                   <span
-                    key={index}
-                    className="bg-purple-600 text-white text-xs px-2 py-1 rounded-md "
+                    key={`${post.id}-${tag}-${index}`}
+                    className="bg-purple-600 text-white text-xs px-2 py-1 rounded-md"
                   >
                     #{tag}
                   </span>
@@ -85,9 +92,11 @@ const Blog = () => {
                 href={post.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${siteContent.blog.readMore}: ${post.title}`}
                 className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-semibold text-sm transition-colors group/link"
               >
                 {siteContent.blog.readMore}
+
                 <FaArrowRight
                   size={12}
                   className="group-hover/link:translate-x-1 transition-transform"

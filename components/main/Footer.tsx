@@ -32,7 +32,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={social.name}
+                  aria-label={`Visit Rohan Shrestha on ${social.name}`}
                   className="rounded-md transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
                 >
                   <Image
@@ -63,6 +63,7 @@ const Footer = () => {
             {/* Email */}
             <a
               href="mailto:shrestharohan495@gmail.com"
+              aria-label={`Email Rohan Shrestha at ${footer.email}`}
               className="flex items-center gap-3 rounded-xl bg-gray-800 px-5 py-3 shadow-md transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             >
               <div className="flex items-center justify-center rounded-lg bg-cyan-500/10 p-3">
@@ -85,6 +86,7 @@ const Footer = () => {
             <a
               key={link.name}
               href={link.href}
+              aria-label={`Navigate to ${link.name}`}
               className="text-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 md:text-base"
             >
               {link.name}

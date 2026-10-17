@@ -106,6 +106,7 @@ const HeroContent = () => {
           {/* Work with me — solid purple */}
           <motion.a
             href="#contact"
+            aria-label={`${siteContent.hero.primaryCta}: Contact Rohan Shrestha about a project or opportunity`}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center justify-center text-white font-semibold rounded-xl text-sm md:text-base w-[160px] md:w-[180px] py-3 tracking-wide transition-all"
@@ -121,6 +122,7 @@ const HeroContent = () => {
           {/* Download CV — outlined */}
           <motion.a
             href={siteContent.hero.secondaryLink}
+            aria-label={`${siteContent.hero.secondaryCta}: Rohan Shrestha's resume PDF`}
             download={true}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}

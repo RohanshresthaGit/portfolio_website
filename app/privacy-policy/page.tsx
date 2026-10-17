@@ -38,6 +38,7 @@ const PrivacyPolicy = () => {
         >
           <Link
             href="/"
+            aria-label={`${privacyPolicy.backLink}: Rohan Shrestha portfolio homepage`}
             className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-purple-400 transition-colors mb-10 group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
@@ -52,7 +53,7 @@ const PrivacyPolicy = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-10"
         >
-       
+
 
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
             {privacyPolicy.title.first}{" "}
@@ -169,8 +170,9 @@ const PrivacyPolicy = () => {
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
             {privacyPolicy.yourRights.description}{" "}
-            
-             <a href="mailto:shrestharohan495@gmail.com"
+
+            <a href="mailto:shrestharohan495@gmail.com"
+              aria-label="shrestharohan495@gmail.com: email Rohan Shrestha about your privacy rights"
               style={{ color: "#ba9cff" }}
               className="font-medium transition-colors hover:text-purple-300"
             >
@@ -202,8 +204,9 @@ const PrivacyPolicy = () => {
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
             {privacyPolicy.contact.description}{" "}
-            
-             <a href="mailto:shrestharohan495@gmail.com"
+
+            <a href="mailto:shrestharohan495@gmail.com"
+              aria-label="shrestharohan495@gmail.com: email Rohan Shrestha with a contact or privacy question"
               style={{ color: "#ba9cff" }}
               className="font-medium transition-colors hover:text-purple-300"
             >

@@ -33,6 +33,7 @@ const FeaturedPage = () => {
         >
           <Link
             href="/"
+            aria-label="Back to Home: Rohan Shrestha portfolio homepage"
             className="mb-10 inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-purple-400"
           >
             <span className="transition-transform group-hover:-translate-x-1">←</span>

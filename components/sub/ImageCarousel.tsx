@@ -13,36 +13,6 @@ interface ImageCarouselProps {
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const renderCurrentImage = (src: string, index: number) => {
-    const isRemoteOrDataUrl =
-      /^https?:\/\//.test(src) || src.startsWith("data:");
-
-    if (isRemoteOrDataUrl) {
-      return (
-        <img
-          src={src}
-          alt={`${alt} ${index + 1}`}
-          className="h-full w-full object-cover"
-          loading={index === 0 ? "eager" : "lazy"}
-          decoding={index === 0 ? "sync" : "async"}
-        />
-      );
-    }
-
-    return (
-      <Image
-        src={src}
-        alt={`${alt} ${index + 1}`}
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 50vw"
-        priority={index === 0}
-        loading={index === 0 ? "eager" : "lazy"}
-        unoptimized
-      />
-    );
-  };
-
   const goToNext = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % images.length);
   }, [images.length]);
@@ -100,7 +70,14 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
           transition={{ duration: 0.35, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          {renderCurrentImage(images[activeIndex], activeIndex)}
+          <Image
+            src={images[activeIndex]}
+            alt={`${alt} ${activeIndex + 1}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={activeIndex === 0}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         </m.div>
       </AnimatePresence>

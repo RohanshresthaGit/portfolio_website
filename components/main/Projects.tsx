@@ -7,7 +7,7 @@ const Projects = () => {
       className="flex flex-col items-center justify-center py-20"
       id="projects"
     >
-      <h1 className="text-[40px] font-semibold text-cyan-300 py-20">
+      <h1 className="text-[40px] font-semibold text-purple-300 py-20">
         Selected Projects
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">

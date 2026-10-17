@@ -14,12 +14,12 @@ const AboutMe = () => {
               src="/rohan.svg"
               alt="Rohan Shrestha"
               fill
-              className="rounded-full object-cover border-4 border-white bg-gradient-to-r from-purple-500 to-cyan-500"
+              className="rounded-full object-cover border-4 border-white bg-gradient-to-r from-purple-500 to-purple-300"
             />
           </div>
 
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-cyan-300">
+            <h2 className="text-2xl md:text-3xl font-semibold text-purple-300">
               {siteContent.about.name}
             </h2>
             <p className="text-white/70 text-sm md:text-base mt-1 italic">

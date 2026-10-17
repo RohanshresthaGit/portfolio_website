@@ -7,12 +7,36 @@
       "href": "#about-me"
     },
     "links": [
-      { "name": "Home", "href": "/#", "id": "home" },
-      { "name": "Skills", "href": "/#skills", "id": "skills" },
-      { "name": "Experience", "href": "/#experience", "id": "experience" },
-      { "name": "Blogs", "href": "/#blog", "id": "blog" },
-      { "name": "Contact", "href": "/#contact", "id": "contact" },
-      { "name": "Featured", "href": "/featured", "id": "featured" }
+      {
+        "name": "Home",
+        "href": "/#",
+        "id": "home"
+      },
+      {
+        "name": "Skills",
+        "href": "/#skills",
+        "id": "skills"
+      },
+      {
+        "name": "Experience",
+        "href": "/#experience",
+        "id": "experience"
+      },
+      {
+        "name": "Blogs",
+        "href": "/#blog",
+        "id": "blog"
+      },
+      {
+        "name": "Contact",
+        "href": "/#contact",
+        "id": "contact"
+      },
+      {
+        "name": "Featured",
+        "href": "/featured",
+        "id": "featured"
+      }
     ]
   },
   "hero": {
@@ -50,8 +74,14 @@
       "second": "& Impact"
     },
     "tabs": [
-      { "id": "technical", "label": "💼 Technical" },
-      { "id": "community", "label": "🌐 Community" }
+      {
+        "id": "technical",
+        "label": "💼 Technical"
+      },
+      {
+        "id": "community",
+        "label": "🌐 Community"
+      }
     ],
     "technicalExperience": [
       {
@@ -62,7 +92,19 @@
         "logo": "/dynamic_technosoft.jpg",
         "logoColor": "#7042f8",
         "description": "Developing production-grade Flutter applications for business products, translating requirements into scalable features, integrating REST APIs, and improving app stability and maintainability across Android and iOS.",
-        "skills": ["Flutter", "Dart", "REST API", "Git", "GitHub", "Clean Code", "State Management", "UI/UX", "Responsive Design", "Version Control", "Debugging"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "REST API",
+          "Git",
+          "GitHub",
+          "Clean Code",
+          "State Management",
+          "UI/UX",
+          "Responsive Design",
+          "Version Control",
+          "Debugging"
+        ]
       },
       {
         "role": "Junior Flutter Developer",
@@ -70,11 +112,19 @@
         "duration": "Apr 2023 - May 2025",
         "type": "Full Time",
         "logo": "/vroom_nepal.webp",
-        "logoColor": "#0ea5e9",
+        "logoColor": "#9b6dff",
         "description": "Built and improved mobile application features for a ride-sharing product, contributed to API-driven workflows, and helped refine performance and user experience through maintainable app architecture.",
-        "skills": ["Flutter", "Dart", "API Integration", "UI/UX", "Debugging", "Technical Documentation", "State Management", "MVVM"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "API Integration",
+          "UI/UX",
+          "Debugging",
+          "Technical Documentation",
+          "State Management",
+          "MVVM"
+        ]
       }
-   
     ],
     "communityExperience": [
       {
@@ -85,7 +135,12 @@
         "logo": "/gnome.jpg",
         "logoColor": "#4ade80",
         "description": "Contributed to open-source and community initiatives that supported collaboration, technical learning, and developer engagement in Nepal’s growing technology ecosystem.",
-        "skills": ["Linux", "Event Management", "Open Source", "Community Engagement"]
+        "skills": [
+          "Linux",
+          "Event Management",
+          "Open Source",
+          "Community Engagement"
+        ]
       },
       {
         "role": "College Representative (CR)",
@@ -95,7 +150,14 @@
         "logo": "/code_for_change.jpg",
         "logoColor": "#fbbf24",
         "description": "Represented the college in technology-focused initiatives, coordinating events and helping students connect with practical software development opportunities.",
-        "skills": ["Leadership", "Coordination", "Community", "Event Management", "Networking", "Communication"]
+        "skills": [
+          "Leadership",
+          "Coordination",
+          "Community",
+          "Event Management",
+          "Networking",
+          "Communication"
+        ]
       },
       {
         "role": "Member",
@@ -103,9 +165,12 @@
         "duration": "Jan 2024 - Dec 2024",
         "type": "Community",
         "logo": "/code_for_change.jpg",
-        "logoColor": "#38bdf8",
+        "logoColor": "#ba9cff",
         "description": "Participated in community-driven programs focused on using technology for social impact, mentorship, and collaborative learning.",
-        "skills": ["Web development", "Networking"]
+        "skills": [
+          "Web development",
+          "Networking"
+        ]
       },
       {
         "role": "Member",
@@ -113,9 +178,13 @@
         "duration": "Feb 2024 - Present",
         "type": "Community",
         "logo": "/flutter_white.jpg",
-        "logoColor": "#54d7eb",
+        "logoColor": "#9b6dff",
         "description": "Engaged with the Flutter community in Kathmandu through meetups and knowledge-sharing sessions that strengthened technical growth and networking.",
-        "skills": ["Flutter", "Dart", "Networking"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "Networking"
+        ]
       }
     ]
   },
@@ -133,7 +202,11 @@
         "category": "Flutter",
         "date": "Feb 13, 2026",
         "readTime": "5 min read",
-        "tags": ["Flutter", "Flutter Package", "Best Practices"],
+        "tags": [
+          "Flutter",
+          "Flutter Package",
+          "Best Practices"
+        ],
         "link": "https://medium.com/@shrestharohan495/stop-guessing-how-your-app-looks-on-other-devices-this-flutter-package-changed-everything-5af34eb750cb"
       }
     ]
@@ -174,13 +247,34 @@
     "location": "Kathmandu, Nepal",
     "email": "shrestharohan495@gmail.com",
     "links": [
-      { "name": "Home", "href": "/#" },
-      { "name": "Skills", "href": "/#skills" },
-      { "name": "Experience", "href": "/#experience" },
-      { "name": "Blogs", "href": "/#blog" },
-      { "name": "Contact", "href": "/#contact" },
-      { "name": "Featured", "href": "/featured" },
-      { "name": "Privacy Policy", "href": "/privacy-policy" }
+      {
+        "name": "Home",
+        "href": "/#"
+      },
+      {
+        "name": "Skills",
+        "href": "/#skills"
+      },
+      {
+        "name": "Experience",
+        "href": "/#experience"
+      },
+      {
+        "name": "Blogs",
+        "href": "/#blog"
+      },
+      {
+        "name": "Contact",
+        "href": "/#contact"
+      },
+      {
+        "name": "Featured",
+        "href": "/featured"
+      },
+      {
+        "name": "Privacy Policy",
+        "href": "/privacy-policy"
+      }
     ],
     "copyright": "© {year} Rohan Shrestha. All rights reserved."
   },

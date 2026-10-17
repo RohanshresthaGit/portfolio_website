@@ -13,7 +13,7 @@ const AboutMeText = () => {
         className="text-[40px] font-medium text-center text-gray-200 "
       >
         About
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-300">
           {" "}
           Me{" "}
         </span>

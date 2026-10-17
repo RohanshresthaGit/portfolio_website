@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
       <div
         className="absolute bottom-40 right-1/4 w-72 h-72 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(156,178,255,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(186,156,255,0.07) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -47,14 +47,14 @@ const PrivacyPolicy = () => {
 
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
             {privacyPolicy.title.first}{" "}
-            <span className="text-cyan-300">
+            <span className="text-purple-300">
               {privacyPolicy.title.second}
             </span>
           </h1>
 
           <div
             className="h-[2px] w-32 rounded-full mb-4"
-            style={{ background: "linear-gradient(90deg, #ba9cff, #9cb2ff, transparent)" }}
+            style={{ background: "linear-gradient(90deg, #ba9cff, #9b6dff, transparent)" }}
           />
 
           <p className="text-gray-500 text-sm tracking-wide">{privacyPolicy.updated}</p>
@@ -85,10 +85,10 @@ const PrivacyPolicy = () => {
               backdropFilter: "blur(12px)",
             }}
           >
-            <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
+            <h2 className="text-lg md:text-xl font-bold text-purple-300 mb-4 flex items-center gap-2">
               <span
                 className="w-1.5 h-5 rounded-full flex-shrink-0"
-                style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
+                style={{ background: "linear-gradient(to bottom, #ba9cff, #9b6dff)" }}
               />
               {section.title}
             </h2>
@@ -118,10 +118,10 @@ const PrivacyPolicy = () => {
             backdropFilter: "blur(12px)",
           }}
         >
-          <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
+          <h2 className="text-lg md:text-xl font-bold text-purple-300 mb-4 flex items-center gap-2">
             <span
               className="w-1.5 h-5 rounded-full flex-shrink-0"
-              style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
+              style={{ background: "linear-gradient(to bottom, #ba9cff, #9b6dff)" }}
             />
             {privacyPolicy.dataSharing.title}
           </h2>
@@ -139,10 +139,10 @@ const PrivacyPolicy = () => {
             backdropFilter: "blur(12px)",
           }}
         >
-          <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
+          <h2 className="text-lg md:text-xl font-bold text-purple-300 mb-4 flex items-center gap-2">
             <span
               className="w-1.5 h-5 rounded-full flex-shrink-0"
-              style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
+              style={{ background: "linear-gradient(to bottom, #ba9cff, #9b6dff)" }}
             />
             {privacyPolicy.yourRights.title}
           </h2>
@@ -170,10 +170,10 @@ const PrivacyPolicy = () => {
             backdropFilter: "blur(12px)",
           }}
         >
-          <h2 className="text-lg md:text-xl font-bold text-cyan-300 mb-4 flex items-center gap-2">
+          <h2 className="text-lg md:text-xl font-bold text-purple-300 mb-4 flex items-center gap-2">
             <span
               className="w-1.5 h-5 rounded-full flex-shrink-0"
-              style={{ background: "linear-gradient(to bottom, #ba9cff, #9cb2ff)" }}
+              style={{ background: "linear-gradient(to bottom, #ba9cff, #9b6dff)" }}
             />
             {privacyPolicy.contact.title}
           </h2>

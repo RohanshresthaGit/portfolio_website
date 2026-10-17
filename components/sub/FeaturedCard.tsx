@@ -42,7 +42,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ item, reverse = false }) =>
 
           <div>
             <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-            <p className="mt-2 text-sm text-cyan-300">{item.location}</p>
+            <p className="mt-2 text-sm text-purple-300">{item.location}</p>
           </div>
 
           <p className="text-base leading-7 text-gray-300">{item.description}</p>

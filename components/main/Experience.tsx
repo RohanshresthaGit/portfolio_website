@@ -27,9 +27,9 @@ const badgeConfig: Record<string, { bg: string; border: string; text: string }> 
     text: "#ba9cff",
   },
   Internship: {
-    bg: "rgba(156,178,255,0.15)",
-    border: "rgba(156,178,255,0.4)",
-    text: "#9cb2ff",
+    bg: "rgba(186,156,255,0.15)",
+    border: "rgba(186,156,255,0.4)",
+    text: "#ba9cff",
   },
   Freelance: {
     bg: "rgba(229,156,255,0.15)",
@@ -47,9 +47,9 @@ const badgeConfig: Record<string, { bg: string; border: string; text: string }> 
     text: "#fbbf24",
   },
   Community: {
-    bg: "rgba(56,189,248,0.15)",
-    border: "rgba(56,189,248,0.4)",
-    text: "#38bdf8",
+    bg: "rgba(186,156,255,0.15)",
+    border: "rgba(186,156,255,0.4)",
+    text: "#ba9cff",
   },
 };
 
@@ -117,14 +117,7 @@ const CardContent = ({
               <h3 className="text-white font-bold text-lg md:text-xl leading-tight">
                 {item.role}
               </h3>
-              <p
-                className="text-sm md:text-base font-semibold mt-0.5"
-                style={{
-                  background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
+              <p className="text-sm md:text-base font-semibold text-purple-300 mt-0.5">
                 {item.company}
               </p>
               <p className="text-gray-500 text-xs mt-1 tracking-wide">
@@ -347,7 +340,7 @@ const Experience = () => {
         className="absolute bottom-20 right-1/4 w-64 h-64 rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(156,178,255,0.07) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(186,156,255,0.07) 0%, transparent 70%)",
         }}
       />
 
@@ -355,7 +348,7 @@ const Experience = () => {
         <div className="text-center mb-12">
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-medium text-white leading-tight">
             {siteContent.experience.heading.first}{" "}
-            <span className="text-cyan-300">
+            <span className="text-purple-300">
               {siteContent.experience.heading.second}
             </span>
           </h2>

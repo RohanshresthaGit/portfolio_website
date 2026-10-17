@@ -74,45 +74,45 @@ export default function CustomCursor() {
       dotRef.current!.style.transform =
         `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
 
-      const target      = e.target as HTMLElement;
+      const target = e.target as HTMLElement;
       const interactive = Boolean(
         target.closest('a,button,input,textarea,select,label,[role="button"],[tabindex]')
       );
       isHover.current = interactive;
 
       if (interactive) {
-        dotRef.current!.style.width      = '10px';
-        dotRef.current!.style.height     = '10px';
-        dotRef.current!.style.boxShadow  = '0 0 14px 5px rgba(229,156,255,0.7)';
-        ringRef.current!.style.width     = '54px';
-        ringRef.current!.style.height    = '54px';
+        dotRef.current!.style.width = '10px';
+        dotRef.current!.style.height = '10px';
+        dotRef.current!.style.boxShadow = '0 0 14px 5px rgba(229,156,255,0.7)';
+        ringRef.current!.style.width = '54px';
+        ringRef.current!.style.height = '54px';
         ringRef.current!.style.borderColor = 'rgba(229,156,255,0.7)';
-        orbitRef.current!.style.width    = '78px';
-        orbitRef.current!.style.height   = '78px';
-        planetRef.current!.style.background  = '#e59cff';
-        planetRef.current!.style.boxShadow   = '0 0 6px 3px rgba(229,156,255,0.6)';
+        orbitRef.current!.style.width = '78px';
+        orbitRef.current!.style.height = '78px';
+        planetRef.current!.style.background = '#e59cff';
+        planetRef.current!.style.boxShadow = '0 0 6px 3px rgba(229,156,255,0.6)';
       } else {
-        dotRef.current!.style.width      = '7px';
-        dotRef.current!.style.height     = '7px';
-        dotRef.current!.style.boxShadow  = '0 0 8px 3px rgba(186,156,255,0.6)';
-        ringRef.current!.style.width     = '36px';
-        ringRef.current!.style.height    = '36px';
+        dotRef.current!.style.width = '7px';
+        dotRef.current!.style.height = '7px';
+        dotRef.current!.style.boxShadow = '0 0 8px 3px rgba(186,156,255,0.6)';
+        ringRef.current!.style.width = '36px';
+        ringRef.current!.style.height = '36px';
         ringRef.current!.style.borderColor = 'rgba(186,156,255,0.5)';
-        orbitRef.current!.style.width    = '58px';
-        orbitRef.current!.style.height   = '58px';
-        planetRef.current!.style.background  = '#9cb2ff';
-        planetRef.current!.style.boxShadow   = '0 0 5px 2px rgba(156,178,255,0.55)';
+        orbitRef.current!.style.width = '58px';
+        orbitRef.current!.style.height = '58px';
+        planetRef.current!.style.background = '#ba9cff';
+        planetRef.current!.style.boxShadow = '0 0 5px 2px rgba(186,156,255,0.55)';
       }
     };
 
     const onMouseDown = (e: MouseEvent) => {
-      dotRef.current!.style.width  = '4px';
+      dotRef.current!.style.width = '4px';
       dotRef.current!.style.height = '4px';
 
-      // Double ripple — purple then blue
+      // Double ripple in two purple shades
       const rippleColors = [
         ['rgba(229,156,255,0.5)', 0],
-        ['rgba(156,178,255,0.3)', 120],
+        ['rgba(186,156,255,0.3)', 120],
       ] as const;
 
       rippleColors.forEach(([color, delay]) => {
@@ -133,19 +133,19 @@ export default function CustomCursor() {
     };
 
     const onMouseUp = () => {
-      dotRef.current!.style.width  = isHover.current ? '10px' : '7px';
+      dotRef.current!.style.width = isHover.current ? '10px' : '7px';
       dotRef.current!.style.height = isHover.current ? '10px' : '7px';
     };
 
-    document.addEventListener('mousemove',  onMouseMove);
-    document.addEventListener('mousedown',  onMouseDown);
-    document.addEventListener('mouseup',    onMouseUp);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
 
     return () => {
       document.body.style.cursor = '';
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('mouseup',   onMouseUp);
+      document.removeEventListener('mouseup', onMouseUp);
       cancelAnimationFrame(animRef.current);
     };
   }, [isMounted, enabled]);
@@ -153,11 +153,11 @@ export default function CustomCursor() {
   if (!isMounted || !enabled) return null;
 
   const base: React.CSSProperties = {
-    position:      'fixed',
-    top:           0,
-    left:          0,
+    position: 'fixed',
+    top: 0,
+    left: 0,
     pointerEvents: 'none',
-    willChange:    'transform',
+    willChange: 'transform',
   };
 
   return (
@@ -167,12 +167,12 @@ export default function CustomCursor() {
         ref={orbitRef}
         style={{
           ...base,
-          width:        '58px',
-          height:       '58px',
+          width: '58px',
+          height: '58px',
           borderRadius: '50%',
-          border:       '1px dashed rgba(156,178,255,0.18)',
-          zIndex:       99989,
-          transition:   'width 0.3s, height 0.3s',
+          border: '1px dashed rgba(186,156,255,0.18)',
+          zIndex: 99989,
+          transition: 'width 0.3s, height 0.3s',
         }}
       />
 
@@ -181,13 +181,13 @@ export default function CustomCursor() {
         ref={planetRef}
         style={{
           ...base,
-          width:        '5px',
-          height:       '5px',
+          width: '5px',
+          height: '5px',
           borderRadius: '50%',
-          background:   '#9cb2ff',
-          boxShadow:    '0 0 5px 2px rgba(156,178,255,0.55)',
-          zIndex:       99994,
-          transition:   'background 0.2s, box-shadow 0.2s',
+          background: '#ba9cff',
+          boxShadow: '0 0 5px 2px rgba(186,156,255,0.55)',
+          zIndex: 99994,
+          transition: 'background 0.2s, box-shadow 0.2s',
         }}
       />
 
@@ -196,13 +196,13 @@ export default function CustomCursor() {
         ref={ringRef}
         style={{
           ...base,
-          width:          '36px',
-          height:         '36px',
-          borderRadius:   '50%',
-          border:         '1px solid rgba(186,156,255,0.5)',
+          width: '36px',
+          height: '36px',
+          borderRadius: '50%',
+          border: '1px solid rgba(186,156,255,0.5)',
           backdropFilter: 'blur(2px)',
-          zIndex:         99995,
-          transition:     'width 0.25s, height 0.25s, border-color 0.2s',
+          zIndex: 99995,
+          transition: 'width 0.25s, height 0.25s, border-color 0.2s',
         }}
       />
 
@@ -211,13 +211,13 @@ export default function CustomCursor() {
         ref={dotRef}
         style={{
           ...base,
-          width:        '7px',
-          height:       '7px',
+          width: '7px',
+          height: '7px',
           borderRadius: '50%',
-          background:   '#e59cff',
-          boxShadow:    '0 0 8px 3px rgba(186,156,255,0.6)',
-          zIndex:       99999,
-          transition:   'width 0.15s, height 0.15s, box-shadow 0.2s',
+          background: '#e59cff',
+          boxShadow: '0 0 8px 3px rgba(186,156,255,0.6)',
+          zIndex: 99999,
+          transition: 'width 0.15s, height 0.15s, box-shadow 0.2s',
         }}
       />
 

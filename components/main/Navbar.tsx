@@ -130,7 +130,7 @@ const Navbar = () => {
                     <span
                       className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
                       style={{
-                        background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
+                        background: "linear-gradient(90deg, #ba9cff, #9b6dff)",
                         width: active ? "100%" : "0%",
                       }}
                     />
@@ -141,7 +141,7 @@ const Navbar = () => {
                         className="absolute bottom-0 left-0 h-[2px] rounded-full w-0 group-hover:w-full transition-all duration-300"
                         style={{
                           background:
-                            "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(156,178,255,0.5))",
+                            "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(155,109,255,0.5))",
                         }}
                       />
                     )}
@@ -216,7 +216,7 @@ const Navbar = () => {
                   <span
                     className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
                     style={{
-                      background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
+                      background: "linear-gradient(90deg, #ba9cff, #9b6dff)",
                       width: active ? "100%" : "0%",
                     }}
                   />
@@ -227,7 +227,7 @@ const Navbar = () => {
                       className="absolute bottom-0 left-0 h-[2px] rounded-full w-0 group-hover:w-full transition-all duration-300"
                       style={{
                         background:
-                          "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(156,178,255,0.5))",
+                          "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(155,109,255,0.5))",
                       }}
                     />
                   )}

@@ -39,7 +39,7 @@ const TypingText = () => {
 
   return (
     <span className="inline-flex items-center gap-[2px]">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-300 font-bold">
         {displayed}
       </span>
       <span
@@ -197,7 +197,7 @@ const HeroContent = () => {
                 borderRadius: "50%",
                 padding: "3px",
                 background:
-                  "conic-gradient(from 0deg, #7042f8, #ba9cff, #9cb2ff, #e59cff, #7042f8)",
+                  "conic-gradient(from 0deg, #7042f8, #ba9cff, #e59cff, #7042f8)",
               }}
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
@@ -244,8 +244,8 @@ const HeroContent = () => {
                   width: "7px",
                   height: "7px",
                   borderRadius: "50%",
-                  background: "#9cb2ff",
-                  boxShadow: "0 0 8px 3px rgba(156,178,255,0.7)",
+                  background: "#ba9cff",
+                  boxShadow: "0 0 8px 3px rgba(186,156,255,0.7)",
                 }}
               />
             </m.div>

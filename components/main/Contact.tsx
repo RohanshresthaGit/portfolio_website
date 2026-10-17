@@ -79,7 +79,7 @@ const Contact = () => {
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
             {content.headline.first}{" "}
-            <span className="text-cyan-300">
+            <span className="text-purple-300">
               {content.headline.accent}
             </span>
           </m.h2>
@@ -101,7 +101,7 @@ const Contact = () => {
             className="flex-1 flex flex-col justify-center gap-8"
           >
             <div className="flex gap-4 items-start">
-              <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
+              <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-purple-300/20 flex items-center justify-center">
                 <MapPinIcon className="h-6 w-6 text-purple-500" />
               </div>
 
@@ -114,8 +114,8 @@ const Contact = () => {
             </div>
 
             <div className="flex gap-4 items-start">
-              <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
-                <EnvelopeIcon className="h-6 w-6 text-cyan-500" />
+              <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-purple-300/20 flex items-center justify-center">
+                <EnvelopeIcon className="h-6 w-6 text-purple-400" />
               </div>
 
               <div>
@@ -195,7 +195,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder={content.form.emailPlaceholder}
-                    className="w-full bg-[#1a0033] border border-[#7042f861] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors relative z-20"
+                    className="w-full bg-[#1a0033] border border-[#7042f861] rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 transition-colors relative z-20"
                   />
                 </div>
 

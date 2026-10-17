@@ -4,6 +4,7 @@ import FeaturedCard from "@/components/sub/FeaturedCard";
 
 const FeaturedPage = () => {
   const { pageTitle, pageSubtitle, items } = featuredContent;
+  const [titleLead, titleAccent] = pageTitle.split(" & ");
 
   return (
     <div className="min-h-screen relative overflow-hidden text-gray-200" style={{ background: "#05071a" }}>
@@ -17,7 +18,7 @@ const FeaturedPage = () => {
       <div
         className="absolute bottom-20 right-1/4 h-72 w-72 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(156,178,255,0.1) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(186,156,255,0.1) 0%, transparent 70%)",
           filter: "blur(36px)",
         }}
       />
@@ -37,10 +38,10 @@ const FeaturedPage = () => {
         <header
           className="mb-14 text-center"
         >
-          <h1 className="text-4xl font-bold text-cyan-300 md:text-5xl">
-            {pageTitle}
+          <h1 className="text-4xl font-bold text-white md:text-5xl">
+            {titleLead} & <span className="text-purple-300">{titleAccent}</span>
           </h1>
-          <div className="mx-auto mt-4 h-[2px] w-32 rounded-full" style={{ background: "linear-gradient(90deg, #ba9cff, #9cb2ff, transparent)" }} />
+          <div className="mx-auto mt-4 h-[2px] w-32 rounded-full" style={{ background: "linear-gradient(90deg, #ba9cff, #9b6dff, transparent)" }} />
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-gray-400 md:text-lg">
             {pageSubtitle}
           </p>

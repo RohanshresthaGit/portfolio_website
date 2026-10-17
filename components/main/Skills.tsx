@@ -1,186 +1,110 @@
-"use client";
-
+import Image from "next/image";
 import { mainSkills, secondarySkills } from "@/constants";
-import React, { useState, useEffect, useRef } from "react";
-import { m, useMotionValue, useAnimation } from "framer-motion";
-import SkillDataProvider from "../sub/SkillDataProvider";
-import SkillText from "../sub/SkillText";
+import siteContent from "@/constants/navbar-content.json";
 
-const Skills = () => {
-  const [isMobile, setIsMobile] = useState(false);
+const skillGroups = [
+    {
+        number: "01",
+        title: "Mobile",
+        detail: "Cross-platform product development",
+        skills: mainSkills.slice(0, 3),
+    },
+    {
+        number: "02",
+        title: "State management",
+        detail: "Application structure and data flow",
+        skills: mainSkills.slice(3, 5),
+    },
+    {
+        number: "03",
+        title: "Backend & data",
+        detail: "Services, persistence, and APIs",
+        skills: secondarySkills.slice(0, 4),
+    },
+    {
+        number: "04",
+        title: "UI & workflow",
+        detail: "Interface systems and collaboration",
+        skills: [...secondarySkills.slice(5), ...mainSkills.slice(5), secondarySkills[4]],
+    },
+];
 
-  const xMain = useMotionValue(0);
-  const xSecondary = useMotionValue(0);
-  const controlsMain = useAnimation();
-  const controlsSecondary = useAnimation();
-  const mainContainerRef = useRef<HTMLDivElement>(null);
-  const secondaryContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const getSize = (width: number) => (isMobile ? width * 0.6 : width);
-  const getHeight = (height: number) => (isMobile ? height * 0.6 : height);
-
-  useEffect(() => {
-    if (mainContainerRef.current) {
-      const containerWidth = mainContainerRef.current.scrollWidth / 2;
-      controlsMain.start({
-        x: [0, -containerWidth],
-        transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
-      });
-    }
-    if (secondaryContainerRef.current) {
-      const containerWidth = secondaryContainerRef.current.scrollWidth / 2;
-      controlsSecondary.start({
-        x: [-containerWidth, 0],
-        transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
-      });
-    }
-  }, [controlsMain, controlsSecondary, isMobile]);
-
-  const pauseAnimation = (controls: any) => controls.stop();
-
-  const resumeAnimation = (
-    motionValue: any,
-    controls: any,
-    containerRef: any,
-    direction: "forward" | "backward"
-  ) => {
-    if (!containerRef.current) return;
-    const containerWidth = containerRef.current.scrollWidth / 2;
-    const currentX = motionValue.get();
-    const targetX = direction === "forward" ? -containerWidth : 0;
-    const remainingDistance = Math.abs(targetX - currentX);
-    const proportionalDuration = (remainingDistance / containerWidth) * 20;
-
-    controls
-      .start({
-        x: targetX,
-        transition: { duration: proportionalDuration, ease: "linear" },
-      })
-      .then(() => {
-        if (direction === "forward") {
-          motionValue.set(0);
-          controls.start({
-            x: [0, -containerWidth],
-            transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
-          });
-        } else {
-          motionValue.set(-containerWidth);
-          controls.start({
-            x: [-containerWidth, 0],
-            transition: { repeat: Infinity, duration: 20, ease: "linear", repeatType: "loop" },
-          });
-        }
-      });
-  };
-
-  return (
-    <section
-      id="skills"
-      className="flex flex-col items-center justify-center gap-3 w-full relative overflow-hidden py-10 md:py-20 scroll-mt-20"
-    >
-      {/* Ambient glow blobs */}
-      <div
-        className="absolute top-10 left-1/4 w-72 h-72 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(113,47,255,0.12) 0%, transparent 70%)" }}
-      />
-      <div
-        className="absolute bottom-10 right-1/4 w-56 h-56 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(156,178,255,0.08) 0%, transparent 70%)" }}
-      />
-
-      <SkillText />
-
-      {/* Main Skills row */}
-      <div className="flex w-full justify-center mt-6 md:mt-16">
-        <div
-          className="w-full md:w-3/4 relative"
-          style={{ overflowX: "hidden", overflowY: "visible" }}
-        >
-          <div
-            className="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to right, #05071a, transparent)" }}
-          />
-          <div
-            className="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to left, #05071a, transparent)" }}
-          />
-
-          <m.div
-            ref={mainContainerRef}
-            className="flex flex-row flex-nowrap gap-3 md:gap-5 items-center py-4"
-            animate={controlsMain}
-            style={{ x: xMain }}
-            onMouseEnter={() => pauseAnimation(controlsMain)}
-            onMouseLeave={() =>
-              resumeAnimation(xMain, controlsMain, mainContainerRef, "forward")
-            }
-          >
-            {[...mainSkills, ...mainSkills].map((image, index) => (
-              <SkillDataProvider
-                key={`main-${index}`}
-                src={image.Image}
-                alt={image.skill_name}
-                width={getSize(image.width)}
-                height={getHeight(image.height)}
-                index={index}
-              />
-            ))}
-          </m.div>
-        </div>
-      </div>
-
-      {/* Secondary Skills row */}
-      <div className="flex w-full justify-center mt-6 md:mt-16">
-        <div
-          className="w-full md:w-3/4 relative"
-          style={{ overflowX: "hidden", overflowY: "visible" }}
-        >
-          <div
-            className="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to right, #05071a, transparent)" }}
-          />
-          <div
-            className="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to left, #05071a, transparent)" }}
-          />
-
-          <m.div
-            ref={secondaryContainerRef}
-            className="flex flex-row flex-nowrap gap-3 md:gap-5 items-center py-4"
-            animate={controlsSecondary}
-            style={{ x: xSecondary }}
-            onMouseEnter={() => pauseAnimation(controlsSecondary)}
-            onMouseLeave={() =>
-              resumeAnimation(
-                xSecondary,
-                controlsSecondary,
-                secondaryContainerRef,
-                "backward"
-              )
-            }
-          >
-            {[...secondarySkills, ...secondarySkills].map((image, index) => (
-              <SkillDataProvider
-                key={`secondary-${index}`}
-                src={image.Image}
-                alt={image.skill_name}
-                width={getSize(image.width)}
-                height={getHeight(image.height)}
-                index={index}
-              />
-            ))}
-          </m.div>
-        </div>
-      </div>
-    </section>
-  );
+const skillLabels: Record<string, string> = {
+    Ios: "iOS",
+    bloc: "BLoC",
+    "Fire base": "Firebase",
+    "Postger SQL": "PostgreSQL",
 };
+
+const Skills = () => (
+    <section
+        id="skills"
+        className="relative w-full overflow-hidden px-6 py-20 md:px-10 md:py-28 scroll-mt-20"
+    >
+        <div
+            className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full"
+            style={{ background: "radial-gradient(circle, rgba(34,211,238,0.08), transparent 70%)" }}
+        />
+
+        <div className="relative mx-auto max-w-6xl">
+            <header className="mb-12 grid gap-5 border-b border-white/15 pb-8 md:grid-cols-[1fr_auto] md:items-end">
+                <div>
+                    <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">
+                        Capability index / 01-04
+                    </p>
+                    <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+                        {siteContent.skills.title}{" "}
+                        <span className="text-cyan-300">&amp; {siteContent.skills.subtitle}</span>
+                    </h2>
+                </div>
+                <p className="max-w-md text-sm leading-6 text-gray-400 md:text-right">
+                    A practical toolkit for shipping mobile products, structuring application state, and supporting the services behind them.
+                </p>
+            </header>
+
+            <div className="grid gap-x-10 md:grid-cols-2 md:gap-x-16">
+                {skillGroups.map((group) => (
+                    <article
+                        key={group.number}
+                        className="border-b border-white/10 py-7 first:pt-0 md:odd:border-r md:odd:pr-10 md:even:pl-6"
+                    >
+                        <div className="mb-5 flex items-start justify-between gap-4">
+                            <div>
+                                <p className="mb-1 font-mono text-xs text-cyan-300/80">
+                                    {group.number}
+                                </p>
+                                <h3 className="text-lg font-semibold text-white">{group.title}</h3>
+                                <p className="mt-1 text-sm text-gray-400">{group.detail}</p>
+                            </div>
+                            <span className="pt-1 font-mono text-xs text-gray-500">
+                                {String(group.skills.length).padStart(2, "0")} items
+                            </span>
+                        </div>
+
+                        <ul className="grid grid-cols-1 gap-y-3 sm:grid-cols-2">
+                            {group.skills.map((skill) => (
+                                <li key={skill.skill_name} className="flex min-w-0 items-center gap-3">
+                                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] p-2">
+                                        <Image
+                                            src={skill.Image}
+                                            alt=""
+                                            width={36}
+                                            height={36}
+                                            sizes="36px"
+                                            className="h-full w-full object-contain"
+                                        />
+                                    </span>
+                                    <span className="text-sm text-gray-200">
+                                        {skillLabels[skill.skill_name] ?? skill.skill_name}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+);
 
 export default Skills;

@@ -6,6 +6,7 @@ import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import MotionProvider from "@/components/MotionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -186,11 +187,13 @@ export default function RootLayout({
             __html: JSON.stringify(profilePageStructuredData)
           }}
         />
-        <CustomCursor />
-        <StarsCanvas />
-        <Navbar />
-        {children}
-        <Footer />
+        <MotionProvider>
+          <CustomCursor />
+          <StarsCanvas />
+          <Navbar />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

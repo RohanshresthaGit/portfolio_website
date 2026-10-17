@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import siteContent from "@/constants/navbar-content.json";
 
 const SkillText = () => {
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center">
-      <motion.div
+      <m.div
         variants={slideInFromTop}
         className="text-[32px] md:text-[40px] font-medium text-center text-gray-200"
       >
@@ -16,8 +16,8 @@ const SkillText = () => {
           {" "}&{" "}
         </span>
         {siteContent.skills.subtitle}
-      </motion.div>
-       <div className="h-1 w-48 bg-white/80 rounded-full mt-3 mx-auto" />
+      </m.div>
+      <div className="h-1 w-48 bg-white/80 rounded-full mt-3 mx-auto" />
     </div>
   );
 };

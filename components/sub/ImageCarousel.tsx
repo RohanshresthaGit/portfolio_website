@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 interface ImageCarouselProps {
@@ -92,7 +92,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
       onTouchEnd={handleTouchEnd}
     >
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={images[activeIndex]}
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
@@ -102,7 +102,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
         >
           {renderCurrentImage(images[activeIndex], activeIndex)}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-        </motion.div>
+        </m.div>
       </AnimatePresence>
 
       <button

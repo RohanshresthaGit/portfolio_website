@@ -2,7 +2,7 @@
 
 import React from "react";
 import ImageCarousel from "./ImageCarousel";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface FeaturedCardProps {
   item: {
@@ -20,7 +20,7 @@ interface FeaturedCardProps {
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ item, reverse = false }) => {
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -59,7 +59,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ item, reverse = false }) =>
           </div>
         </div>
       </div>
-    </motion.article>
+    </m.article>
   );
 };
 

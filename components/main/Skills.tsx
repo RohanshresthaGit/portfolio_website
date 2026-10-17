@@ -2,7 +2,7 @@
 
 import { mainSkills, secondarySkills } from "@/constants";
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useMotionValue, useAnimation } from "framer-motion";
+import { m, useMotionValue, useAnimation } from "framer-motion";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 
@@ -112,7 +112,7 @@ const Skills = () => {
             style={{ background: "linear-gradient(to left, #05071a, transparent)" }}
           />
 
-          <motion.div
+          <m.div
             ref={mainContainerRef}
             className="flex flex-row flex-nowrap gap-3 md:gap-5 items-center py-4"
             animate={controlsMain}
@@ -132,7 +132,7 @@ const Skills = () => {
                 index={index}
               />
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
 
@@ -151,7 +151,7 @@ const Skills = () => {
             style={{ background: "linear-gradient(to left, #05071a, transparent)" }}
           />
 
-          <motion.div
+          <m.div
             ref={secondaryContainerRef}
             className="flex flex-row flex-nowrap gap-3 md:gap-5 items-center py-4"
             animate={controlsSecondary}
@@ -176,7 +176,7 @@ const Skills = () => {
                 index={index}
               />
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

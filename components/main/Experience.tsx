@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import siteContent from "@/constants/navbar-content.json";
@@ -71,7 +71,7 @@ const CardContent = ({
   const badge = badgeConfig[item.type] ?? defaultBadge;
 
   return (
-    <motion.div
+    <m.div
       className="rounded-2xl p-5 md:p-6 cursor-pointer w-full"
       style={{
         background: "rgba(10,0,30,0.7)",
@@ -142,19 +142,19 @@ const CardContent = ({
               >
                 {item.type}
               </span>
-              <motion.span
+              <m.span
                 animate={{ rotate: expanded ? 180 : 0 }}
                 transition={{ duration: 0.25 }}
                 className="text-gray-500 text-sm select-none"
               >
                 ▾
-              </motion.span>
+              </m.span>
             </div>
           </div>
         </div>
       </div>
 
-      <motion.div
+      <m.div
         initial={false}
         animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
         transition={{ duration: 0.35, ease: "easeInOut" }}
@@ -187,8 +187,8 @@ const CardContent = ({
             ))}
           </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 };
 
@@ -205,7 +205,7 @@ const MobileTimelineItem = ({
 }) => {
   const [expanded, setExpanded] = useState(defaultOpen);
   return (
-    <motion.div
+    <m.div
       variants={slideInFromLeft(index * 0.1 + 0.2)}
       initial="hidden"
       whileInView="visible"
@@ -248,7 +248,7 @@ const MobileTimelineItem = ({
           onToggle={() => setExpanded(!expanded)}
         />
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -267,7 +267,7 @@ const DesktopTimelineItem = ({
   const isLeft = index % 2 === 0;
 
   return (
-    <motion.div
+    <m.div
       variants={
         isLeft
           ? slideInFromLeft(index * 0.1 + 0.2)
@@ -323,7 +323,7 @@ const DesktopTimelineItem = ({
           </div>
         )}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -394,7 +394,7 @@ const Experience = () => {
           </div>
         </div>
 
-        <motion.div
+        <m.div
           key={tab}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -431,7 +431,7 @@ const Experience = () => {
               />
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface Props {
   src: string;
@@ -12,11 +12,11 @@ interface Props {
   alt: string;
 }
 
-const SkillDataProvider = ({ src, width, height, alt}: Props) => {
+const SkillDataProvider = ({ src, width, height, alt }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div
+    <m.div
       className="flex-shrink-0 px-5 md:px-10 relative flex items-center justify-center overflow-visible"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -24,7 +24,7 @@ const SkillDataProvider = ({ src, width, height, alt}: Props) => {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       {hovered && (
-        <motion.div
+        <m.div
           className="absolute inset-0 rounded-full pointer-events-none"
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1.3 }}
@@ -66,7 +66,7 @@ const SkillDataProvider = ({ src, width, height, alt}: Props) => {
           }}
         />
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

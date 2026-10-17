@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
 import siteContent from "@/constants/navbar-content.json";
@@ -60,7 +60,7 @@ const HeroContent = () => {
   }, []);
 
   return (
-    <motion.div
+    <m.div
       initial="hidden"
       animate="visible"
       className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 lg:gap-16 px-5 sm:px-8 lg:px-24 pt-32 sm:pt-36 lg:pt-32 pb-10 mx-auto"
@@ -68,43 +68,43 @@ const HeroContent = () => {
     >
       {/* Left content */}
       <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-center items-center lg:items-start text-center lg:text-start order-2 lg:order-1">
-        <motion.div
+        <m.div
           variants={slideInFromLeft(0.2)}
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-white"
         >
           {siteContent.hero.greeting}
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           variants={slideInFromLeft(0.3)}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
         >
           {siteContent.hero.name}
-        </motion.h1>
+        </m.h1>
 
-        <motion.div
+        <m.div
           variants={slideInFromLeft(0.4)}
           className="text-xl md:text-2xl font-bold text-white flex flex-wrap items-center justify-center md:justify-start gap-x-2 mt-1"
         >
           <span>a</span>
           <TypingText />
-        </motion.div>
+        </m.div>
 
 
-        <motion.p
+        <m.p
           variants={slideInFromLeft(0)}
           className="text-sm md:text-base lg:text-[17px] text-gray-400 leading-relaxed text-justify max-w-[580px] mt-2"
         >
           {siteContent.hero.description}
-        </motion.p>
+        </m.p>
 
         {/* Buttons */}
-        <motion.div
+        <m.div
           variants={slideInFromLeft(0.8)}
           className="flex gap-4 mt-5 flex-wrap justify-center md:justify-start"
         >
           {/* Work with me — solid purple */}
-          <motion.a
+          <m.a
             href="#contact"
             aria-label={`${siteContent.hero.primaryCta}: Contact Rohan Shrestha about a project or opportunity`}
             whileHover={{ scale: 1.05, y: -2 }}
@@ -117,10 +117,10 @@ const HeroContent = () => {
             }}
           >
             {siteContent.hero.primaryCta}
-          </motion.a>
+          </m.a>
 
           {/* Download CV — outlined */}
-          <motion.a
+          <m.a
             href={siteContent.hero.secondaryLink}
             aria-label={`${siteContent.hero.secondaryCta}: Rohan Shrestha's resume PDF`}
             download={true}
@@ -146,21 +146,21 @@ const HeroContent = () => {
             }}
           >
             {siteContent.hero.secondaryCta}
-          </motion.a>
-        </motion.div>
+          </m.a>
+        </m.div>
       </div>
 
       {/* Right — image */}
-      <motion.div
+      <m.div
         variants={slideInFromRight(0.8)}
         className="w-full lg:w-[45%] flex justify-center lg:justify-end items-center flex-shrink-0 order-1 lg:order-2"
       >
         {/* Floating animation wrapper */}
-        <motion.div
+        <m.div
           animate={{ y: [0, -14, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
         >
-          <motion.div
+          <m.div
             className="relative w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[340px] md:h-[340px] lg:w-[380px] lg:h-[380px]"
             onMouseMove={isInteractive ? (e) => {
               const rect = e.currentTarget.getBoundingClientRect();
@@ -190,7 +190,7 @@ const HeroContent = () => {
             />
 
             {/* Rotating gradient border ring */}
-            <motion.div
+            <m.div
               className="absolute pointer-events-none"
               style={{
                 inset: "-4px",
@@ -210,10 +210,10 @@ const HeroContent = () => {
                   background: "#05071a",
                 }}
               />
-            </motion.div>
+            </m.div>
 
             {/* Orbiting purple dot */}
-            <motion.div
+            <m.div
               className="absolute pointer-events-none"
               style={{ inset: "-24px", borderRadius: "50%" }}
               animate={{ rotate: 360 }}
@@ -229,10 +229,10 @@ const HeroContent = () => {
                   boxShadow: "0 0 12px 4px rgba(186,156,255,0.8)",
                 }}
               />
-            </motion.div>
+            </m.div>
 
             {/* Orbiting blue dot */}
-            <motion.div
+            <m.div
               className="absolute pointer-events-none"
               style={{ inset: "-24px", borderRadius: "50%" }}
               animate={{ rotate: -360 }}
@@ -248,7 +248,7 @@ const HeroContent = () => {
                   boxShadow: "0 0 8px 3px rgba(156,178,255,0.7)",
                 }}
               />
-            </motion.div>
+            </m.div>
 
             {/* Circle image */}
             <div
@@ -280,10 +280,10 @@ const HeroContent = () => {
                 sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 340px, 380px"
               />
             </div>
-          </motion.div>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
+    </m.div>
   );
 };
 

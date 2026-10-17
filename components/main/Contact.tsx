@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import siteContent from "@/constants/navbar-content.json";
@@ -67,14 +67,14 @@ const Contact = () => {
 
   return (
     <section id="contact" className="w-full py-20 px-6 md:px-10">
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <motion.h2
+          <m.h2
             variants={slideInFromLeft(0.3)}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
@@ -82,21 +82,21 @@ const Contact = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {content.headline.accent}
             </span>
-          </motion.h2>
+          </m.h2>
 
           <div className="h-1 w-48 bg-white/80 rounded-full my-1 mb-8 mx-auto" />
 
-          <motion.p
+          <m.p
             variants={slideInFromLeft(0.5)}
             className="text-gray-400 max-w-[600px] mx-auto"
           >
             {content.description}
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-12 max-w-6xl mx-auto">
           {/* Left Side - Contact Information */}
-          <motion.div
+          <m.div
             variants={slideInFromLeft(0.7)}
             className="flex-1 flex flex-col justify-center gap-8"
           >
@@ -129,10 +129,10 @@ const Contact = () => {
             <div className="pt-8 border-t border-[#7042f861]">
               <p className="text-gray-400 text-sm">{content.note}</p>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right Side - Contact Form */}
-          <motion.div
+          <m.div
             variants={slideInFromRight(0.7)}
             className="flex-1 bg-[#0300145e] border border-[#7042f861] rounded-lg p-8 relative z-10"
           >
@@ -239,9 +239,9 @@ const Contact = () => {
                 </button>
               </form>
             )}
-          </motion.div>
+          </m.div>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 };

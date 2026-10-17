@@ -26,6 +26,12 @@ export const Skill_data = [
     height: 80,
   },
   {
+    skill_name: "C",
+    Image: "/skills/c.svg",
+    width: 80,
+    height: 80,
+  },
+  {
     skill_name: "Html 5",
     Image: "/html.png",
     width: 80,
@@ -350,6 +356,48 @@ export const mainSkills = [
     height: 80,
   },
   {
+    skill_name: "Dart",
+    Image: "/dart.webp",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Kotlin",
+    Image: "/kotlin.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Java",
+    Image: "/java.svg",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "C",
+    Image: "/skills/c.svg",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "JavaScript",
+    Image: "/skills/javascript.svg",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Python",
+    Image: "/python.svg",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Bash",
+    Image: "/skills/bash.svg",
+    width: 80,
+    height: 80,
+  },
+  {
     skill_name: "Git",
     Image: "/git.svg",
     width: 50,
@@ -365,6 +413,18 @@ export const mainSkills = [
 
 
 export const secondarySkills = [
+  {
+    skill_name: "Node.js",
+    Image: "/skills/nodejs.svg",
+    width: 55,
+    height: 55,
+  },
+  {
+    skill_name: "MongoDB",
+    Image: "/skills/mongodb.svg",
+    width: 55,
+    height: 55,
+  },
   {
     skill_name: "Ktor",
     Image: "/Ktor.svg",
@@ -400,6 +460,18 @@ export const secondarySkills = [
     Image: "/mui.png",
     width: 80,
     height: 80,
+  },
+  {
+    skill_name: "Figma",
+    Image: "/figma.png",
+    width: 50,
+    height: 50,
+  },
+  {
+    skill_name: "Postman",
+    Image: "/skills/postman.svg",
+    width: 50,
+    height: 50,
   },
 ]
 

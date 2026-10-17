@@ -95,7 +95,7 @@ const Blog = () => {
                 aria-label={`${siteContent.blog.readMore}: ${post.title}`}
                 className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-semibold text-sm transition-colors group/link"
               >
-                {siteContent.blog.readMore}
+                {siteContent.blog.readMore}: {post.title}
 
                 <FaArrowRight
                   size={12}

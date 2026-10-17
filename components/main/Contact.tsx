@@ -231,6 +231,7 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
+                  aria-label={loading ? "Sending contact message" : "Send contact message"}
                   disabled={loading}
                   className="button-primary py-3 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 transition-transform"
                 >

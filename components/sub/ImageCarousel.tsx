@@ -109,7 +109,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
         type="button"
         onClick={goToPrev}
         className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-black/30 p-2 text-white backdrop-blur-sm transition hover:bg-black/50"
-        aria-label="Previous image"
+        aria-label="Image carousel: Previous image"
       >
         <ChevronLeftIcon className="h-5 w-5" />
       </button>
@@ -118,7 +118,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
         type="button"
         onClick={goToNext}
         className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-black/30 p-2 text-white backdrop-blur-sm transition hover:bg-black/50"
-        aria-label="Next image"
+        aria-label="Image carousel: Next image"
       >
         <ChevronRightIcon className="h-5 w-5" />
       </button>
@@ -128,11 +128,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, alt }) => {
           <button
             key={index}
             type="button"
-            aria-label={`Go to image ${index + 1}`}
+            aria-label={`Image carousel: Go to image ${index + 1}`}
             onClick={() => setActiveIndex(index)}
-            className={`h-2.5 rounded-full transition-all ${
-              activeIndex === index ? "w-8 bg-white" : "w-2.5 bg-white/50"
-            }`}
+            className={`h-2.5 rounded-full transition-all ${activeIndex === index ? "w-8 bg-white" : "w-2.5 bg-white/50"
+              }`}
           />
         ))}
       </div>

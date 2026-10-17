@@ -178,6 +178,9 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         {isMobile && (
           <button
+            type="button"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
             className="lg:hidden flex items-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >

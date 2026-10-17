@@ -373,6 +373,9 @@ const Experience = () => {
             {(siteContent.experience.tabs as Array<{ id: "technical" | "community"; label: string }>).map((tabItem) => (
               <button
                 key={tabItem.id}
+                type="button"
+                aria-label={`${tabItem.label} experience`}
+                aria-pressed={tab === tabItem.id}
                 onClick={() => setTab(tabItem.id)}
                 className="px-6 py-2 rounded-lg text-sm font-medium tracking-wide transition-all duration-300"
                 style={{

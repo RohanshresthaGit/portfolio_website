@@ -90,8 +90,9 @@ const HeroContent = () => {
           <TypingText />
         </motion.div>
 
+
         <motion.p
-          variants={slideInFromLeft(0.6)}
+          variants={slideInFromLeft(0)}
           className="text-sm md:text-base lg:text-[17px] text-gray-400 leading-relaxed text-justify max-w-[580px] mt-2"
         >
           {siteContent.hero.description}

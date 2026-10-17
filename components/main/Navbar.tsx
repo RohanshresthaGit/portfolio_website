@@ -110,65 +110,65 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         {!isMobile && (
           <div className="hidden lg:flex w-full max-w-[500px] h-full flex-row items-center justify-between lg:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full">
-            {navLinks.map((link) => {
-              const active = activeSection === link.id;
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target={link.id === "blogs" ? "_blank" : undefined}
-                  rel={link.id === "blogs" ? "noopener noreferrer" : undefined}
-                  className="relative group cursor-pointer text-sm px-1 pb-1 transition-colors duration-300"
-                  style={{ color: active ? "#ba9cff" : "rgb(229,231,235)" }}
-                >
-                  {link.name}
+            <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full">
+              {navLinks.map((link) => {
+                const active = activeSection === link.id;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target={link.id === "blogs" ? "_blank" : undefined}
+                    rel={link.id === "blogs" ? "noopener noreferrer" : undefined}
+                    className="relative group cursor-pointer text-sm px-1 pb-1 transition-colors duration-300"
+                    style={{ color: active ? "#ba9cff" : "rgb(229,231,235)" }}
+                  >
+                    {link.name}
 
-                  {/* Active underline */}
-                  <span
-                    className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
-                    style={{
-                      background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
-                      width: active ? "100%" : "0%",
-                    }}
-                  />
-
-                  {/* Hover underline — only when not active */}
-                  {!active && (
+                    {/* Active underline */}
                     <span
-                      className="absolute bottom-0 left-0 h-[2px] rounded-full w-0 group-hover:w-full transition-all duration-300"
+                      className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
                       style={{
-                        background:
-                          "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(156,178,255,0.5))",
+                        background: "linear-gradient(90deg, #ba9cff, #9cb2ff)",
+                        width: active ? "100%" : "0%",
                       }}
                     />
-                  )}
-                </a>
-              );
-            })}
-          </div>
+
+                    {/* Hover underline — only when not active */}
+                    {!active && (
+                      <span
+                        className="absolute bottom-0 left-0 h-[2px] rounded-full w-0 group-hover:w-full transition-all duration-300"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, rgba(186,156,255,0.5), rgba(156,178,255,0.5))",
+                        }}
+                      />
+                    )}
+                  </a>
+                );
+              })}
+            </div>
           </div>
         )}
 
         {/* Desktop Socials */}
         {!isMobile && (
           <div className="hidden lg:flex flex-row gap-5">
-          {Socials.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={24}
-                height={24}
-              />
-            </a>
-          ))}
+            {Socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-opacity duration-300"
+              >
+                <Image
+                  src={social.src}
+                  alt={social.name}
+                  width={24}
+                  height={24}
+                />
+              </a>
+            ))}
           </div>
         )}
 
@@ -178,11 +178,11 @@ const Navbar = () => {
             className="lg:hidden flex items-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-          {isMenuOpen ? (
-            <XMarkIcon className="h-6 w-6 text-gray-300" />
-          ) : (
-            <Bars3Icon className="h-6 w-6 text-gray-300" />
-          )}
+            {isMenuOpen ? (
+              <XMarkIcon className="h-6 w-6 text-gray-300" />
+            ) : (
+              <Bars3Icon className="h-6 w-6 text-gray-300" />
+            )}
           </button>
         )}
       </div>
@@ -231,7 +231,7 @@ const Navbar = () => {
             {/* Mobile Socials */}
             <div className="flex flex-row gap-5 pt-4 border-t border-[#7042f861]">
               {Socials.map((social) => (
-                  <a
+                <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
@@ -243,7 +243,7 @@ const Navbar = () => {
                     alt={social.name}
                     width={24}
                     height={24}
-                    className="cursor-pointer"
+                    className="h-6 w-6 cursor-pointer object-contain"
                   />
                 </a>
               ))}

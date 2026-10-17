@@ -8,11 +8,13 @@ import siteContent from "@/constants/navbar-content.json";
 
 const Contact = () => {
   const content = siteContent.contact;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -21,29 +23,42 @@ const Contact = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setLoading(true);
     setError("");
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         setError(content.form.error);
       }
-    } catch (err) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -52,15 +67,24 @@ const Contact = () => {
 
   return (
     <section id="contact" className="w-full py-20 px-6 md:px-10">
-      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <motion.h2
             variants={slideInFromLeft(0.3)}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            {content.headline.first}{" "}<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">{content.headline.accent}</span>
+            {content.headline.first}{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              {content.headline.accent}
+            </span>
           </motion.h2>
-          <div className="h-1 w-48 bg-white/80 rounded-full my-1 mb-8 mx-auto"></div>
+
+          <div className="h-1 w-48 bg-white/80 rounded-full my-1 mb-8 mx-auto" />
 
           <motion.p
             variants={slideInFromLeft(0.5)}
@@ -71,7 +95,7 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-12 max-w-6xl mx-auto">
-          {/* Left Side - Contact Info */}
+          {/* Left Side - Contact Information */}
           <motion.div
             variants={slideInFromLeft(0.7)}
             className="flex-1 flex flex-col justify-center gap-8"
@@ -80,8 +104,11 @@ const Contact = () => {
               <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
                 <MapPinIcon className="h-6 w-6 text-purple-500" />
               </div>
+
               <div>
-                <h3 className="text-white font-semibold mb-1">{content.location.title}</h3>
+                <h3 className="text-white font-semibold mb-1">
+                  {content.location.title}
+                </h3>
                 <p className="text-gray-400">{content.location.value}</p>
               </div>
             </div>
@@ -90,16 +117,17 @@ const Contact = () => {
               <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
                 <EnvelopeIcon className="h-6 w-6 text-cyan-500" />
               </div>
+
               <div>
-                <h3 className="text-white font-semibold mb-1">{content.email.title}</h3>
+                <h3 className="text-white font-semibold mb-1">
+                  {content.email.title}
+                </h3>
                 <p className="text-gray-400">{content.email.value}</p>
               </div>
             </div>
 
             <div className="pt-8 border-t border-[#7042f861]">
-              <p className="text-gray-400 text-sm">
-                {content.note}
-              </p>
+              <p className="text-gray-400 text-sm">{content.note}</p>
             </div>
           </motion.div>
 
@@ -112,17 +140,35 @@ const Contact = () => {
               <div className="flex items-center justify-center h-full">
                 <div className="text-center">
                   <div className="text-5xl mb-4">✨</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{content.form.successTitle}</h3>
-                  <p className="text-gray-400">{content.form.successMessage}</p>
+
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {content.form.successTitle}
+                  </h3>
+
+                  <p className="text-gray-400">
+                    {content.form.successMessage}
+                  </p>
                 </div>
               </div>
-              ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6 pointer-events-auto">
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-6 pointer-events-auto"
+              >
+                {/* Name */}
                 <div>
-                  <label className="block text-gray-300 mb-2 font-medium">{content.form.nameLabel}</label>
+                  <label
+                    htmlFor="contact-name"
+                    className="block text-gray-300 mb-2 font-medium"
+                  >
+                    {content.form.nameLabel}
+                  </label>
+
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -131,11 +177,20 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Email */}
                 <div>
-                  <label className="block text-gray-300 mb-2 font-medium">{content.form.emailLabel}</label>
+                  <label
+                    htmlFor="contact-email"
+                    className="block text-gray-300 mb-2 font-medium"
+                  >
+                    {content.form.emailLabel}
+                  </label>
+
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -144,10 +199,19 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Message */}
                 <div>
-                  <label className="block text-gray-300 mb-2 font-medium">{content.form.messageLabel}</label>
+                  <label
+                    htmlFor="contact-message"
+                    className="block text-gray-300 mb-2 font-medium"
+                  >
+                    {content.form.messageLabel}
+                  </label>
+
                   <textarea
+                    id="contact-message"
                     name="message"
+                    autoComplete="off"
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -157,8 +221,14 @@ const Contact = () => {
                   />
                 </div>
 
-                {error && <p className="text-red-400 text-sm">{error}</p>}
+                {/* Error Message */}
+                {error && (
+                  <p role="alert" className="text-red-400 text-sm">
+                    {error}
+                  </p>
+                )}
 
+                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={loading}

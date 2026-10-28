@@ -45,7 +45,7 @@ const structuredData = {
     "Node.js Development",
     "REST API Development",
     "Full Stack Development",
-    "Product Engineering",
+    "Product Development",
     "Mobile App Architecture",
     "Software Development"
   ],

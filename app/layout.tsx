@@ -16,15 +16,14 @@ const structuredData = {
   "@id": "https://rohan-shrestha.info.np/#person",
   "name": "Rohan Shrestha",
   "url": "https://rohan-shrestha.info.np",
-  "jobTitle": "Flutter Developer and Full Stack Software Developer",
-  "description": "Rohan Shrestha is a software developer in Nepal specializing in Flutter mobile application development, Node.js backend development, REST APIs, and full stack product development.",
+  "jobTitle": "Flutter & Node.js Developer",
+  "description": "Rohan Shrestha is a Flutter and Node.js developer in Nepal building mobile apps, APIs, and full stack products for startups and growing teams.",
   "image": "https://rohan-shrestha.info.np/my_image.jpeg",
-  "email": "mailto:shrestharohan495@gmail.com",
+  "email": "shrestharohan495@gmail.com",
   "availableLanguage": ["en", "ne"],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "professional inquiries",
-    "telephone": "+9779818044672",
     "email": "shrestharohan495@gmail.com",
     "availableLanguage": ["English", "Nepali"]
   },
@@ -41,13 +40,13 @@ const structuredData = {
     "name": "Nepal"
   },
   "knowsAbout": [
-    "Flutter App Development",
-    "Mobile Application Development",
-    "Node.js Backend Development",
-    "Full Stack Development",
+    "Flutter Development",
+    "Mobile App Development",
+    "Node.js Development",
     "REST API Development",
-    "Cross-Platform Mobile App Development",
-    "Mobile Application Engineering",
+    "Full Stack Development",
+    "Product Engineering",
+    "Mobile App Architecture",
     "Software Development"
   ],
   "sameAs": [
@@ -62,9 +61,9 @@ const websiteStructuredData = {
   "@type": "WebSite",
   "@id": "https://rohan-shrestha.info.np/#website",
   "name": "Rohan Shrestha Portfolio",
-  "alternateName": "Rohan Shrestha - Flutter and Node.js Developer",
+  "alternateName": "Rohan Shrestha | Flutter & Node.js Developer",
   "url": "https://rohan-shrestha.info.np",
-  "description": "Rohan Shrestha is a Flutter and Node.js developer in Nepal building mobile apps, web apps, and scalable APIs. View projects, experience, skills, featured and contact details of Rohan Shrestha, a software developer in Nepal.",
+  "description": "Rohan Shrestha is a Flutter and Node.js developer in Nepal building mobile apps, APIs, and full stack products for startups and growing teams.",
   "inLanguage": "en-US",
   "author": {
     "@type": "Person",
@@ -79,7 +78,7 @@ const profilePageStructuredData = {
   "@id": "https://rohan-shrestha.info.np/#profile",
   "url": "https://rohan-shrestha.info.np",
   "name": "Rohan Shrestha | Portfolio",
-  "description": "The official portfolio of Rohan Shrestha, a Flutter developer, software developer, and full stack developer in Nepal specializing in mobile applications and Node.js.",
+  "description": "The official portfolio of Rohan Shrestha, a Flutter and Node.js developer in Nepal building mobile applications, APIs, and product-focused software.",
   "isPartOf": {
     "@id": "https://rohan-shrestha.info.np/#website"
   },
@@ -93,8 +92,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rohan-shrestha.info.np"),
   applicationName: "Rohan Shrestha Portfolio",
   manifest: "/manifest.json",
-  title: "Rohan Shrestha | Flutter Developer & Software Developer in Nepal",
-  description: "Rohan Shrestha is a Flutter developer and software developer in Nepal building mobile applications, Node.js APIs, and full stack software for startups and growing teams.",
+  title: "Rohan Shrestha | Flutter Developer & Full Stack Software Developer in Nepal",
+  description: "Rohan Shrestha is a Flutter developer and full stack software developer in Nepal building mobile apps, Node.js APIs, and reliable product experiences for startups and growing teams.",
   authors: [{ name: "Rohan Shrestha", url: "https://rohan-shrestha.info.np" }],
   creator: "Rohan Shrestha",
   publisher: "Rohan Shrestha",
@@ -106,23 +105,23 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Rohan Shrestha",
-    "Flutter Developer",
-    "Node.js Developer Nepal",
-    "Mobile app Developer",
-    "Mobile app Developer Nepal",
-    "Software Developer",
-    "Node.js Developer Nepal",
-    "Full Stack Developer",
-    "Full Stack Developer Nepal",
-    "Rohan Shrestha Portfolio",
-    "Rohan Shrestha website",
+    "Rohan Shrestha developer",
+    "Rohan Shrestha software developer",
+    "Flutter developer Nepal",
+    "Node.js developer Nepal",
+    "Full stack developer Nepal",
+    "Mobile app developer Nepal",
+    "Software developer Nepal",
+    "Flutter developer Kathmandu",
+    "Freelance Flutter developer",
+    "Rohan Shrestha portfolio"
   ],
   verification: {
     google: "cwoiSs1wZ4y_Wu_YLLZuMSpjRnwbUwF0AF2CEnQc-0k",
   },
   openGraph: {
-    title: "Rohan Shrestha | Flutter Developer & Software Developer in Nepal",
-    description: "Rohan Shrestha builds mobile applications, Node.js backend services, and full stack software as a Flutter developer in Nepal.",
+    title: "Rohan Shrestha | Flutter Developer & Full Stack Software Developer in Nepal",
+    description: "Rohan Shrestha builds mobile apps, Node.js APIs, and full stack products as a Flutter developer and software developer in Nepal.",
     type: "website",
     locale: "en_US",
     siteName: "Rohan Shrestha Portfolio",
@@ -130,14 +129,14 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/my_image.jpeg",
-        alt: "Rohan Shrestha, Flutter and Node.js developer"
+        alt: "Rohan Shrestha, Flutter developer and software developer in Nepal"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rohan Shrestha | Flutter Developer & Software Developer in Nepal",
-    description: "Rohan Shrestha builds mobile applications, Node.js backend services, and full stack software as a Flutter developer in Nepal.",
+    title: "Rohan Shrestha | Flutter Developer & Full Stack Software Developer in Nepal",
+    description: "Rohan Shrestha builds mobile apps, Node.js APIs, and full stack products as a Flutter developer and software developer in Nepal.",
     images: ["/my_image.jpeg"]
   },
   alternates: {

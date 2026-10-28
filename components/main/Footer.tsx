@@ -59,11 +59,7 @@ const Footer = () => {
             </div>
 
             {/* Email */}
-            <a
-              href="mailto:shrestharohan495@gmail.com"
-              aria-label={`Email Rohan Shrestha at ${footer.email}`}
-              className="flex items-center gap-3 rounded-xl bg-gray-800 px-5 py-3 shadow-md transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
-            >
+            <div className="flex items-center gap-3 rounded-xl bg-gray-800 px-5 py-3 shadow-md transition-colors">
               <div className="flex items-center justify-center rounded-lg bg-purple-500/10 p-3">
                 <EnvelopeIcon className="h-6 w-6 text-purple-400" />
               </div>
@@ -71,7 +67,7 @@ const Footer = () => {
               <span className="text-sm text-white md:text-base">
                 {footer.email}
               </span>
-            </a>
+            </div>
           </div>
         </div>
 

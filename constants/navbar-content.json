@@ -43,13 +43,13 @@
     "greeting": "Hello, I'm",
     "name": "Rohan Shrestha",
     "roles": [
-      "Flutter App Developer",
-      "Mobile App Developer",
-      "Node.js Backend Developer",
+      "Flutter Developer",
       "Full Stack Developer",
-      "Software Developer in Nepal"
+      "Node.js Developer",
+      "Software Developer",
+      "Product Developer"
     ],
-    "description": "I am a software developer in Nepal building production-ready mobile applications and backend services for startups and growing product teams. My work spans Flutter and Dart for cross-platform experiences, Node.js for scalable APIs, and full stack delivery from architecture and API integration to deployment and maintenance, with additional experience in Kotlin, Java, Python, Bash, Git and GitHub.",
+    "description": "Rohan Shrestha is a Flutter developer and full stack software developer in Nepal building production-ready mobile apps, backend services, and product-focused digital experiences for startups and growing teams. My work spans Flutter and Dart for cross-platform experiences, Node.js for scalable APIs, and practical engineering from architecture and integration to deployment and maintenance.",
     "primaryCta": "Let's Connect",
     "secondaryCta": "Download Resume",
     "secondaryLink": "/rohan_shrestha.pdf",
@@ -133,7 +133,12 @@
         "logo": "/vroom_nepal.webp",
         "logoColor": "#0ea5e9",
         "description": "Supported feature implementation, bug fixes, and UI refinements while gaining hands-on experience with Flutter workflows, version control, and quality-focused app development in a collaborative environment.",
-        "skills": ["Flutter", "Dart", "Git", "Responsive Design"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "Git",
+          "Responsive Design"
+        ]
       },
       {
         "role": "Freelance Flutter Developer",
@@ -143,7 +148,13 @@
         "logo": "/eclat.jpg",
         "logoColor": "#e59cff",
         "description": "Delivered a patient-side hospital management mobile application by implementing core features, integrating backend services, and shaping a reliable cross-platform product for real-world use.",
-        "skills": ["Flutter", "Dart", "REST API", "Git", "Gitlab"]
+        "skills": [
+          "Flutter",
+          "Dart",
+          "REST API",
+          "Git",
+          "Gitlab"
+        ]
       }
     ],
     "communityExperience": [

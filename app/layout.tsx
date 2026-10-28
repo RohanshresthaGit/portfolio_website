@@ -20,10 +20,12 @@ const structuredData = {
   "description": "Rohan Shrestha is a Flutter and Node.js developer in Nepal building mobile apps, APIs, and full stack products for startups and growing teams.",
   "image": "https://rohan-shrestha.info.np/my_image.jpeg",
   "email": "shrestharohan495@gmail.com",
+  "telephone": "+9779818044672",
   "availableLanguage": ["en", "ne"],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "professional inquiries",
+    "telephone": "+9779818044672",
     "email": "shrestharohan495@gmail.com",
     "availableLanguage": ["English", "Nepali"]
   },
